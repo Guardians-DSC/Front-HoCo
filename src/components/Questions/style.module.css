@@ -1,0 +1,55 @@
+.accordionSection{
+    display: flex;
+    flex-direction: column;
+    padding: 0px 4px 0px 0px;
+}
+
+.accordion{
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 18px 0px;
+    padding-left: 6px;
+    display: flex;
+    align-items: center;
+    outline: none;
+
+    transition: 0.6s ease;
+    
+}
+
+#dropdown{
+    padding-left: 5px;
+}
+
+
+.accordionContent{
+    overflow: hidden;
+}
+
+.accordionText{
+    transition: 0.5s ease;
+    padding-left: 8px;
+    color: var(--font-grey);
+    font-size: 18px;
+    line-height: 28px;
+    text-align: justify;
+    width: 900px;
+}
+    
+.title{
+    font-size: 22px;
+    font-weight:700;
+    color: var(--font-grey);
+    text-align: left;
+    width: 60.5rem;
+}
+
+.rotate{
+    transform: rotate(360deg);
+    transition:ease-in-out 0.4s;
+}
+
+.active .rotate{
+    transform: rotate(180deg);
+}
