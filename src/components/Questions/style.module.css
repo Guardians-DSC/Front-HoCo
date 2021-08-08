@@ -1,48 +1,46 @@
-.accordionSection{
+.section{
     display: flex;
     flex-direction: column;
-    padding: 0px 4px 0px 0px;
+    padding: 0px 4px;
 }
 
-.accordion{
+.questionContent{
     background: none;
     border: none;
     cursor: pointer;
-    padding: 18px 0px;
     padding-left: 6px;
     display: flex;
-    align-items: center;
     outline: none;
-
+    width: 62.5rem;
+    margin: 24px 0 10px;
     transition: 0.6s ease;
-    
 }
 
-#dropdown{
-    padding-left: 5px;
+.questionTitle{
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--font-grey);
+    text-align: left;
 }
 
+.icon{
+    margin-left: 0.5rem
+}
 
-.accordionContent{
+.responseContent{
     overflow: hidden;
 }
 
-.accordionText{
+.responseText{
     transition: 0.5s ease;
     padding-left: 8px;
     color: var(--font-grey);
     font-size: 18px;
     line-height: 28px;
     text-align: justify;
-    width: 900px;
-}
-    
-.title{
-    font-size: 22px;
-    font-weight:700;
-    color: var(--font-grey);
-    text-align: left;
-    width: 60.5rem;
+    margin-left: 1.25rem;
+    width: 55.7rem;
+    display: flex;
 }
 
 .rotate{

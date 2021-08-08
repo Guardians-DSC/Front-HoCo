@@ -14,13 +14,14 @@ export const Questions = (props) => {
         },
     )
     return (
-        <div className={style.accordionSection}>
-            <button className={`${style.accordion} ${active ? `${style.active}` : ""}`} onClick={handleClick}>
-                <p className={style.title}>{props.title}</p>
-                <Dropdown className={style.rotate} size='1.5rem' id={style.dropdown} color="#514E4E" />
+        <div className={style.section}>
+            <button className={`${style.questionContent} ${active ? `${style.active}` : ""}`} onClick={handleClick}>
+                <p className={style.questionTitle}>{props.title}
+                </p>
+                <div className={style.icon}><Dropdown className={style.rotate} size='24px' id={style.dropdown} color="#514E4E" /></div>
             </button>
-            <div className={style.accordionContent}>
-                <div ref={content} style={{ maxHeight: `${height}` }} className={style.accordionText}>{props.content}</div>
+            <div className={style.responseContent}>
+                <div ref={content} style={{ maxHeight: `${height}` }} className={style.responseText}>{props.content}</div>
             </div>
         </div>
 
