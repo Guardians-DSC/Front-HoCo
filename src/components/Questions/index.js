@@ -15,15 +15,18 @@ export const Questions = (props) => {
     )
     return (
         <div className={style.section}>
-            <button className={`${style.questionContent} ${active ? `${style.active}` : ""}`} onClick={handleClick}>
-                <p className={style.questionTitle}>{props.title}
-                </p>
-                <div className={style.icon}><Dropdown className={style.rotate} size='24px' id={style.dropdown} color="#514E4E" /></div>
-            </button>
-            <div className={style.responseContent}>
-                <div ref={content} style={{ maxHeight: `${height}` }} className={style.responseText}>{props.content}</div>
+            <div className={style.container}>
+                <div className={`${style.questionContent} ${active ? `${style.active}` : ""}`} onClick={handleClick}>
+                    <div className={style.icon}><Dropdown className={style.rotate} id={style.dropdown} color="#514E4E" /></div>
+                    <p className={style.questionTitle}>{props.title}
+                    </p>
+                </div>
+                <div className={style.responseContent}>
+                    <div ref={content} style={{ maxHeight: `${height}` }} className={style.responseText}>{props.content}</div>
+                </div>
             </div>
         </div>
 
     )
 }
+
