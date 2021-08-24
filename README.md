@@ -1,7 +1,7 @@
 # O HoCo
 
 <p align=center>
-  <img width=350 src='https://user-images.githubusercontent.com/42751604/125948239-49f7484e-d45d-4724-8bb8-d2e3c23845f8.png'/>
+  <img width=350 src='https://user-images.githubusercontent.com/42751604/130678288-4c854469-6d06-4c23-ba23-c89b1fa7cde0.png'/>
 </p>
 <br/>
 
@@ -12,6 +12,8 @@
   <p>
   A falta de conhecimento acerca do funcionamento das horas e atividades complementares do curso é algo que é de conhecimento geral dos alunos e professores e foi assim que o HoCo nasceu. O projeto tem com o objetivo de sanar essa deficiência do curso provendo um lugar onde os alunos além de salvarem suas horas possam ter conhecimento do seu funcionamento e das normas atuais do curso.
   </p>
+
+
 </div>
 
 ---
