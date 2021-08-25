@@ -12,11 +12,13 @@
   <p>
   A falta de conhecimento acerca do funcionamento das horas e atividades complementares do curso é algo que é de conhecimento geral dos alunos e professores e foi assim que o HoCo nasceu. O projeto tem com o objetivo de sanar essa deficiência do curso provendo um lugar onde os alunos além de salvarem suas horas possam ter conhecimento do seu funcionamento e das normas atuais do curso.
   </p>
-
-
 </div>
 
 ---
+
+### Figma
+
+O figma é a plataforma onde nós prototipamos as telas dos projeto, caso você queira dar uma olhada acesse esse link: [Link do figma do HoCo](https://www.figma.com/file/e62phNSSNY2C1kgAOCFfid/HoCo?node-id=640%3A2271)
 
 ## Requisitos
 Para executar o projeto você precisa instalar as seguintes ferramentas:
