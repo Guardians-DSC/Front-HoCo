@@ -1,13 +1,13 @@
-FROM node:latest
+FROM node:14.14.0-alpine
 
 LABEL maintainer="Rodrigo Eloy Cavalcanti"
 
-COPY . /app
-
 WORKDIR /app
 
-RUN ["npm", "install"]
+COPY . .
 
-CMD ["npm", "start"]
+RUN npm install
+
+CMD npm start
 
 EXPOSE 3000
