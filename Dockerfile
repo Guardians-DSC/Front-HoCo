@@ -1,12 +1,19 @@
-FROM node:14.14.0-alpine
+FROM node:14.14.0-alpine as dependency
 
-LABEL maintainer="Rodrigo Eloy Cavalcanti"
+WORKDIR /app
+
+COPY package.json .
+
+RUN npm install
+
+
+FROM node:14.14.0-alpine
 
 WORKDIR /app
 
 COPY . .
 
-RUN npm install
+COPY --from=dependency /app/node_modules /app/node_modules
 
 CMD npm start
 
