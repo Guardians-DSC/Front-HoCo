@@ -69,8 +69,6 @@ Para executar o projeto você precisa ter instalado na sua máquina o `docker` e
   docker run -p 3000 front-hoco
 ```
 
-⚠️ ATENÇÂO: Se o comando acima acarretou em um erro de permissão, então você precisa criar um grupo docker, para isso veja o link a seguir: [Link para rodar o docker-compose up sem sudo criando um grupo](https://docs.docker.com/engine/install/linux-postinstall/)
-
 Pronto! Simples assim e você já consegui executar localmente o projeto, caso você esteja executando o projeto e modificar alguma coisa no código o projeto será atualizado automaticamente.
 
 ## :handshake: Como contribuir
