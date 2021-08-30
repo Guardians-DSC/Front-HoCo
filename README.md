@@ -66,7 +66,7 @@ Para executar o projeto você precisa ter instalado na sua máquina o `docker` e
 4. Executar container
 
 ```bash
-  docker run -p 3000 front-hoco
+  docker run -p 3000:3000 front-hoco
 ```
 
 Pronto! Simples assim e você já consegui executar localmente o projeto, caso você esteja executando o projeto e modificar alguma coisa no código o projeto será atualizado automaticamente.
