@@ -1,4 +1,4 @@
-FROM node:14.14.0-alpine as dependency
+FROM node:lts-alpine as dependency
 
 WORKDIR /app
 
@@ -7,7 +7,7 @@ COPY package.json .
 RUN npm install
 
 
-FROM node:14.14.0-alpine
+FROM node:lts-alpine
 
 WORKDIR /app
 
