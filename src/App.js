@@ -10,21 +10,22 @@ import { Orgs } from './views/Organizacoes'
 
 import './styles/reset.css'
 
-
 function App() {
   return (
     <div className="App">
       <Switch>
-        <Route path='/sobre' component={Sobre}/>
-        <Route path='/horas' component={Horas}/>
-        <Route path='/atividades' component={Atividades}/>
-        <Route path='/orgs' component={Orgs}/>
-        <Route path='/duvidas' component={Duvidas}/>
-        <Route path='/perfil' component={Perfil}/>
-        <Route path='*'><Redirect to='/sobre'/></Route>
+        <Route path="/sobre" component={Sobre} />
+        <Route path="/horas" component={Horas} />
+        <Route path="/atividades" component={Atividades} />
+        <Route path="/orgs" component={Orgs} />
+        <Route path="/duvidas" component={Duvidas} />
+        <Route path="/perfil" component={Perfil} />
+        <Route path="*">
+          <Redirect to="/sobre" />
+        </Route>
       </Switch>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

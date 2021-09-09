@@ -1,9 +1,5 @@
 import React from 'react'
 
 export const Atividades = () => {
-    return (
-        <div>
-            Atividades
-        </div>
-    )
+  return <div>Atividades</div>
 }
