@@ -17,18 +17,19 @@ function App() {
   return (
     <ThemeProvider theme={themeLight}>
       <div className="App">
-        <Menu />
-        <Switch>
-          <Route path="/sobre" component={Sobre} />
-          <Route path="/horas" component={Horas} />
-          <Route path="/atividades" component={Atividades} />
-          <Route path="/orgs" component={Orgs} />
-          <Route path="/duvidas" component={Duvidas} />
-          <Route path="/perfil" component={Perfil} />
-          <Route path="*">
-            <Redirect to="/sobre" />
-          </Route>
-        </Switch>
+        <Menu>
+          <Switch>
+            <Route path="/sobre" component={Sobre} />
+            <Route path="/horas" component={Horas} />
+            <Route path="/atividades" component={Atividades} />
+            <Route path="/orgs" component={Orgs} />
+            <Route path="/duvidas" component={Duvidas} />
+            <Route path="/perfil" component={Perfil} />
+            <Route path="*">
+              <Redirect to="/sobre" />
+            </Route>
+          </Switch>
+        </Menu>
       </div>
     </ThemeProvider>
   )
