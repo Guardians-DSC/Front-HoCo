@@ -1,15 +1,15 @@
 import styled from 'styled-components'
 
-import { Arrow } from '../../assets/icons/Arrow'
 import { Link } from 'react-router-dom'
+
 
 export const OutWrapper = styled.div`
   height: 100vh;
   box-sizing: border-box;
-  max-width: 18rem;
-  width: 20vw;
-`
+  width: ${({ isRetracted }) => isRetracted ? '5rem' : '18rem'};
+  transition: width 0.5s;
 
+  `
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -19,9 +19,10 @@ export const Wrapper = styled.div`
   height: inherit;
   max-width: inherit;
   width: inherit;
-  padding: 2rem 2rem;
+  padding: ${({ isRetracted }) => isRetracted ? '2rem 0rem' : '2rem'};
   justify-content: space-between;
   box-sizing: border-box;
+  overflow: hidden;
 `
 
 export const MenuHeader = styled.div`
@@ -30,11 +31,18 @@ export const MenuHeader = styled.div`
   align-items: center;
   gap: 1.5rem;
   width: 100%;
+
 `
 
-export const ArrowContainer = styled(Arrow)`
+export const ArrowContainer = styled.div`
   cursor: pointer;
-  align-self: flex-end;
+  align-self: ${({ isRetracted }) => isRetracted ? '' : 'flex-end'};
+  transform: ${({ isRetracted }) => isRetracted ? 'rotate(180deg)' : ''};
+  transition: transform 0.5s ease;
+`
+
+export const LinkContainer = styled(Link)`
+  display: ${({ isRetracted }) => isRetracted ? 'none' : ''};
 `
 
 export const MenuBody = styled.div`

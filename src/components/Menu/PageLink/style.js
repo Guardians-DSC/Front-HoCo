@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   background-color: ${(props) => (props.isActive ? props.theme['main-white'] : props.theme['main-green'])};
   align-items: center;
   gap: 0.5rem;
-  min-width: 12rem;
+  min-width: ${({ isRetracted }) => isRetracted ? 'fit-content' : '12rem'};
   width: fit-content;
   height: 1.5rem;
   font-family: 'sen';
@@ -20,4 +20,5 @@ export const Icon = styled.div`
 export const Text = styled.span`
   color: ${(props) => (props.isActive ? props.theme['main-green'] : props.theme['main-white'])};
   font-weight: bold;
+  display: ${({ isRetracted }) => isRetracted ? 'none' : ''};
 `
