@@ -6,7 +6,7 @@ export const Arrow = ({ className, color, width }) => {
     <div className={className}>
       <svg
         width={width}
-        height={Math.pow((Math.sqrt(width) + 1), 2)}
+        height={Math.pow(Math.sqrt(width) + 1, 2)}
         viewBox="0 0 25 16"
         fill={color}
         xmlns="http://www.w3.org/2000/svg"

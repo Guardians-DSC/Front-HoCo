@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import { Avatar } from "antd"
+import styled from 'styled-components'
+import { Avatar } from 'antd'
 
 export const Wrapper = styled.div`
   color: white;
@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   gap: 1rem;
 
   span {
-    display: ${({ isRetracted }) => isRetracted ? 'none' : ''};
+    display: ${({ isRetracted }) => (isRetracted ? 'none' : '')};
   }
 `
 

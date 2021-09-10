@@ -29,11 +29,9 @@ export const Menu = ({ children }) => {
 
   const handleRetract = () => {
     setIsRetracted(!isRetracted)
-    console.log(isRetracted)
   }
 
   const handleActive = () => {
-    console.log(isActive)
     setIsActive(!isActive)
   }
 
@@ -48,7 +46,12 @@ export const Menu = ({ children }) => {
             <CloseContainer onClick={handleActive}>
               <CloseOutlined style={{ fontSize: '24px', color: '#f5f5f5' }} />
             </CloseContainer>
-            <LinkContainer to="/sobre" isRetracted={isRetracted} isActive={isActive}>
+            <LinkContainer
+              to="/sobre"
+              onClick={() => setIsActive(false)}
+              isRetracted={isRetracted}
+              isActive={isActive}
+            >
               <Logo width={200} />
             </LinkContainer>
           </MenuHeader>
@@ -66,7 +69,7 @@ export const Menu = ({ children }) => {
               }
             })}
           </MenuBody>
-          <MenuFooter to="/perfil">
+          <MenuFooter to="/perfil" onClick={() => setIsActive(false)}>
             <Profile isRetracted={isRetracted} />
           </MenuFooter>
         </Wrapper>
@@ -77,7 +80,7 @@ export const Menu = ({ children }) => {
             <BurguerMenu />
           </div>
           <Link to="/sobre">
-            <Logo width={100} color="#5E966A" />
+            <Logo width={100} onClick={() => setIsActive(false)} color="#5E966A" />
           </Link>
         </Header>
         {children}

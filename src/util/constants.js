@@ -50,7 +50,9 @@ export const pages = [
   {
     name: 'duvidas',
     text: 'Dúvidas',
-    icon: <QuestionCircleOutlined style={{ fontSize: `${21}px`, color: '#5E966A' }} />,
+    icon: (
+      <QuestionCircleOutlined style={{ fontSize: `${21}px`, color: '#5E966A' }} />
+    ),
     path: '/duvidas',
     component: Duvidas,
     menu: true,

@@ -39,11 +39,11 @@ export const Logo = ({ className, color, width }) => {
 Logo.propTypes = {
   className: PropTypes.string,
   color: PropTypes.string,
-  width: PropTypes.number
+  width: PropTypes.number,
 }
 
 Logo.defaultProps = {
   className: 'ArrowContainer',
   color: '#fff',
-  width: 187
+  width: 187,
 }
