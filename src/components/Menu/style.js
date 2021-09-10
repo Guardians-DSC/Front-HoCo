@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 import { Arrow } from '../../assets/icons/Arrow'
+import { Link } from 'react-router-dom'
 
 export const OutWrapper = styled.div`
   height: 100vh;
@@ -42,4 +43,4 @@ export const MenuBody = styled.div`
   gap: 1rem;
 `
 
-export const MenuFooter = styled.div``
+export const MenuFooter = styled(Link)``

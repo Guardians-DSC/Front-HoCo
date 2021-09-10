@@ -5,6 +5,7 @@ import { Wrapper, MenuHeader, MenuBody, MenuFooter, ArrowContainer, OutWrapper }
 import { pages } from '../../util/constants'
 import { PageLink } from './PageLink'
 import { Link } from 'react-router-dom'
+import { Profile } from '../Profile'
 
 export const Menu = () => {
   const handleRetract = () => {
@@ -27,8 +28,8 @@ export const Menu = () => {
             }
           })}
         </MenuBody>
-        <MenuFooter>
-          Entrar
+        <MenuFooter to='/perfil'>
+          <Profile />
         </MenuFooter>
       </Wrapper>
     </OutWrapper>
