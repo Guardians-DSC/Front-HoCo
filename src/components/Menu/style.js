@@ -9,8 +9,7 @@ export const OutWrapper = styled.div`
   transition: 0.5s ease;
 
   @media screen and (max-width: 1024px) {
-    transition-delay: 0.3s;
-    transform: ${({ isActive }) => (isActive ? '' : 'translate(-200vh)')};
+    transform: ${({ isActive }) => (isActive ? '' : 'translate(-50vh)')};
     position: absolute;
   }
 `
