@@ -38,6 +38,7 @@ export const Menu = ({ children }) => {
   }
 
   const handleActive = () => {
+    setIsRetracted(false)
     setIsActive(!isActive)
   }
 
