@@ -1,17 +1,11 @@
 import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 
-import { Atividades } from './views/Atividades'
-import { Sobre } from './views/Sobre'
-import { Perfil } from './views/Perfil'
-import { Horas } from './views/Horas'
-import { Duvidas } from './views/Duvidas'
-import { Orgs } from './views/Organizacoes'
-
 import './styles/reset.css'
 import { Menu } from './components/Menu'
 import { ThemeProvider } from 'styled-components'
 import { themeLight } from './util/themes'
+import { pages } from './util/constants'
 
 function App() {
   return (
@@ -19,12 +13,9 @@ function App() {
       <div className="App">
         <Menu>
           <Switch>
-            <Route path="/sobre" component={Sobre} />
-            <Route path="/horas" component={Horas} />
-            <Route path="/atividades" component={Atividades} />
-            <Route path="/orgs" component={Orgs} />
-            <Route path="/duvidas" component={Duvidas} />
-            <Route path="/perfil" component={Perfil} />
+            {pages.map((path, index) => (
+              <Route path={path.path} component={path.component} key={index} />
+            ))}
             <Route path="*">
               <Redirect to="/sobre" />
             </Route>

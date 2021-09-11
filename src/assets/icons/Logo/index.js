@@ -20,9 +20,8 @@ export const Logo = ({ className, color, width }) => {
       xmlns="http://www.w3.org/2000/svg"
     >
       {paths.map((path, index) => {
-        <path d={path} fill={color} key={index} />
+        return <path d={path} fill={color} key={index} />
       })}
-      />
     </svg>
   )
 }
