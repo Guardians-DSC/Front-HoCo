@@ -14,7 +14,7 @@ import {
   Body,
   CloseContainer,
 } from './style'
-import { pages } from '../../util/constants'
+import constants from '../../util/constants'
 import { PageLink } from './PageLink'
 import { Profile } from '../Profile'
 import { Arrow } from '../../assets/icons/Arrow'
@@ -56,7 +56,7 @@ export const Menu = ({ children }) => {
             </LinkContainer>
           </MenuHeader>
           <MenuBody>
-            {pages.map((page, index) => {
+            {constants.pages.map((page, index) => {
               if (page.menu) {
                 return (
                   <PageLink

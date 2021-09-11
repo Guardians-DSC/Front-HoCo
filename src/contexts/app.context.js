@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react'
 
 import PropTypes from 'prop-types'
-import { pages } from '../util/constants'
+import constants from '../util/constants'
 import { useHistory } from 'react-router-dom'
 
 const PagesContext = createContext()
@@ -10,7 +10,7 @@ export function PagesProvider({ children }) {
   const history = useHistory()
 
   const [currentPathname, setCurrentPathname] = useState(window.location.pathname)
-
+  const { pages } = constants
   useEffect(() => {
     history.listen((location) => {
       setCurrentPathname(location.pathname)

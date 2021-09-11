@@ -4,17 +4,17 @@ import {
   BookOutlined,
   QuestionCircleOutlined,
 } from '@ant-design/icons'
-import { Group } from '../assets/icons/Group'
+import { Group } from '../../assets/icons/Group'
 
-import { Horas } from '../views/Horas'
-import { Atividades } from '../views/Atividades'
-import { Orgs } from '../views/Organizacoes'
-import { Duvidas } from '../views/Duvidas'
-import { Perfil } from '../views/Perfil'
-import { Sobre } from '../views/Sobre'
-import { ShortLogo } from '../assets/icons/ShortLogo'
+import { Horas } from '../../views/Horas'
+import { Atividades } from '../../views/Atividades'
+import { Orgs } from '../../views/Organizacoes'
+import { Duvidas } from '../../views/Duvidas'
+import { Perfil } from '../../views/Perfil'
+import { Sobre } from '../../views/Sobre'
+import { ShortLogo } from '../../assets/icons/ShortLogo'
 
-export const pages = [
+export default [
   {
     name: 'sobre',
     text: 'O HoCo',
