@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Logo } from '../../assets/icons/Logo'
 import { Link } from 'react-router-dom'
 
@@ -24,8 +24,14 @@ import { BurguerMenu } from '../../assets/icons/BurguerMenu'
 import { CloseOutlined } from '@ant-design/icons'
 
 export const Menu = ({ children }) => {
-  const [isRetracted, setIsRetracted] = useState(false)
+  const [isRetracted, setIsRetracted] = useState(
+    localStorage.getItem('retracted') === 'true'
+  )
   const [isActive, setIsActive] = useState(false)
+
+  useEffect(() => {
+    localStorage.setItem('retracted', isRetracted)
+  }, [isRetracted])
 
   const handleRetract = () => {
     setIsRetracted(!isRetracted)
