@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 export const OutWrapper = styled.div`
   height: 100vh;
   box-sizing: border-box;
-  width: ${({ isRetracted }) => (isRetracted ? '5rem' : '21rem')};
+  width: ${({ isRetracted }) => (isRetracted ? '5rem' : '18rem')};
   transition: 0.5s ease;
 
   @media screen and (max-width: 1024px) {
@@ -76,19 +76,12 @@ export const MenuBody = styled.div`
 
 export const MenuFooter = styled(Link)``
 
-export const Body = styled.div`
+export const Header = styled.div`
+  display: none;
   padding: 2rem 3rem;
-  width: 100%;
 
   @media screen and (max-width: 1025px) {
     padding: 2rem 1.5rem;
-  }
-`
-
-export const Header = styled.div`
-  display: none;
-
-  @media screen and (max-width: 1025px) {
     display: flex;
     justify-content: space-between;
   }

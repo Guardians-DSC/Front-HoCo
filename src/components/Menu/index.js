@@ -11,7 +11,6 @@ import {
   OutWrapper,
   LinkContainer,
   Header,
-  Body,
   CloseContainer,
 } from './style'
 import constants from '../../util/constants'
@@ -19,11 +18,10 @@ import { PageLink } from './PageLink'
 import { Profile } from '../Profile'
 import { Arrow } from '../../assets/icons/Arrow'
 
-import PropTypes from 'prop-types'
 import { BurguerMenu } from '../../assets/icons/BurguerMenu'
 import { CloseOutlined } from '@ant-design/icons'
 
-export const Menu = ({ children }) => {
+export const Menu = () => {
   const [isRetracted, setIsRetracted] = useState(
     localStorage.getItem('retracted') === 'true'
   )
@@ -81,21 +79,14 @@ export const Menu = ({ children }) => {
           </MenuFooter>
         </Wrapper>
       </OutWrapper>
-      <Body>
-        <Header>
-          <div onClick={handleActive}>
-            <BurguerMenu />
-          </div>
-          <Link to="/sobre">
-            <Logo width={100} onClick={() => setIsActive(false)} color="#5E966A" />
-          </Link>
-        </Header>
-        {children}
-      </Body>
+      <Header>
+        <div onClick={handleActive}>
+          <BurguerMenu />
+        </div>
+        <Link to="/sobre">
+          <Logo width={100} onClick={() => setIsActive(false)} color="#5E966A" />
+        </Link>
+      </Header>
     </>
   )
-}
-
-Menu.propTypes = {
-  children: PropTypes.element,
 }
