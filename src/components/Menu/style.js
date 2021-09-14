@@ -21,7 +21,7 @@ export const Wrapper = styled.div`
   background-color: ${(props) => props.theme['main-green']};
   height: inherit;
   width: ${({ isRetracted }) => (isRetracted ? '5rem' : '18rem')};
-  padding: ${({ isRetracted }) => (isRetracted ? '2rem 0rem' : '2rem')};
+  padding: ${({ isRetracted }) => (isRetracted ? '2rem 0rem' : '1.5rem 2rem')};
   justify-content: space-between;
   box-sizing: border-box;
   transition: width 0.5s;

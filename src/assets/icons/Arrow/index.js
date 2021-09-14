@@ -28,5 +28,5 @@ Arrow.propTypes = {
 Arrow.defaultProps = {
   className: 'ArrowContainer',
   color: '#fff',
-  width: 32,
+  width: 26,
 }
