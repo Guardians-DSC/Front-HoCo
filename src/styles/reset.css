@@ -3,13 +3,13 @@
 
 html,
 body,
-.App {
+<<<<<<< HEAD .App {
   font-family: 'Roboto';
 }
 
 html,
 body,
-div,
+=======>>>>>>>main div,
 span,
 applet,
 object,
@@ -130,4 +130,36 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  min-height: 100vh;
+  min-width: 100vw;
+  margin: 0;
+  font-family: roboto;
+}
+
+#root {
+  min-width: 100vw;
+  min-height: 100vh;
+  min-height: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.App {
+  display: flex;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 1250px) {
+  .App {
+    display: block;
+  }
 }
