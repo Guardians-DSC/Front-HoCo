@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
   gap: 0.5rem;
   min-width: ${({ isRetracted }) => (isRetracted ? 'fit-content' : '12rem')};
   width: fit-content;
-  height: 3rem;
+  height: 1.5rem;
   font-family: 'sen';
   border-radius: 2px;
   transition: 0.3s;
