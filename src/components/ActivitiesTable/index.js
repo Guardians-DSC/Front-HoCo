@@ -1,12 +1,13 @@
-import React from "react"
+import React from 'react'
 import { Space, Tag, Popconfirm } from 'antd'
-import "antd/dist/antd.css"
-import { EditOutlined, DeleteOutlined, DownloadOutlined } from '@ant-design/icons';
+import { EditOutlined, DeleteOutlined, DownloadOutlined } from '@ant-design/icons'
 
 import { Table } from './style'
 
 import pdf from '../../assets/files/arquivo.pdf'
-import { Link } from "react-router-dom"
+import { Link } from 'react-router-dom'
+
+import categories from '../../util/constants/categories'
 
 export const ActivitiesTable = ({ data }) => {
   const columns = [
@@ -15,7 +16,7 @@ export const ActivitiesTable = ({ data }) => {
       dataIndex: 'titulo',
       key: 'titulo',
       width: 'fit-content',
-      render: (text) => (text)
+      render: (text) => text,
     },
     {
       title: 'Horas',
@@ -24,46 +25,60 @@ export const ActivitiesTable = ({ data }) => {
       align: 'center',
       width: 'fit-content',
 
-      render: hora => (hora ? hora : '- - -')
+      render: (hora) => (hora ? hora : '- - -'),
     },
     {
       title: 'Crédito',
       dataIndex: 'credito',
       key: 'credito',
       align: 'center',
-      render: credito => (credito ? credito : '- - -')
+      render: (credito) => (credito ? credito : '- - -'),
     },
     {
       title: 'Categoria',
       key: 'categoria',
       dataIndex: 'categoria',
-      render: tag => (<Tag color='green' key={tag}>
-                      {tag.toUpperCase()}
-                    </Tag>),
+      render: (tag) => {
+        return (
+          <Tag color="red" key={tag}>
+            {tag.toUpperCase()}
+          </Tag>
+        )
+      },
     },
     {
       title: 'Ações',
       key: 'action',
       render: (text, record) => (
         <Space size="middle">
-          <Link to='http://www.africau.edu/images/default/sample.pdf' target="_blank" download>
-            <DownloadOutlined style={{ fontSize: '18px'}} onClick={() => handleDownload(record)}/>
+          <Link
+            to="http://www.africau.edu/images/default/sample.pdf"
+            target="_blank"
+            download
+          >
+            <DownloadOutlined
+              style={{ fontSize: '18px' }}
+              onClick={() => handleDownload(record)}
+            />
           </Link>
-          <EditOutlined style={{ fontSize: '18px'}} onClick={() => handleEdit(record)}/>
-          <Popconfirm 
-            cancelText='Cancelar'
-            okText='Apagar'
+          <EditOutlined
+            style={{ fontSize: '18px' }}
+            onClick={() => handleEdit(record)}
+          />
+          <Popconfirm
+            cancelText="Cancelar"
+            okText="Apagar"
             overlayStyle={{ fontFamily: 'Roboto', maxWidth: '15rem' }}
-            icon={<DeleteOutlined style={{ color: 'red', fontSize: '18px' }}/>}
-            title={<p >Tem certeza que você deseja deletar esse registro?</p>}
+            icon={<DeleteOutlined style={{ color: 'red', fontSize: '18px' }} />}
+            title={<p>Tem certeza que você deseja deletar esse registro?</p>}
             onConfirm={() => handleDelete(record)}
           >
-            <DeleteOutlined style={{ fontSize: '18px'}}/>
+            <DeleteOutlined style={{ fontSize: '18px' }} />
           </Popconfirm>
         </Space>
       ),
     },
-  ];
+  ]
 
   const handleDownload = (record) => {
     console.log('baixando...')
@@ -78,10 +93,9 @@ export const ActivitiesTable = ({ data }) => {
   }
 
   return (
-    <Table columns={columns} dataSource={data} ></Table>
+    <Table columns={columns} pagination={{ pageSize: 8 }} dataSource={data}></Table>
   )
 }
-
 
 ActivitiesTable.defaultProps = {
   data: [
@@ -90,7 +104,7 @@ ActivitiesTable.defaultProps = {
       titulo: 'John Brown',
       age: 32,
       address: 'New York No. 1 Lake Park',
-      categoria: 'nice',
+      categoria: 'evento',
       certificate: pdf,
     },
     {
@@ -98,7 +112,7 @@ ActivitiesTable.defaultProps = {
       titulo: 'Jim Green',
       age: 42,
       address: 'London No. 1 Lake Park',
-      categoria: 'loser',
+      categoria: 'projeto',
       certificate: pdf,
     },
     {
@@ -106,8 +120,32 @@ ActivitiesTable.defaultProps = {
       titulo: 'Joe Black',
       age: 32,
       address: 'Sidney No. 1 Lake Park',
-      categoria: 'cool',
+      categoria: 'iniciacaoCientifica',
       certificate: pdf,
     },
-  ]
+    {
+      key: '4',
+      titulo: 'John Brown',
+      age: 32,
+      address: 'New York No. 1 Lake Park',
+      categoria: 'evento',
+      certificate: pdf,
+    },
+    {
+      key: '5',
+      titulo: 'Jim Green',
+      age: 42,
+      address: 'London No. 1 Lake Park',
+      categoria: 'projeto',
+      certificate: pdf,
+    },
+    {
+      key: '6',
+      titulo: 'Joe Black',
+      age: 32,
+      address: 'Sidney No. 1 Lake Park',
+      categoria: 'outros',
+      certificate: pdf,
+    },
+  ],
 }
