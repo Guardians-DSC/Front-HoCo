@@ -12,6 +12,7 @@ export const ActivitiesTable = ({ data }) => {
       dataIndex: 'title',
       key: 'title',
       width: 'fit-content',
+      fixed: 'left',
       render: (text) => text,
     },
     {
@@ -81,7 +82,12 @@ export const ActivitiesTable = ({ data }) => {
   }
 
   return (
-    <Table columns={columns} pagination={{ pageSize: 8 }} dataSource={data}></Table>
+    <Table
+      columns={columns}
+      pagination={{ pageSize: 8 }}
+      scroll={{ x: 600 }}
+      dataSource={data}
+    ></Table>
   )
 }
 

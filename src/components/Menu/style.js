@@ -8,7 +8,7 @@ export const OutWrapper = styled.div`
   position: relative;
   margin-right: ${({ isRetracted }) => (isRetracted ? '5rem' : '18rem')};
   transition: 0.5s ease;
-  z-index: 2;
+  z-index: 10;
 
   @media screen and (max-width: 1025px) {
     transform: ${({ isActive }) => (isActive ? '' : 'translate(-50vh)')};
