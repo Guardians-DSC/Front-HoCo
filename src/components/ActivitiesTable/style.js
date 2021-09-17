@@ -9,18 +9,22 @@ import 'antd/lib/popover/style/index.css'
 import 'antd/lib/button/style/index.css'
 
 export const Table = styled(TableAntd)`
-  /* tr > th, tr > td {
-    background-color: #f5f5f5;
-    border-bottom: 0.5px solid #BDBDBD;
-    color: #000
+  tr > th,
+  tr > td {
+    border-bottom: 0.5px solid ${({ theme }) => theme['main-border']};
+    color: ${({ theme }) => theme['main-font']};
   }
-  
+
   tr > th {
-    background-color: #343B45;
+    background-color: ${({ theme }) => theme['second-background']};
   }
+  tr > td {
+    background-color: ${({ theme }) => theme['main-background']};
+  }
+
   .ant-table-tbody > tr.ant-table-row:hover > td {
-    background: #2B3138;
-  } */
+    background: ${({ theme }) => theme['second-background']};
+  }
 `
 
 export const Confirm = styled(Popconfirm)`
