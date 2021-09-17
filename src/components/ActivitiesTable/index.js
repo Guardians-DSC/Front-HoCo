@@ -1,46 +1,42 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Space, Tag, Popconfirm } from 'antd'
 import { EditOutlined, DeleteOutlined, DownloadOutlined } from '@ant-design/icons'
 
 import { Table } from './style'
 
-import pdf from '../../assets/files/arquivo.pdf'
 import { Link } from 'react-router-dom'
-
-import categories from '../../util/constants/categories'
 
 export const ActivitiesTable = ({ data }) => {
   const columns = [
     {
       title: 'Título',
-      dataIndex: 'titulo',
-      key: 'titulo',
+      dataIndex: 'title',
+      key: 'title',
       width: 'fit-content',
       render: (text) => text,
     },
     {
       title: 'Horas',
-      dataIndex: 'horas',
-      key: 'horas',
+      dataIndex: 'hours',
+      key: 'hours',
       align: 'center',
-      width: 'fit-content',
-
       render: (hora) => (hora ? hora : '- - -'),
     },
     {
-      title: 'Crédito',
-      dataIndex: 'credito',
-      key: 'credito',
+      title: 'Créditos',
+      dataIndex: 'credit',
+      key: 'credit',
       align: 'center',
       render: (credito) => (credito ? credito : '- - -'),
     },
     {
       title: 'Categoria',
-      key: 'categoria',
-      dataIndex: 'categoria',
+      key: 'category',
+      dataIndex: 'category',
       render: (tag) => {
         return (
-          <Tag color="red" key={tag}>
+          <Tag color="green" key={tag}>
             {tag.toUpperCase()}
           </Tag>
         )
@@ -81,15 +77,15 @@ export const ActivitiesTable = ({ data }) => {
   ]
 
   const handleDownload = (record) => {
-    console.log('baixando...')
+    console.log('baixando...', record)
   }
 
   const handleEdit = (record) => {
-    console.log('editando...')
+    console.log('editando...', record)
   }
 
   const handleDelete = (record) => {
-    console.log('deletando...')
+    console.log('deletando...', record)
   }
 
   return (
@@ -97,55 +93,54 @@ export const ActivitiesTable = ({ data }) => {
   )
 }
 
+ActivitiesTable.propTypes = {
+  data: PropTypes.shape([
+    {
+      key: PropTypes.string,
+      titulo: PropTypes.string,
+      horas: PropTypes.number,
+      category: PropTypes.string,
+    },
+  ]),
+}
+
 ActivitiesTable.defaultProps = {
   data: [
     {
       key: '1',
-      titulo: 'John Brown',
-      age: 32,
-      address: 'New York No. 1 Lake Park',
-      categoria: 'evento',
-      certificate: pdf,
+      title: 'John Brown',
+      credit: 14,
+      category: 'evento',
     },
     {
       key: '2',
-      titulo: 'Jim Green',
-      age: 42,
-      address: 'London No. 1 Lake Park',
-      categoria: 'projeto',
-      certificate: pdf,
+      title: 'Jim Green',
+      hours: 20,
+      category: 'projeto',
     },
     {
       key: '3',
-      titulo: 'Joe Black',
-      age: 32,
-      address: 'Sidney No. 1 Lake Park',
-      categoria: 'iniciacaoCientifica',
-      certificate: pdf,
+      title: 'Joe Black',
+      hours: 135,
+      category: 'iniciacaoCientifica',
     },
     {
       key: '4',
-      titulo: 'John Brown',
-      age: 32,
-      address: 'New York No. 1 Lake Park',
-      categoria: 'evento',
-      certificate: pdf,
+      title: 'John Brown',
+      credit: 8,
+      category: 'evento',
     },
     {
       key: '5',
-      titulo: 'Jim Green',
-      age: 42,
-      address: 'London No. 1 Lake Park',
-      categoria: 'projeto',
-      certificate: pdf,
+      title: 'Jim Green',
+      credit: 18,
+      category: 'caesi',
     },
     {
       key: '6',
-      titulo: 'Joe Black',
-      age: 32,
-      address: 'Sidney No. 1 Lake Park',
-      categoria: 'outros',
-      certificate: pdf,
+      title: 'Joe Black',
+      credit: 12,
+      category: 'outros',
     },
   ],
 }

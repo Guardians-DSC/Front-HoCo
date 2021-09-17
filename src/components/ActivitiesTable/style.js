@@ -8,10 +8,6 @@ import 'antd/lib/space/style/index.css'
 import 'antd/lib/popover/style/index.css'
 import 'antd/lib/button/style/index.css'
 
-export const Wrapper = styled.div`
-  width: 100%;
-`
-
 export const Table = styled(TableAntd)`
   /* tr > th, tr > td {
     background-color: #f5f5f5;
