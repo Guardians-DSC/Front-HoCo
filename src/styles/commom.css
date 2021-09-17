@@ -1,0 +1,58 @@
+.contentPage {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 4.5rem 4rem;
+
+}
+
+.icon {
+    width: 38px;
+    height: 38px;
+}
+
+.title {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    color: #514E4E;
+    letter-spacing: 0.1rem;
+
+    font-size: 3rem;
+}
+
+.subtitle {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+    margin: 1rem 0;
+    font-weight: 600;
+    color: #514E4E;
+
+    font-size: 1.75rem;
+}
+
+p {
+    color: #514E4E;
+
+    font-size: 1.25rem;
+}
+
+p > span {
+    font-weight: bold;
+}
+
+.paragraphLink {
+    color: #514E4E;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.paragraphLink :active, .paragraphLink :visited {
+    color: #514E4E;
+}
+
+
