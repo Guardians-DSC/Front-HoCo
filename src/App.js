@@ -12,7 +12,7 @@ function App() {
     <ThemeProvider theme={themeLight}>
       <div className="App">
         <Menu />
-        <body>
+        <div className="Body">
           <Switch>
             {constants.pages.map((path, index) => (
               <Route path={path.path} component={path.component} key={index} />
@@ -21,7 +21,7 @@ function App() {
               <Redirect to="/sobre" />
             </Route>
           </Switch>
-        </body>
+        </div>
       </div>
     </ThemeProvider>
   )

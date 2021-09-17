@@ -152,8 +152,17 @@ html {
   box-sizing: border-box;
 }
 
+.Body {
+  padding: 3.5rem 2.5rem;
+  width: 100%;
+}
+
 @media screen and (max-width: 1250px) {
   .App {
     display: block;
+  }
+
+  .Body {
+    padding: 1rem 2rem;
   }
 }
