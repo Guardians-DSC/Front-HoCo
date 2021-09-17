@@ -7,12 +7,12 @@ const paths = [
   'M9.96172 14.8234L16.5795 14.8345C17.0554 14.8353 17.4419 14.4501 17.4427 13.9742C17.4435 13.4982 17.0584 13.1118 16.5825 13.111L9.96473 13.1C9.4888 13.0992 9.10231 13.4843 9.10148 13.9603C9.10065 14.4362 9.48579 14.8226 9.96172 14.8234Z',
 ]
 
-export const ShortLogo = ({ className, color }) => {
+export const ShortLogo = ({ className, color, width }) => {
   return (
     <svg
       className={className}
-      width="21"
-      height="25"
+      width={width}
+      height={width * 1.2}
       viewBox="0 0 21 25"
       fill={color}
       xmlns="http://www.w3.org/2000/svg"
@@ -27,9 +27,11 @@ export const ShortLogo = ({ className, color }) => {
 ShortLogo.propTypes = {
   className: PropTypes.string,
   color: PropTypes.string,
+  width: PropTypes.number,
 }
 
 ShortLogo.defaultProps = {
   className: 'ArrowContainer',
   color: '#5E966A',
+  width: 21,
 }
