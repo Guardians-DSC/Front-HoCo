@@ -138,9 +138,6 @@ html {
 }
 
 #root {
-  min-width: 100vw;
-  min-height: 100vh;
-  min-height: 100%;
   box-sizing: border-box;
   overflow-x: hidden;
   overflow-y: hidden;
@@ -148,7 +145,6 @@ html {
 
 .App {
   display: flex;
-  min-height: 100%;
   box-sizing: border-box;
 }
 
@@ -164,5 +160,13 @@ html {
 
   .Body {
     padding: 1rem 2rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .Body {
+    padding: 1rem;
   }
 }

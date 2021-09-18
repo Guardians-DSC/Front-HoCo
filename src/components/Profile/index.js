@@ -4,15 +4,15 @@ import PropTypes from 'prop-types'
 import { UserOutlined } from '@ant-design/icons'
 import eu from '../../assets/images/eu.jpeg'
 
-export const Profile = ({ image, name, isRetracted }) => {
+export const Profile = ({ image, name, isRetracted, width }) => {
   return (
     <Wrapper isRetracted={isRetracted}>
       {image ? (
-        <Image src={image} />
+        <Image src={image} width={width} />
       ) : (
         <AvatarContainer
           size="large"
-          icon={<UserOutlined style={{ color: '#000' }} />}
+          icon={<UserOutlined style={{ color: '#000', width: width }} />}
         />
       )}
       <span>{name}</span>
@@ -22,11 +22,12 @@ export const Profile = ({ image, name, isRetracted }) => {
 
 Profile.propTypes = {
   image: PropTypes.image,
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string,
   isRetracted: PropTypes.bool,
+  width: PropTypes.number,
 }
 
 Profile.defaultProps = {
   image: eu,
-  name: 'Rodrigo Eloy',
+  width: 56,
 }

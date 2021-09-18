@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
 `
 
 export const Image = styled.img`
-  max-width: 3.5rem;
+  width: ${({ width }) => `${width}px`};
   border-radius: 100%;
   box-shadow: 1px 1px 1px grey;
 `

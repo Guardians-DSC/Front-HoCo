@@ -1,5 +1,4 @@
 import React from 'react'
-import { Form } from 'antd'
 import {
   Wrapper,
   Title,
@@ -8,7 +7,11 @@ import {
   Input,
   FormInfoWrapper,
   Item,
+  Form,
+  Devider,
+  SubTitle,
 } from './styles'
+import { Profile } from '../../components/Profile'
 
 export const Perfil = () => {
   return (
@@ -17,22 +20,27 @@ export const Perfil = () => {
         <Icon />
         Meu Perfil
       </Title>
+      <SubTitle>Minhas informações</SubTitle>
       <FormWrapper>
-        <Form.Item label="Nome">
-          <Input />
-        </Form.Item>
-        <Form.Item label="E-mail">
-          <Input />
-        </Form.Item>
-        <FormInfoWrapper>
-          <Item label="Matrícula">
-            <Input disabled />
-          </Item>
-          <Form.Item label="Curso">
+        <Form>
+          <Item label="Nome">
             <Input />
-          </Form.Item>
-        </FormInfoWrapper>
+          </Item>
+          <Item label="E-mail">
+            <Input />
+          </Item>
+          <FormInfoWrapper>
+            <Item label="Matrícula">
+              <Input disabled />
+            </Item>
+            <Item label="Curso">
+              <Input />
+            </Item>
+          </FormInfoWrapper>
+        </Form>
+        <Profile width={320} />
       </FormWrapper>
+      <Devider />
     </Wrapper>
   )
 }

@@ -75,7 +75,7 @@ export const Menu = () => {
             })}
           </MenuBody>
           <MenuFooter to="/perfil" onClick={() => setIsActive(false)}>
-            <Profile isRetracted={isRetracted} />
+            <Profile isRetracted={isRetracted} name="Rodrigo Eloy" />
           </MenuFooter>
         </Wrapper>
       </OutWrapper>
