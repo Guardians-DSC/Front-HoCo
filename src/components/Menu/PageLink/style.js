@@ -17,7 +17,9 @@ export const Wrapper = styled.div`
 
 export const Icon = styled.div`
   filter: ${(props) => (props.isActive ? '' : 'brightness(500%)')};
+  fill: ${({ theme }) => theme['main-green']}};
 `
+
 export const Text = styled.span`
   color: ${(props) =>
     props.isActive ? props.theme['main-green'] : props.theme['main-white']};
