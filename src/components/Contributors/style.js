@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const ContributorsContainer = styled.div`
   display: flex;
-  gap: 1.5vw;
+  gap: 1.5rem;
   flex-wrap: wrap;
 
   & > a {
@@ -11,6 +11,6 @@ export const ContributorsContainer = styled.div`
 
   & > a > img {
     border-radius: 50%;
-    width: 10vh;
+    width: 4rem;
   }
 `
