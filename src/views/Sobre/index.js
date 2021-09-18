@@ -7,7 +7,7 @@ import {
   Content,
   Title,
   Subtitle,
-} from './styles'
+} from '../commom'
 
 export const Sobre = () => {
   return (
@@ -34,32 +34,6 @@ export const Sobre = () => {
         </Subtitle>
         <p>
           Você pode contribuir de diversas formas!
-        </p>
-        <p>
-          Caso você queira contribuir através de código você pode acessar os{' '}
-          <a href="https://github.com/Guardians-DSC/HoCo" className="paragraphLink" target="_blank" rel="noreferrer">
-            repositórios do HoCo no gitHub
-          </a>, ver quais as issues que estão cadastradas
-          nos repositórios, e ler os documentos de código de conduta e contribuição
-          para entender como você pode ajudar na melhoria da plataforma.
-        </p>
-        <p>
-          Se você tiver alguma ideia de funcionalidade para o HoCo você pode
-          participar das nossas reuniões abertas no discord do curso, onde
-          nós discutimos o nosso progresso e futuro do projeto.
-        </p>
-        <p>
-          Caso você queira contribuir através de código você pode acessar os{' '}
-          <a href="https://github.com/Guardians-DSC/HoCo" className="paragraphLink" target="_blank" rel="noreferrer">
-            repositórios do HoCo no gitHub
-          </a>, ver quais as issues que estão cadastradas
-          nos repositórios, e ler os documentos de código de conduta e contribuição
-          para entender como você pode ajudar na melhoria da plataforma.
-        </p>
-        <p>
-          Se você tiver alguma ideia de funcionalidade para o HoCo você pode
-          participar das nossas reuniões abertas no discord do curso, onde
-          nós discutimos o nosso progresso e futuro do projeto.
         </p>
         <p>
           Caso você queira contribuir através de código você pode acessar os{' '}
