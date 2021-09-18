@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Page = styled.div`
-	width: 100%;
+  width: 100%;
 `
 
 export const Content = styled.div`
@@ -35,25 +35,25 @@ export const Content = styled.div`
 `
 
 export const Title = styled.h1`
-	display: flex;
-	gap: 1rem;
-	align-items: center;
-	margin-bottom: 1rem;
-	font-weight: 500;
-	color: #514E4E;
-	letter-spacing: 0.1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  color: #514e4e;
+  letter-spacing: 0.1rem;
 
-	font-size: 3rem;
+  font-size: 3rem;
 `
 
 export const Subtitle = styled.h2`
-	display: flex;
-	gap: 1rem;
-	align-items: center;
-	margin-bottom: 1rem;
-	margin: 1rem 0;
-	font-weight: 600;
-	color: #514E4E;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+  margin: 1rem 0;
+  font-weight: 600;
+  color: #514e4e;
 
-	font-size: 1.75rem;
+  font-size: 1.75rem;
 `
