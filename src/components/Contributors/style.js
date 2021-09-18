@@ -8,7 +8,7 @@ export const ContributorsContainer = styled.div`
   & > a {
     text-decoration: none;
   }
-  
+
   & > a > img {
     border-radius: 50%;
     width: 10vh;
