@@ -12,19 +12,13 @@ export function Contributors() {
 
 	useEffect(() => {
 		async function searchContributors() {
-			let repositories = localStorage.getItem('@HoCo/repositories');
-			if (!repositories) {
-				repositories = await github.getAllRepositoriesFromOrganization();
-				localStorage.setItem('@HoCo/repositories', JSON.stringify(repositories));
-			} else {
-				repositories = JSON.parse(repositories);
-			}
-
-			let contributors = localStorage.getItem('@HoCo/contributors');
+			let contributors = sessionStorage.getItem('@HoCo/contributors');
 			if (!contributors) {
+				let repositories = await github.getAllRepositoriesFromOrganization();
+
 				const hocoRepositories = filterRepositoriesNames(repositories);
 				contributors = await github.getAllHocoContributors(hocoRepositories);
-				localStorage.setItem('@HoCo/contributors', JSON.stringify(contributors));
+				sessionStorage.setItem('@HoCo/contributors', JSON.stringify(contributors));
 			} else {
 				contributors = JSON.parse(contributors);
 			}
