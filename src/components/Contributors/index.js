@@ -3,7 +3,9 @@ import React, { useEffect, useState } from 'react'
 import { github } from '../../services/github';
 import { filterRepositoriesNames } from '../../util/util';
 
-import style from './style.module.css'
+import {
+	ContributorsContainer,
+} from './style'
 
 export function Contributors() {
 	const [hocoContributors, setHocoContributors] = useState({});
@@ -34,23 +36,20 @@ export function Contributors() {
 	}, []);
 
 	return (
-		<>
-			<h2 className="subtitle">Pessoas que contribuiram na elaboração do projeto</h2>
-			<div className={style.contributorsContainer}>
-				{Object.values(hocoContributors).map((contributorInfo, index) => {
-					return (
-						<a
-							href={contributorInfo.profileUrl}
-							target="_blank"
-							rel="noreferrer"
-							key={index}
-						>
-							<img src={contributorInfo.imageUrl} alt="" />
-						</a>
-					);
-				})}
-			</div>
-		</>
+		<ContributorsContainer>
+			{Object.values(hocoContributors).map((contributorInfo, index) => {
+				return (
+					<a
+						href={contributorInfo.profileUrl}
+						target="_blank"
+						rel="noreferrer"
+						key={index}
+					>
+						<img src={contributorInfo.imageUrl} alt="" />
+					</a>
+				);
+			})}
+		</ContributorsContainer>
 	);
 }
 
