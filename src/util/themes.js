@@ -1,7 +1,7 @@
 export const themeLight = {
+  'main-green': '#539762',
   'main-white': '#f5f5f5',
   'main-black': '#514E4E',
-  'main-green': '#539762',
   'main-background': '#fff',
   'second-background': '#fafafa',
   'main-border': '#f0f0f0',
