@@ -23,11 +23,11 @@ export const Sobre = () => {
           {`A ideia do HoCo é proporcionar uma plataforma unificada onde é possível `}
           <span>
             {`armazenar, visualizar o progresso das suas horas complementares, tirar
-            dúvidas acerca do tema`}
+            dúvidas acerca do tema `}
           </span>
-          {`e também`}
+          {`e também `}
           <span>{`ficar atento quanto às atividades extra-curriculares`}</span>
-          {`que o curso oferece`}.
+          {`que o curso oferece.`}
         </Text>
         <Subtitle>{`O que preciso ter e fazer para contribuir?`}</Subtitle>
         <Text>{`Você pode contribuir de diversas formas!`}</Text>
