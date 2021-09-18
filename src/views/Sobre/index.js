@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { Contributors } from '../../components/Contributors';
+import { ShortLogo } from '../../assets/icons/ShortLogo';
 
 import {
   Page,
@@ -14,6 +15,7 @@ export const Sobre = () => {
     <Page>
       <Content>
         <Title>
+          <ShortLogo width={'3rem'} color={'#514E4E'} />
           <h1>Sobre o HoCo</h1>
         </Title>
         <p>
