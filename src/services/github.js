@@ -19,7 +19,7 @@ export const github = {
     return response
   },
   async getAllHocoContributors(repositoriesNames) {
-    let contributors = await Promise.all(
+    let contributors = Promise.all(
       repositoriesNames.map((name) => this.getContributorsFromRepository(name))
     ).then((values) => {
       const allUsers = [].concat(...values.map((value) => [...value.data]))
