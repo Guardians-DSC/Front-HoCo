@@ -2,7 +2,6 @@ import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 
 import './styles/reset.css'
-import './styles/commom.css'
 import { Menu } from './components/Menu'
 import { ThemeProvider } from 'styled-components'
 import { themeLight } from './util/themes'
