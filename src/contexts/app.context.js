@@ -9,16 +9,22 @@ const PagesContext = createContext()
 
 export function PagesProvider({ children }) {
   const history = useHistory()
-  const [theme, setTheme] = useState(themeLight)
+  const [theme, setTheme] = useState(
+    JSON.parse(localStorage.getItem('@hoco/theme'))
+      ? JSON.parse(localStorage.getItem('@hoco/theme'))
+      : themeLight
+  )
 
   const handleTheme = (themeName) => {
-    console.log(themeName)
-    setTheme(themeName === 'light' ? themeLight : themeDark)
-    console.log(theme)
+    const currentTheme = themeName === 'light' ? themeLight : themeDark
+    localStorage.setItem('@hoco/theme', JSON.stringify(currentTheme))
+
+    setTheme(JSON.parse(localStorage.getItem('@hoco/theme')))
   }
 
   const [currentPathname, setCurrentPathname] = useState(window.location.pathname)
   const { pages } = constants
+
   useEffect(() => {
     history.listen((location) => {
       setCurrentPathname(location.pathname)
@@ -33,7 +39,9 @@ export function PagesProvider({ children }) {
     handleTheme,
   }
 
-  return <PagesContext.Provider value={values}>{children}</PagesContext.Provider>
+  return (
+    theme && <PagesContext.Provider value={values}>{children}</PagesContext.Provider>
+  )
 }
 
 export default function usePagesContext() {

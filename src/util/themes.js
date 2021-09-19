@@ -17,5 +17,5 @@ export const themeDark = {
   'second-background': '#363A40',
   'main-border': '#656565',
   'main-font': '#f5f5f5',
-  'main-emphasis': '#555F0C',
+  'main-emphasis': '#666E78',
 }

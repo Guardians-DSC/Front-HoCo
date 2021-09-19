@@ -4,7 +4,6 @@ import { Wrapper } from './styles'
 
 export const LightTheme = () => {
   const theme = useTheme()
-  console.log(theme)
 
   return (
     <Wrapper>
