@@ -1,17 +1,14 @@
 import React from 'react'
 import {
   Wrapper,
-  Title,
   Icon,
   FormWrapper,
-  Input,
-  FormInfoWrapper,
-  Item,
+  SameLineInfoWrapper,
   Form,
-  Devider,
-  SubTitle,
+  ThemeWrapper,
 } from './styles'
 import { Profile } from '../../components/Profile'
+import { Subtitle, Title, Item, Input } from '../../styles/base-styles'
 
 export const Perfil = () => {
   return (
@@ -20,7 +17,7 @@ export const Perfil = () => {
         <Icon />
         Meu Perfil
       </Title>
-      <SubTitle>Minhas informações</SubTitle>
+      <Subtitle>Minhas informações</Subtitle>
       <FormWrapper>
         <Form>
           <Item label="Nome">
@@ -29,18 +26,20 @@ export const Perfil = () => {
           <Item label="E-mail">
             <Input />
           </Item>
-          <FormInfoWrapper>
+          <SameLineInfoWrapper>
             <Item label="Matrícula">
               <Input disabled />
             </Item>
             <Item label="Curso">
               <Input />
             </Item>
-          </FormInfoWrapper>
+          </SameLineInfoWrapper>
         </Form>
         <Profile width={320} />
       </FormWrapper>
-      <Devider />
+      <ThemeWrapper>
+        <Subtitle>Temas</Subtitle>
+      </ThemeWrapper>
     </Wrapper>
   )
 }

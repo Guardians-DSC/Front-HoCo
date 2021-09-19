@@ -1,4 +1,6 @@
 import styled from 'styled-components'
+import { Form as FormAntd } from 'antd'
+import { Input as InputAntd } from 'antd'
 
 export const Page = styled.div`
   width: 100%;
@@ -72,5 +74,19 @@ export const Subtitle = styled.h2`
 
   @media screen and (max-width: 1024px) {
     text-align: center;
+  }
+`
+
+export const Item = styled(FormAntd.Item)``
+
+export const Input = styled(InputAntd)`
+  width: 100%;
+  border-radius: 3px;
+  height: 2.5rem;
+  margin-top: 0.5rem;
+
+  &:focus {
+    border-color: #18ff3933;
+    box-shadow: 0 0 0 2px rgb(24 255 57 / 20%);
   }
 `
