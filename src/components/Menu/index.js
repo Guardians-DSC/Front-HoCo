@@ -83,13 +83,13 @@ export const Menu = () => {
       </OutWrapper>
       <Header>
         <div onClick={handleActive}>
-          <BurguerMenu />
+          <BurguerMenu color={theme['header-icons']} />
         </div>
         <Link to="/sobre">
           <Logo
             width={100}
             onClick={() => setIsActive(false)}
-            color={theme['main-green']}
+            color={theme['header-icons']}
           />
         </Link>
       </Header>

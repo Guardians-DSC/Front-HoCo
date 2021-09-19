@@ -5,7 +5,7 @@ import './styles/reset.css'
 import { Menu } from './components/Menu'
 import { ThemeProvider } from 'styled-components'
 import constants from './util/constants'
-import { Page } from './styles/base-styles'
+import { AppWrapper, Page } from './styles/base-styles'
 import usePagesContext from './contexts/app.context'
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <div className="App">
+      <AppWrapper>
         <Menu />
         <Page>
           <Switch>
@@ -26,7 +26,7 @@ function App() {
             </Route>
           </Switch>
         </Page>
-      </div>
+      </AppWrapper>
     </ThemeProvider>
   )
 }

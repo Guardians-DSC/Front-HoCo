@@ -7,6 +7,7 @@ export const OutWrapper = styled.div`
   box-sizing: border-box;
   position: relative;
   margin-right: ${({ isRetracted }) => (isRetracted ? '5rem' : '18rem')};
+  transition: 0.3s;
   z-index: 10;
 
   @media screen and (max-width: 1025px) {
@@ -80,6 +81,7 @@ export const MenuFooter = styled(Link)``
 export const Header = styled.div`
   display: none;
   padding: 2rem 3rem;
+  background-color: transparent;
 
   @media screen and (max-width: 1025px) {
     padding: 2rem 1.5rem;

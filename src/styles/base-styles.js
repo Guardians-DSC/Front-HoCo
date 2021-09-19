@@ -2,6 +2,10 @@ import styled from 'styled-components'
 import { Form as FormAntd } from 'antd'
 import { Input as InputAntd } from 'antd'
 
+export const AppWrapper = styled.div`
+  background-color: ${({ theme }) => theme['main-background']};
+`
+
 export const Page = styled.div`
   width: 100%;
   padding: 3.5rem 2.5rem;
