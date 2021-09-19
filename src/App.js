@@ -6,13 +6,14 @@ import { Menu } from './components/Menu'
 import { ThemeProvider } from 'styled-components'
 import { themeLight } from './util/themes'
 import constants from './util/constants'
+import { Page } from './styles/base-styles'
 
 function App() {
   return (
     <ThemeProvider theme={themeLight}>
       <div className="App">
         <Menu />
-        <body>
+        <Page>
           <Switch>
             {constants.pages.map((path, index) => (
               <Route path={path.path} component={path.component} key={index} />
@@ -21,7 +22,7 @@ function App() {
               <Redirect to="/sobre" />
             </Route>
           </Switch>
-        </body>
+        </Page>
       </div>
     </ThemeProvider>
   )
