@@ -1,10 +1,9 @@
 import styled from 'styled-components'
 import { UserOutlined } from '@ant-design/icons'
 import { Form as FormAntd } from 'antd'
-// import { Input as InputAntd } from 'antd'
 
 import 'antd/lib/input/style/index.css'
-import { Item } from '../../styles/base-styles'
+import { Item, Subtitle as SubtitleDefault } from '../../styles/base-styles'
 
 export const Wrapper = styled.div`
   display: flex;
@@ -15,12 +14,8 @@ export const Wrapper = styled.div`
   }
 `
 
-export const SubTitle = styled.h2`
-  font-size: 1.25rem;
-  font-weight: bold;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: ${({ theme }) => theme['main-font']};
+export const Subtitle = styled(SubtitleDefault)`
+  margin-bottom: 2.5rem;
 `
 
 export const Icon = styled(UserOutlined)`

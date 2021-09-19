@@ -7,9 +7,10 @@ import {
   Form,
   ThemeWrapper,
   ThemesContainer,
+  Subtitle,
 } from './styles'
 import { Profile } from '../../components/Profile'
-import { Subtitle, Title, Item, Input } from '../../styles/base-styles'
+import { Title, Item, Input } from '../../styles/base-styles'
 import { LightTheme } from '../../assets/icons/LightTheme'
 import { DarkTheme } from '../../assets/icons/DarkTheme'
 import usePagesContext from '../../contexts/app.context'
