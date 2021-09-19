@@ -6,9 +6,12 @@ import {
   SameLineInfoWrapper,
   Form,
   ThemeWrapper,
+  ThemesContainer,
 } from './styles'
 import { Profile } from '../../components/Profile'
 import { Subtitle, Title, Item, Input } from '../../styles/base-styles'
+import { LightTheme } from '../../assets/icons/LightTheme'
+import { DarkTheme } from '../../assets/icons/DarkTheme'
 
 export const Perfil = () => {
   return (
@@ -39,6 +42,10 @@ export const Perfil = () => {
       </FormWrapper>
       <ThemeWrapper>
         <Subtitle>Temas</Subtitle>
+        <ThemesContainer>
+          <LightTheme />
+          <DarkTheme />
+        </ThemesContainer>
       </ThemeWrapper>
     </Wrapper>
   )

@@ -9,6 +9,7 @@ import { Item } from '../../styles/base-styles'
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+
   @media screen and (max-width: 1025px) {
     align-items: center;
   }
@@ -63,3 +64,15 @@ export const SameLineInfoWrapper = styled.div`
 `
 
 export const ThemeWrapper = styled.section``
+export const ThemesContainer = styled.div`
+  display: flex;
+  gap: 3rem;
+  margin-left: 3rem;
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column-reverse;
+    margin-top: 1rem;
+    gap: 3rem;
+    margin-left: 0rem;
+  }
+`
