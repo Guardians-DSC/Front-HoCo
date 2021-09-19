@@ -13,9 +13,11 @@ import { Subtitle, Title, Item, Input } from '../../styles/base-styles'
 import { LightTheme } from '../../assets/icons/LightTheme'
 import { DarkTheme } from '../../assets/icons/DarkTheme'
 import usePagesContext from '../../contexts/app.context'
+import useUserContext from '../../contexts/user.context'
 
 export const Perfil = () => {
   const { handleTheme } = usePagesContext()
+  const { name, eMail, registrationNumber, course } = useUserContext()
 
   return (
     <Wrapper>
@@ -27,21 +29,21 @@ export const Perfil = () => {
       <FormWrapper>
         <Form>
           <Item label="Nome">
-            <Input />
+            <Input defaultValue={name} />
           </Item>
           <Item label="E-mail">
-            <Input />
+            <Input defaultValue={eMail} />
           </Item>
           <SameLineInfoWrapper>
             <Item label="Matrícula">
-              <Input disabled />
+              <Input defaultValue={registrationNumber} disabled />
             </Item>
             <Item label="Curso">
-              <Input />
+              <Input defaultValue={course} />
             </Item>
           </SameLineInfoWrapper>
         </Form>
-        <Profile width={320} />
+        <Profile width={320} displayName={false} />
       </FormWrapper>
       <ThemeWrapper>
         <Subtitle>Temas</Subtitle>
