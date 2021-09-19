@@ -11,7 +11,7 @@ const paths = [
 export const ShortLogo = ({ className, color, width }) => {
   const theme = useTheme()
   const currentColor =
-    !color || color !== theme['main-green'] ? theme['main-green'] : color
+    !color || color === theme['main-green'] ? theme['main-green'] : color
 
   return (
     <svg

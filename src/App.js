@@ -4,15 +4,16 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 import './styles/reset.css'
 import { Menu } from './components/Menu'
 import { ThemeProvider } from 'styled-components'
-import { themeDark } from './util/themes'
+import { themeLight } from './util/themes'
 import constants from './util/constants'
+import { Page } from './styles/base-styles'
 
 function App() {
   return (
-    <ThemeProvider theme={themeDark}>
+    <ThemeProvider theme={themeLight}>
       <div className="App">
         <Menu />
-        <div className="Body">
+        <Page>
           <Switch>
             {constants.pages.map((path, index) => (
               <Route path={path.path} component={path.component} key={index} />
@@ -21,7 +22,7 @@ function App() {
               <Redirect to="/sobre" />
             </Route>
           </Switch>
-        </div>
+        </Page>
       </div>
     </ThemeProvider>
   )
