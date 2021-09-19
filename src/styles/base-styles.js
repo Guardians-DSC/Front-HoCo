@@ -5,8 +5,10 @@ import { Input as InputAntd } from 'antd'
 export const Page = styled.div`
   width: 100%;
   padding: 3.5rem 2.5rem;
+  background-color: ${({ theme }) => theme['main-background']};
 
   box-sizing: border-box;
+  transition: 0.3s;
 
   @media screen and (max-width: 1024px) {
     padding: 1.5rem 1rem;

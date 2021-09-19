@@ -12,8 +12,11 @@ import { Profile } from '../../components/Profile'
 import { Subtitle, Title, Item, Input } from '../../styles/base-styles'
 import { LightTheme } from '../../assets/icons/LightTheme'
 import { DarkTheme } from '../../assets/icons/DarkTheme'
+import usePagesContext from '../../contexts/app.context'
 
 export const Perfil = () => {
+  const { handleTheme } = usePagesContext()
+
   return (
     <Wrapper>
       <Title>
@@ -43,8 +46,12 @@ export const Perfil = () => {
       <ThemeWrapper>
         <Subtitle>Temas</Subtitle>
         <ThemesContainer>
-          <LightTheme />
-          <DarkTheme />
+          <div onClick={() => handleTheme('light')}>
+            <LightTheme />
+          </div>
+          <div onClick={() => handleTheme('dark')}>
+            <DarkTheme onClick={() => handleTheme('dark')} />
+          </div>
         </ThemesContainer>
       </ThemeWrapper>
     </Wrapper>

@@ -4,13 +4,16 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 import './styles/reset.css'
 import { Menu } from './components/Menu'
 import { ThemeProvider } from 'styled-components'
-import { themeLight } from './util/themes'
 import constants from './util/constants'
 import { Page } from './styles/base-styles'
+import usePagesContext from './contexts/app.context'
 
 function App() {
+  const { theme } = usePagesContext()
+  console.log('temaa', theme)
+
   return (
-    <ThemeProvider theme={themeLight}>
+    <ThemeProvider theme={theme}>
       <div className="App">
         <Menu />
         <Page>
