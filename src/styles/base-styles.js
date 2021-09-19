@@ -4,6 +4,12 @@ import { Input as InputAntd } from 'antd'
 
 export const AppWrapper = styled.div`
   background-color: ${({ theme }) => theme['main-background']};
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  transition: width 0.3s;
+}
 `
 
 export const Page = styled.div`
