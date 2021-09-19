@@ -64,9 +64,6 @@ export const Title = styled.h1`
 `
 
 export const Subtitle = styled.h2`
-  display: flex;
-  gap: 1rem;
-  align-items: center;
   margin: 1.5rem 0;
   font-weight: 500;
   color: #514e4e;
@@ -74,7 +71,6 @@ export const Subtitle = styled.h2`
   font-size: 1.5rem;
 
   @media screen and (max-width: 1024px) {
-    justify-content: center;
     text-align: center;
   }
 `
