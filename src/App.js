@@ -4,12 +4,12 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 import './styles/reset.css'
 import { Menu } from './components/Menu'
 import { ThemeProvider } from 'styled-components'
-import { themeDark } from './util/themes'
+import { themeLight } from './util/themes'
 import constants from './util/constants'
 
 function App() {
   return (
-    <ThemeProvider theme={themeDark}>
+    <ThemeProvider theme={themeLight}>
       <div className="App">
         <Menu />
         <body>
