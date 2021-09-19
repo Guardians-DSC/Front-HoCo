@@ -1,10 +1,10 @@
 import React from 'react'
 import { PieChart, Pie, Cell, ResponsiveContainer, Legend } from 'recharts'
-import { Title, Wrapper } from './styles'
+import { Wrapper, Title, Text } from './styles'
 import PropTypes from 'prop-types'
 import { compare } from '../../util/util'
 
-const COLORS = ['#FF9090', '#FFB6B6', '#FF6A6A', '#975858', '#8884D8']
+const COLORS = ['#FF9090', '#FF6A6A', '#975858', '#8884D8', '#A4A2D9']
 
 const RADIAN = Math.PI / 180
 const renderCustomizedLabel = ({
@@ -53,7 +53,7 @@ export const CreditsPieChart = ({ data }) => {
 
   return (
     <Wrapper>
-      <Title>Proporção de cŕeditos de horas complementares</Title>
+      <Title>Proporção de créditos de horas complementares</Title>
       <ResponsiveContainer minWidth={350} width="100%" height={400}>
         <PieChart>
           <Pie
@@ -73,6 +73,11 @@ export const CreditsPieChart = ({ data }) => {
           <Legend layout="horizontal" wrapperStyle={{ paddingLeft: 0 }} />
         </PieChart>
       </ResponsiveContainer>
+      <Text>
+        Você tem 11 créditos aprovados atualmente e as suas principais fontes de
+        atividades <br /> complementares são <span>{sortedData[0].name}</span>,
+        <span>{sortedData[1].name}</span> e <span>{sortedData[2].name}</span>.
+      </Text>
     </Wrapper>
   )
 }
