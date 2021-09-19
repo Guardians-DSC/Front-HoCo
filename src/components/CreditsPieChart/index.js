@@ -84,14 +84,14 @@ export const CreditsPieChart = ({ data }) => {
 
 CreditsPieChart.defaultProps = {
   data: [
-    { name: 'Projeto', value: 400 },
-    { name: 'Monitoria', value: 400 },
-    { name: 'Evento', value: 400 },
-    { name: 'Caesi', value: 300 },
-    { name: 'Atv. extensã', value: 100 },
-    { name: 'Atv. extenso', value: 100 },
-    { name: 'Atv. extenão', value: 100 },
-    { name: 'Atv. extesão', value: 100 },
+    { name: 'Projeto', value: 12 },
+    { name: 'Monitoria', value: 8 },
+    { name: 'Evento', value: 4 },
+    { name: 'Caesi', value: 1 },
+    { name: 'Atv. extensã', value: 2 },
+    { name: 'Atv. extenso', value: 1 },
+    { name: 'Atv. extenão', value: 1 },
+    { name: 'Atv. extesão', value: 1 },
   ],
 }
 
