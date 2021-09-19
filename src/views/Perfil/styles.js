@@ -64,6 +64,10 @@ export const ThemesContainer = styled.div`
   gap: 3rem;
   margin-left: 3rem;
 
+  div {
+    cursor: pointer;
+  }
+
   @media screen and (max-width: 600px) {
     flex-direction: column-reverse;
     margin-top: 1rem;
