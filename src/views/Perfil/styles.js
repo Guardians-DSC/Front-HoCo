@@ -69,6 +69,8 @@ export const ThemesContainer = styled.div`
   margin-left: 3rem;
 
   div {
+    display: flex;
+    justify-content: center;
     cursor: pointer;
   }
 
