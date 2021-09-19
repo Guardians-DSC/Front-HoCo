@@ -131,16 +131,11 @@ a {
 }
 
 html {
-  min-height: 100vh;
-  min-width: 100vw;
   margin: 0;
   font-family: roboto;
 }
 
 #root {
-  min-width: 100vw;
-  min-height: 100vh;
-  min-height: 100%;
   box-sizing: border-box;
   overflow-x: hidden;
   overflow-y: hidden;
@@ -148,7 +143,6 @@ html {
 
 .App {
   display: flex;
-  min-height: 100%;
   box-sizing: border-box;
 }
 
