@@ -3,6 +3,12 @@
 
 html,
 body,
+.App {
+  font-family: 'Roboto';
+}
+
+html,
+body,
 div,
 span,
 applet,
@@ -105,6 +111,7 @@ section {
 }
 body {
   line-height: 1;
+  width: 100vw;
 }
 ol,
 ul {
@@ -131,16 +138,11 @@ a {
 }
 
 html {
-  min-height: 100vh;
-  min-width: 100vw;
   margin: 0;
   font-family: roboto;
 }
 
 #root {
-  min-width: 100vw;
-  min-height: 100vh;
-  min-height: 100%;
   box-sizing: border-box;
   overflow-x: hidden;
   overflow-y: hidden;
@@ -148,7 +150,8 @@ html {
 
 .App {
   display: flex;
-  min-height: 100%;
+  min-height: 100vh;
+  width: 100vw;
   box-sizing: border-box;
 }
 
@@ -158,7 +161,7 @@ html {
   box-sizing: border-box;
 }
 
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1025px) {
   .App {
     display: block;
   }
