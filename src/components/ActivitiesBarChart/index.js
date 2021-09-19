@@ -15,7 +15,6 @@ import { Wrapper, Title } from './styles'
 import PropTypes from 'prop-types'
 
 export const ActivitiesBarChart = ({ data }) => {
-  console.log('vacas')
   return (
     <Wrapper>
       <Title>Gráfico de barras das suas atividades complementares</Title>
