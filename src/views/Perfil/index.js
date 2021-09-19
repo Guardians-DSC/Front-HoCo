@@ -7,6 +7,7 @@ import {
   Form,
   ThemeWrapper,
   ThemesContainer,
+  Content,
   Subtitle,
 } from './styles'
 import { Profile } from '../../components/Profile'
@@ -26,37 +27,39 @@ export const Perfil = () => {
         <Icon />
         Meu Perfil
       </Title>
-      <Subtitle>Minhas informações</Subtitle>
-      <FormWrapper>
-        <Form>
-          <Item label="Nome">
-            <Input defaultValue={name} />
-          </Item>
-          <Item label="E-mail">
-            <Input defaultValue={eMail} />
-          </Item>
-          <SameLineInfoWrapper>
-            <Item label="Matrícula">
-              <Input defaultValue={registrationNumber} disabled />
+      <Content>
+        <Subtitle>Minhas informações</Subtitle>
+        <FormWrapper>
+          <Form>
+            <Item label="Nome">
+              <Input defaultValue={name} />
             </Item>
-            <Item label="Curso">
-              <Input defaultValue={course} />
+            <Item label="E-mail">
+              <Input defaultValue={eMail} />
             </Item>
-          </SameLineInfoWrapper>
-        </Form>
-        <Profile width={320} displayName={false} />
-      </FormWrapper>
-      <ThemeWrapper>
-        <Subtitle>Temas</Subtitle>
-        <ThemesContainer>
-          <div onClick={() => handleTheme('light')}>
-            <LightTheme />
-          </div>
-          <div onClick={() => handleTheme('dark')}>
-            <DarkTheme onClick={() => handleTheme('dark')} />
-          </div>
-        </ThemesContainer>
-      </ThemeWrapper>
+            <SameLineInfoWrapper>
+              <Item label="Matrícula">
+                <Input defaultValue={registrationNumber} disabled />
+              </Item>
+              <Item label="Curso">
+                <Input defaultValue={course} />
+              </Item>
+            </SameLineInfoWrapper>
+          </Form>
+          <Profile width={320} displayName={false} />
+        </FormWrapper>
+        <ThemeWrapper>
+          <Subtitle>Temas</Subtitle>
+          <ThemesContainer>
+            <div onClick={() => handleTheme('light')}>
+              <LightTheme />
+            </div>
+            <div onClick={() => handleTheme('dark')}>
+              <DarkTheme onClick={() => handleTheme('dark')} />
+            </div>
+          </ThemesContainer>
+        </ThemeWrapper>
+      </Content>
     </Wrapper>
   )
 }

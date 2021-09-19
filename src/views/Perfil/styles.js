@@ -14,6 +14,8 @@ export const Wrapper = styled.div`
   }
 `
 
+export const Content = styled.div``
+
 export const Subtitle = styled(SubtitleDefault)`
   margin-bottom: 2.5rem;
 `
@@ -24,9 +26,11 @@ export const Icon = styled(UserOutlined)`
 
 export const FormWrapper = styled.section`
   display: flex;
+  align-self: center;
   align-items: center;
-  gap: 5rem;
+  gap: 8rem;
   margin-left: 3rem;
+  width: 100%;
 
   @media screen and (max-width: 600px) {
     flex-direction: column-reverse;
