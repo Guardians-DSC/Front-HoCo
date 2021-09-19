@@ -1,5 +1,10 @@
 import React from 'react'
+import { ActivitiesBarChart } from '../../components/ActivitiesBarChart'
 
 export const Horas = () => {
-  return <div>Horas</div>
+  return (
+    <div>
+      <ActivitiesBarChart />
+    </div>
+  )
 }
