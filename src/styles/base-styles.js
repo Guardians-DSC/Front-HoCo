@@ -9,6 +9,10 @@ export const AppWrapper = styled.div`
   width: 100%;
   box-sizing: border-box;
   transition: width 0.3s;
+
+  @media screen and (max-width: 1025px) {
+    display: block;
+  }
 }
 `
 
