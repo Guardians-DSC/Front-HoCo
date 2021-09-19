@@ -20,5 +20,7 @@ export const Progress = styled.div`
   box-shadow: 1px 1px 2px #00000060;
   background-color: #9f6464;
   border-radius: inherit;
+  transition-delay: 0.2s;
   width: ${({ width }) => `${width}%`};
+  transition: width 1s ease-in-out 0s;
 `

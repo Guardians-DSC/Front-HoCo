@@ -4,7 +4,6 @@ import { Wrapper, Progress, ProgressContainer } from './styles'
 
 export const ProgressBar = ({ credits, limit }) => {
   const porcentage = (credits / limit) * 100
-  console.log(porcentage)
 
   return (
     <Wrapper>
