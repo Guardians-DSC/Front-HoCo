@@ -13,19 +13,21 @@ export const Sobre = () => {
           <ShortLogo width={'3rem'} color={'#514E4E'} />
           <h1>{`Sobre o HoCo`}</h1>
         </Title>
+        <Subtitle>{`O que é o HoCo?`}</Subtitle>
         <Text>
-          {`Olá! o Hoco é uma plataforma idealizada por alunos da graduação com
-            o objetivo de ajudar os alunos da graduação de ciência da computação
-            da Universidade Federal de Campina Grande (UFCG) a gerenciarem as 
-            suas atividades complementares.`}
+          {`Olá! o Hoco é uma plataforma idealizada por alunos da graduação com o
+        objetivo de ajudar outros alunos da ciência da computação na Universidade
+        Federal de Campina Grande (UFCG) a gerenciarem as suas atividades
+        complementares, uma vez que a falta de conhecimento acerca do funcionamento
+        dessas horas é de conhecimento geral dos alunos de computação.`}
         </Text>
         <Text>
           {`A ideia do HoCo é proporcionar uma plataforma unificada onde é possível `}
           <span>
             {`armazenar, visualizar o progresso das suas horas complementares, tirar
-            dúvidas acerca do tema `}
+            dúvidas acerca do tema`}
           </span>
-          {`e também `}
+          {` e também `}
           <span>{`ficar atento quanto às atividades extra-curriculares`}</span>
           {`que o curso oferece.`}
         </Text>

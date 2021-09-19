@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const ContributorsContainer = styled.div`
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
   flex-wrap: wrap;
 
   & > a {
