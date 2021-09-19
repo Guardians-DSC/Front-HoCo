@@ -20,12 +20,14 @@ import { Arrow } from '../../assets/icons/Arrow'
 
 import { BurguerMenu } from '../../assets/icons/BurguerMenu'
 import { CloseOutlined } from '@ant-design/icons'
+import { useTheme } from 'styled-components'
 
 export const Menu = () => {
   const [isRetracted, setIsRetracted] = useState(
     localStorage.getItem('retracted') === 'true'
   )
   const [isActive, setIsActive] = useState(false)
+  const theme = useTheme()
 
   useEffect(() => {
     localStorage.setItem('retracted', isRetracted)
@@ -84,7 +86,11 @@ export const Menu = () => {
           <BurguerMenu />
         </div>
         <Link to="/sobre">
-          <Logo width={100} onClick={() => setIsActive(false)} color="#5E966A" />
+          <Logo
+            width={100}
+            onClick={() => setIsActive(false)}
+            color={theme['main-green']}
+          />
         </Link>
       </Header>
     </>
