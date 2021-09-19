@@ -3,14 +3,14 @@ import React from 'react'
 import { Contributors } from '../../components/Contributors'
 import { ShortLogo } from '../../assets/icons/ShortLogo'
 
-import { Page, Content, Title, Subtitle, Text } from '../base-styles.js'
+import { Page, Content, Title, Subtitle, Text } from '../../styles/base-styles.js'
 
 export const Sobre = () => {
   return (
     <Page>
       <Content>
         <Title>
-          <ShortLogo width={'3rem'} color={'#514E4E'} />
+          <ShortLogo width={'2rem'} color={'#514E4E'} />
           <h1>{`Sobre o HoCo`}</h1>
         </Title>
         <Subtitle>{`O que é o HoCo?`}</Subtitle>

@@ -13,4 +13,8 @@ export const ContributorsContainer = styled.div`
     border-radius: 50%;
     width: 4rem;
   }
+
+  @media screen and (max-width: 1024px) {
+    justify-content: center;
+  }
 `
