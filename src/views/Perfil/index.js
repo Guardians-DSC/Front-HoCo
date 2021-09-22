@@ -9,6 +9,7 @@ import {
   ThemesContainer,
   Content,
   Subtitle,
+  ButtonWrapper,
 } from './styles'
 import { Profile } from '../../components/Profile'
 import { Title, Item, Input } from '../../styles/base-styles'
@@ -16,10 +17,15 @@ import { LightTheme } from '../../assets/icons/LightTheme'
 import { DarkTheme } from '../../assets/icons/DarkTheme'
 import usePagesContext from '../../contexts/app.context'
 import useUserContext from '../../contexts/user.context'
+import { Button } from '../../components/Button'
 
 export const Perfil = () => {
   const { handleTheme } = usePagesContext()
   const { name, eMail, registrationNumber, course } = useUserContext()
+
+  const handleSaveInfo = () => {
+    console.log('Salvando...')
+  }
 
   return (
     <Wrapper>
@@ -59,6 +65,9 @@ export const Perfil = () => {
             </div>
           </ThemesContainer>
         </ThemeWrapper>
+        <ButtonWrapper>
+          <Button text="Salvar alterações" onClick={handleSaveInfo} />
+        </ButtonWrapper>
       </Content>
     </Wrapper>
   )

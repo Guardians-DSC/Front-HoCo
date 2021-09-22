@@ -14,7 +14,11 @@ export const Wrapper = styled.div`
   }
 `
 
-export const Content = styled.div``
+export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+`
 
 export const Subtitle = styled(SubtitleDefault)`
   margin-bottom: 2.5rem;
@@ -29,8 +33,12 @@ export const FormWrapper = styled.section`
   align-self: center;
   align-items: center;
   gap: 8rem;
-  margin-left: 3rem;
   width: 100%;
+
+  @media screen and (max-width: 800px) {
+    margin-left: 0;
+    gap: 3rem;
+  }
 
   @media screen and (max-width: 600px) {
     flex-direction: column-reverse;
@@ -43,7 +51,7 @@ export const FormWrapper = styled.section`
 export const Form = styled(FormAntd)`
   display: flex;
   flex-direction: column;
-  max-width: 21rem;
+  max-width: 30rem;
   gap: 1rem;
 `
 
@@ -79,5 +87,14 @@ export const ThemesContainer = styled.div`
     margin-top: 1rem;
     gap: 3rem;
     margin-left: 0rem;
+  }
+`
+
+export const ButtonWrapper = styled.div`
+  align-self: flex-end;
+
+  @media screen and (max-width: 600px) {
+    margin-top: 2rem;
+    align-self: center;
   }
 `
