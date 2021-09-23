@@ -3,7 +3,7 @@ import React from 'react'
 import { OrganizationCard } from './OrganizationCard'
 import { OrganizationsDiv } from './style.js'
 
-import { orgs } from '../../util/organizations'
+import { orgs } from '../../util/constants/organizations'
 
 export function Organizations() {
   return (
