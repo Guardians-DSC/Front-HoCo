@@ -84,7 +84,7 @@ export const ActivitiesTable = ({ data }) => {
   return (
     <Table
       columns={columns}
-      pagination={{ pageSize: 8 }}
+      pagination={{ pageSize: 6 }}
       scroll={{ x: 600 }}
       dataSource={data}
     ></Table>
