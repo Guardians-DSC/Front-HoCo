@@ -14,8 +14,11 @@ import {
 import { Wrapper, GraphTitle } from './styles'
 
 import PropTypes from 'prop-types'
+import { useTheme } from 'styled-components'
 
 export const ActivitiesBarChart = ({ data }) => {
+  const theme = useTheme()
+
   const updatedData = data.map((objectData) => {
     return {
       'creditos disponiveis':
@@ -41,34 +44,38 @@ export const ActivitiesBarChart = ({ data }) => {
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="name" />
           <YAxis dataKey="top" width={30} />
-          <Tooltip />
-          <Legend
-            payload={[
-              {
-                value: 'Creditos totais',
-                type: 'rect',
-                color: '#975858',
-              },
-              {
-                value: 'Creditos disponiveis',
-                type: 'rect',
-                color: '#343B4590',
-              },
-            ]}
+          <Tooltip
+            cursor={{ fill: theme['third-background'] }}
+            contentStyle={{ backgroundColor: theme['main-background'] }}
           />
           <Bar
             legendType="rect"
             dataKey="Creditos totais"
             stackId="a"
             maxBarSize={25}
-            fill="#975858"
+            fill={theme['main-bar']}
           />
           <Bar
             legendType="rect"
             dataKey="creditos disponiveis"
             stackId="a"
             maxBarSize={25}
-            fill="#343B4560"
+            fill={theme['second-bar']}
+          />
+          <Legend
+            verticalAlign
+            payload={[
+              {
+                value: 'Creditos totais',
+                type: 'rect',
+                color: theme['main-bar'],
+              },
+              {
+                value: 'Creditos disponiveis',
+                type: 'rect',
+                color: theme['main-font'],
+              },
+            ]}
           />
         </BarChart>
       </ResponsiveContainer>

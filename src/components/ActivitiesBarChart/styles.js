@@ -6,6 +6,10 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  .recharts-layer .recharts-cartesian-axis-tick text {
+    fill: ${({ theme }) => theme['main-font']} !important;
+  }
 `
 export const GraphTitle = styled.h2`
   font-size: 1.5rem;
