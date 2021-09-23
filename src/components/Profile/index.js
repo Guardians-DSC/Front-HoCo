@@ -3,30 +3,35 @@ import { Wrapper, Image, AvatarContainer } from './style'
 import PropTypes from 'prop-types'
 import { UserOutlined } from '@ant-design/icons'
 import eu from '../../assets/images/eu.jpeg'
+import useUserContext from '../../contexts/user.context'
 
-export const Profile = ({ image, name, isRetracted }) => {
+export const Profile = ({ isRetracted, width, displayName }) => {
+  const { avatar, name } = useUserContext()
+
   return (
     <Wrapper isRetracted={isRetracted}>
-      {image ? (
-        <Image src={image} />
+      {avatar ? (
+        <Image src={avatar} width={width} />
       ) : (
         <AvatarContainer
           size="large"
-          icon={<UserOutlined style={{ color: '#000' }} />}
+          icon={<UserOutlined style={{ color: '#000', width: width }} />}
         />
       )}
-      <span>{name}</span>
+
+      {displayName ? <span>{name}</span> : null}
     </Wrapper>
   )
 }
 
 Profile.propTypes = {
-  image: PropTypes.image,
-  name: PropTypes.string.isRequired,
   isRetracted: PropTypes.bool,
+  width: PropTypes.number,
+  displayName: PropTypes.bool,
 }
 
 Profile.defaultProps = {
   image: eu,
-  name: 'Rodrigo Eloy',
+  width: 56,
+  displayName: true,
 }

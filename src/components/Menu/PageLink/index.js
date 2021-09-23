@@ -26,7 +26,7 @@ export const PageLink = ({ page, isRetracted, setIsActive }) => {
 PageLink.propTypes = {
   page: PropTypes.shape({
     path: PropTypes.string,
-    icon: PropTypes.string,
+    icon: PropTypes.element,
     text: PropTypes.string,
   }).isRequired,
   currentPathname: PropTypes.string,

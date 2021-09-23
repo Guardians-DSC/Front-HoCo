@@ -1,10 +1,29 @@
 import styled from 'styled-components'
+import { Form as FormAntd } from 'antd'
+import { Input as InputAntd } from 'antd'
+
+export const AppWrapper = styled.div`
+  background-color: ${({ theme }) => theme['main-background']};
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  transition: width 0.3s;
+
+  @media screen and (max-width: 1025px) {
+    display: block;
+  }
+}
+`
 
 export const Page = styled.div`
   width: 100%;
   padding: 3.5rem 2.5rem;
+  background-color: ${({ theme }) => theme['main-background']};
 
   box-sizing: border-box;
+  transition: 0.3s;
+  color: ${({ theme }) => theme['main-font']};
 
   @media screen and (max-width: 1024px) {
     padding: 1.5rem 1rem;
@@ -16,8 +35,6 @@ export const Content = styled.div`
 
   display: flex;
   flex-direction: column;
-
-  color: #514e4e;
 `
 
 export const Text = styled.p`
@@ -26,19 +43,19 @@ export const Text = styled.p`
   line-height: 1.5rem;
 
   & > span {
-    background: #dfdfdf;
+    background: ${({ theme }) => theme['main-emphasis']};
     padding: 0 0.25rem;
     border-radius: 5px;
   }
 
   & > a {
-    color: #514e4e;
+    color: ${({ theme }) => theme['main-font']};
     font-weight: bold;
     text-decoration: underline;
 
     &:active,
     &visited {
-      color: #514e4e;
+      color: ${({ theme }) => theme['main-font']};
     }
   }
 
@@ -53,7 +70,6 @@ export const Title = styled.h1`
   align-items: center;
   margin-bottom: 2rem;
   font-weight: 500;
-  color: #514e4e;
   letter-spacing: 0.1rem;
 
   font-size: 2rem;
@@ -66,11 +82,24 @@ export const Title = styled.h1`
 export const Subtitle = styled.h2`
   margin: 1.5rem 0;
   font-weight: 500;
-  color: #514e4e;
 
   font-size: 1.5rem;
 
   @media screen and (max-width: 1024px) {
     text-align: center;
+  }
+`
+
+export const Item = styled(FormAntd.Item)``
+
+export const Input = styled(InputAntd)`
+  width: 100%;
+  border-radius: 3px;
+  height: 2.5rem;
+  margin-top: 0.5rem;
+
+  &:focus {
+    border-color: #18ff3933;
+    box-shadow: 0 0 0 2px rgb(24 255 57 / 20%);
   }
 `

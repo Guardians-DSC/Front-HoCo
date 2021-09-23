@@ -4,12 +4,15 @@ import { Contributors } from '../../components/Contributors'
 import { ShortLogo } from '../../assets/icons/ShortLogo'
 
 import { Content, Title, Subtitle, Text } from '../../styles/base-styles.js'
+import { useTheme } from 'styled-components'
 
 export const Sobre = () => {
+  const theme = useTheme()
+
   return (
     <Content>
       <Title>
-        <ShortLogo width={'2rem'} color={'#514E4E'} />
+        <ShortLogo width={'2rem'} color={[theme['main-font']]} />
         <h1>{`Sobre o HoCo`}</h1>
       </Title>
       <Subtitle>{`O que é o HoCo?`}</Subtitle>
