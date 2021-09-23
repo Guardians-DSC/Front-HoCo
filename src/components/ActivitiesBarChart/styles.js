@@ -1,13 +1,14 @@
 import styled from 'styled-components'
 
 export const Wrapper = styled.div`
+  width: 100%;
   max-width: 50rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 `
-export const Title = styled.h2`
-  font-size: 1.2rem;
+export const GraphTitle = styled.h2`
+  font-size: 1.5rem;
   font-weight: 500;
   margin-bottom: 2.5rem;
 

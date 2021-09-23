@@ -11,7 +11,7 @@ import {
   ResponsiveContainer,
 } from 'recharts'
 
-import { Wrapper, Title } from './styles'
+import { Wrapper, GraphTitle } from './styles'
 
 import PropTypes from 'prop-types'
 
@@ -26,7 +26,7 @@ export const ActivitiesBarChart = ({ data }) => {
 
   return (
     <Wrapper>
-      <Title>Gráfico de barras das suas atividades complementares</Title>
+      <GraphTitle>Gráfico de barras das suas atividades complementares</GraphTitle>
       <ResponsiveContainer minWidth={380} width="100%" height={400}>
         <BarChart
           wrapperStyle={{ paddingLeft: 0 }}
