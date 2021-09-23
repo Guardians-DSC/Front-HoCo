@@ -155,6 +155,10 @@ html {
   box-sizing: border-box;
 }
 
+.Body {
+  width: 100%;
+}
+
 @media screen and (max-width: 1025px) {
   .App {
     display: block;

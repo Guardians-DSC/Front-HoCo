@@ -1,0 +1,5 @@
+export const SALMON = '#FF9090'
+export const DARK_SALMON = '#FF6A6A'
+export const BURGUNDY = '#975858'
+export const PURPLE = '#8884D8'
+export const LIGHT_PURPLE = '#A4A2D9'
