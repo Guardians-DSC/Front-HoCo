@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { Form as FormAntd } from 'antd'
 import { Input as InputAntd } from 'antd'
+import 'antd/lib/input/style/index.css'
 
 export const AppWrapper = styled.div`
   background-color: ${({ theme }) => theme['main-background']};
@@ -117,4 +118,11 @@ export const Button = styled.button`
   &:hover {
     background-color: ${({ theme }) => theme['second-green']};
   }
+`
+
+export const Form = styled(FormAntd)`
+  display: flex;
+  flex-direction: column;
+  max-width: 30rem;
+  gap: 1rem;
 `
