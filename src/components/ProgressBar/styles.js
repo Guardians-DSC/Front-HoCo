@@ -5,6 +5,10 @@ export const Wrapper = styled.div`
   gap: 1rem;
   align-items: center;
   font-weight: 600;
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+  }
 `
 
 export const ProgressContainer = styled.div`

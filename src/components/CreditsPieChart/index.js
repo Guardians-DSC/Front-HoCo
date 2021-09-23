@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
 import { PieChart, Pie, Cell, ResponsiveContainer, Legend } from 'recharts'
-import { Wrapper, Title, Text } from './styles'
+import { Wrapper, GraphTitle, Text } from './styles'
 import PropTypes from 'prop-types'
 import { compare } from '../../util/util'
 import {
@@ -60,7 +60,7 @@ export const CreditsPieChart = ({ data }) => {
 
   return (
     <Wrapper>
-      <Title>Proporção de créditos de horas complementares</Title>
+      <GraphTitle>Proporção de créditos de horas complementares</GraphTitle>
       <ResponsiveContainer minWidth={350} width="100%" height={400}>
         <PieChart>
           <Pie

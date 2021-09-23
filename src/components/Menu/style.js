@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 
 export const OutWrapper = styled.div`
   height: 100vh;
-  box-sizing: border-box;
   position: relative;
   margin-right: ${({ isRetracted }) => (isRetracted ? '5rem' : '18rem')};
   transition: 0.3s;
