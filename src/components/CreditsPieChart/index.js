@@ -16,24 +16,23 @@ import { RADIAN, MAX_NUM_CATEGORIES } from '../../util/constants/numbers'
 const COLORS = [SALMON, DARK_SALMON, BURGUNDY, PURPLE, LIGHT_PURPLE]
 
 const customizedLabel = ({
-  horizontalStart,
-  verticalStart,
+  cx,
+  cy,
   midAngle,
   innerRadius,
   outerRadius,
   percent,
 }) => {
   const radius = innerRadius + (outerRadius - innerRadius) * 0.5
-  const x = horizontalStart + radius * Math.cos(-midAngle * RADIAN)
-  const y = verticalStart + radius * Math.sin(-midAngle * RADIAN)
-
+  const horizontalAlign = cx + radius * Math.cos(-midAngle * RADIAN)
+  const verticalAlign = cy + radius * Math.sin(-midAngle * RADIAN)
   return (
     <text
-      x={x}
-      y={y}
+      x={horizontalAlign}
+      y={verticalAlign}
       fill="white"
       fontWeight="bold"
-      textAnchor={x > horizontalStart ? 'start' : 'end'}
+      textAnchor={horizontalAlign > cx ? 'start' : 'end'}
       dominantBaseline="central"
     >
       {`${(percent * 100).toFixed(0)}%`}
