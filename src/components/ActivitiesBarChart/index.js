@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react'
 import {
   BarChart,
@@ -15,13 +16,21 @@ import { Wrapper, Title } from './styles'
 import PropTypes from 'prop-types'
 
 export const ActivitiesBarChart = ({ data }) => {
+  const updatedData = data.map((objectData) => {
+    return {
+      'creditos disponiveis':
+        objectData['Max creditos'] - objectData['Creditos totais'],
+      ...objectData,
+    }
+  })
+
   return (
     <Wrapper>
       <Title>Gráfico de barras das suas atividades complementares</Title>
       <ResponsiveContainer minWidth={380} width="100%" height={400}>
         <BarChart
           wrapperStyle={{ paddingLeft: 0 }}
-          data={data}
+          data={updatedData}
           margin={{
             top: 0,
             right: 0,
@@ -33,18 +42,33 @@ export const ActivitiesBarChart = ({ data }) => {
           <XAxis dataKey="name" />
           <YAxis dataKey="top" width={30} />
           <Tooltip />
-          <Legend />
+          <Legend
+            payload={[
+              {
+                value: 'Creditos totais',
+                type: 'rect',
+                color: '#975858',
+              },
+              {
+                value: 'Creditos disponiveis',
+                type: 'rect',
+                color: '#343B4590',
+              },
+            ]}
+          />
           <Bar
             legendType="rect"
             dataKey="Creditos totais"
-            BarSize={42}
+            stackId="a"
+            maxBarSize={25}
             fill="#975858"
           />
           <Bar
             legendType="rect"
-            dataKey="Max creditos"
-            BarSize={42}
-            fill="#343B4570"
+            dataKey="creditos disponiveis"
+            stackId="a"
+            maxBarSize={25}
+            fill="#343B4560"
           />
         </BarChart>
       </ResponsiveContainer>
