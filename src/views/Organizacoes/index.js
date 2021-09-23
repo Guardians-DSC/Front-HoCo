@@ -2,14 +2,16 @@ import React from 'react'
 
 import { Organizations } from '../../components/Organizations'
 import { OrganizationsIcon } from '../../assets/icons/OrganizationIcon'
-
+import { useTheme } from 'styled-components'
 import { Content, Title, Text } from '../../styles/base-styles.js'
 
 export const Orgs = () => {
+  const theme = useTheme()
+
   return (
     <Content>
       <Title>
-        <OrganizationsIcon width={'2rem'} color={'#514E4E'} />
+        <OrganizationsIcon width={'2rem'} color={theme['main-font']} />
         {`Organizações`}
       </Title>
       <Text>
