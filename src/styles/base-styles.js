@@ -103,3 +103,18 @@ export const Input = styled(InputAntd)`
     box-shadow: 0 0 0 2px rgb(24 255 57 / 20%);
   }
 `
+
+export const Button = styled.button`
+  padding: 0.6rem 1rem;
+  background-color: ${({ theme }) => theme['main-green']};
+  color: ${({ theme }) => theme['main-white']};
+  width: fit-content;
+  cursor: pointer;
+  border-radius: 2px;
+  border: none;
+  transition: 0.5s;
+
+  &:hover {
+    background-color: ${({ theme }) => theme['second-green']};
+  }
+`

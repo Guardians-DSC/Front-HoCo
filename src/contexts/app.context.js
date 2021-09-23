@@ -1,29 +1,34 @@
-import React, { createContext, useContext, useState, useEffect } from 'react'
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  useCallback,
+} from 'react'
 
 import PropTypes from 'prop-types'
 import constants from '../util/constants'
 import { useHistory } from 'react-router-dom'
-import { themeDark, themeLight } from '../util/themes'
 
 const PagesContext = createContext()
 
 export function PagesProvider({ children }) {
+  const { themes, pages } = constants
   const history = useHistory()
-  const [theme, setTheme] = useState(
-    JSON.parse(localStorage.getItem('@hoco/theme'))
-      ? JSON.parse(localStorage.getItem('@hoco/theme'))
-      : themeLight
-  )
+
+  const getTheme = useCallback(() => {
+    return JSON.parse(localStorage.getItem('@hoco/theme'))
+  }, [])
+
+  const currentTheme = getTheme()
+  const [theme, setTheme] = useState(currentTheme ? currentTheme : themes['light'])
 
   const handleTheme = (themeName) => {
-    const currentTheme = themeName === 'light' ? themeLight : themeDark
-    localStorage.setItem('@hoco/theme', JSON.stringify(currentTheme))
-
-    setTheme(JSON.parse(localStorage.getItem('@hoco/theme')))
+    localStorage.setItem('@hoco/theme', JSON.stringify(themes[themeName]))
+    setTheme(getTheme())
   }
 
   const [currentPathname, setCurrentPathname] = useState(window.location.pathname)
-  const { pages } = constants
 
   useEffect(() => {
     history.listen((location) => {

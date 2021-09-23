@@ -1,5 +1,6 @@
-export const themeLight = {
+const themeLight = {
   'main-green': '#539762',
+  'second-green': '#497B54',
   'main-white': '#f5f5f5',
   'main-black': '#514E4E',
   'main-background': '#fff',
@@ -10,8 +11,9 @@ export const themeLight = {
   'header-icons': '#539762',
 }
 
-export const themeDark = {
+const themeDark = {
   'main-green': '#48674F',
+  'second-green': '#5B8564',
   'main-white': '#f5f5f5',
   'main-black': '#373E47',
   'main-background': '#373E47',
@@ -21,3 +23,5 @@ export const themeDark = {
   'main-emphasis': '#666E78',
   'header-icons': '#f5f5f5',
 }
+
+export default { light: themeLight, dark: themeDark }

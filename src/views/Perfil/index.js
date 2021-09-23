@@ -13,15 +13,15 @@ import {
 } from './styles'
 import { Profile } from '../../components/Profile'
 import { Title, Item, Input } from '../../styles/base-styles'
-import { LightTheme } from '../../assets/icons/LightTheme'
-import { DarkTheme } from '../../assets/icons/DarkTheme'
+import { LightThemeIcon } from '../../assets/icons/LightThemeIcon'
+import { DarkThemeIcon } from '../../assets/icons/DarkThemeIcon'
 import usePagesContext from '../../contexts/app.context'
 import useUserContext from '../../contexts/user.context'
-import { Button } from '../../components/Button'
+import { Button } from '../../styles/base-styles'
 
 export const Perfil = () => {
   const { handleTheme } = usePagesContext()
-  const { name, eMail, registrationNumber, course } = useUserContext()
+  const { name, email, userId, course } = useUserContext()
 
   const handleSaveInfo = () => {
     console.log('Salvando...')
@@ -41,11 +41,11 @@ export const Perfil = () => {
               <Input defaultValue={name} />
             </Item>
             <Item label="E-mail">
-              <Input defaultValue={eMail} />
+              <Input defaultValue={email} />
             </Item>
             <SameLineInfoWrapper>
               <Item label="Matrícula">
-                <Input defaultValue={registrationNumber} disabled />
+                <Input defaultValue={userId} disabled />
               </Item>
               <Item label="Curso">
                 <Input defaultValue={course} />
@@ -58,15 +58,15 @@ export const Perfil = () => {
           <Subtitle>Temas</Subtitle>
           <ThemesContainer>
             <div onClick={() => handleTheme('light')}>
-              <LightTheme />
+              <LightThemeIcon />
             </div>
             <div onClick={() => handleTheme('dark')}>
-              <DarkTheme onClick={() => handleTheme('dark')} />
+              <DarkThemeIcon onClick={() => handleTheme('dark')} />
             </div>
           </ThemesContainer>
         </ThemeWrapper>
         <ButtonWrapper>
-          <Button text="Salvar alterações" onClick={handleSaveInfo} />
+          <Button onClick={handleSaveInfo}>Salvar alterações</Button>
         </ButtonWrapper>
       </Content>
     </Wrapper>

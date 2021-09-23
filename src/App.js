@@ -10,7 +10,6 @@ import usePagesContext from './contexts/app.context'
 
 function App() {
   const { theme } = usePagesContext()
-  console.log('temaa', theme)
 
   return (
     <ThemeProvider theme={theme}>

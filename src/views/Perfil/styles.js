@@ -82,19 +82,27 @@ export const ThemesContainer = styled.div`
     cursor: pointer;
   }
 
+  @media screen and (max-width: 1025px) {
+    justify-content: center;
+    margin-left: 0rem;
+  }
+
   @media screen and (max-width: 600px) {
     flex-direction: column-reverse;
     margin-top: 1rem;
     gap: 3rem;
-    margin-left: 0rem;
   }
 `
 
 export const ButtonWrapper = styled.div`
   align-self: flex-end;
 
+  @media screen and (max-width: 1025px) {
+    margin-top: 3.5rem;
+    align-self: center;
+  }
+
   @media screen and (max-width: 600px) {
     margin-top: 2rem;
-    align-self: center;
   }
 `
