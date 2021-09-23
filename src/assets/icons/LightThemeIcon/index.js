@@ -2,7 +2,7 @@ import React from 'react'
 import { useTheme } from 'styled-components'
 import { Wrapper } from './styles'
 
-export const DarkTheme = () => {
+export const LightThemeIcon = () => {
   const theme = useTheme()
 
   return (
@@ -14,7 +14,7 @@ export const DarkTheme = () => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <rect width="228" height="145" fill="#373E47" />
+        <rect width="228" height="145" fill="#f5f5f5" />
         <rect width="84.8372" height="145" fill="#5E966A" />
         <g filter="url(#filter0_d)">
           <path

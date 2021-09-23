@@ -6,20 +6,20 @@ const UserContext = createContext()
 
 export function UserProvider({ children }) {
   const [name, setName] = useState('Rodrigo Eloy')
-  const [eMail, setEmail] = useState('rodrigo.cavalcanti@ccc.ufcg.edu.br')
+  const [email, setEmail] = useState('rodrigo.cavalcanti@ccc.ufcg.edu.br')
   const [course, setCourse] = useState('Ciência da computação')
-  const [registrationNumber, setRegistrationNumber] = useState('115478521')
+  const [userId, setUserId] = useState('115478521')
   const [avatar, setAvatar] = useState(eu)
 
   const values = {
     name,
     setName,
-    eMail,
+    email,
     setEmail,
     course,
     setCourse,
-    registrationNumber,
-    setRegistrationNumber,
+    userId,
+    setUserId,
     avatar,
     setAvatar,
   }
