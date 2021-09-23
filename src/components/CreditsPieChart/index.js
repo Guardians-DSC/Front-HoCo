@@ -1,23 +1,31 @@
+/* eslint-disable react/prop-types */
 import React from 'react'
 import { PieChart, Pie, Cell, ResponsiveContainer, Legend } from 'recharts'
 import { Wrapper, Title, Text } from './styles'
 import PropTypes from 'prop-types'
 import { compare } from '../../util/util'
+import {
+  SALMON,
+  DARK_SALMON,
+  BURGUNDY,
+  PURPLE,
+  LIGHT_PURPLE,
+} from '../../util/constants/colors'
+import { RADIAN, MAX_NUM_CATEGORIES } from '../../util/constants/numbers'
 
-const COLORS = ['#FF9090', '#FF6A6A', '#975858', '#8884D8', '#A4A2D9']
+const COLORS = [SALMON, DARK_SALMON, BURGUNDY, PURPLE, LIGHT_PURPLE]
 
-const RADIAN = Math.PI / 180
-const renderCustomizedLabel = ({
-  cx,
-  cy,
+const customizedLabel = ({
+  horizontalStart,
+  verticalStart,
   midAngle,
   innerRadius,
   outerRadius,
   percent,
 }) => {
   const radius = innerRadius + (outerRadius - innerRadius) * 0.5
-  const x = cx + radius * Math.cos(-midAngle * RADIAN)
-  const y = cy + radius * Math.sin(-midAngle * RADIAN)
+  const x = horizontalStart + radius * Math.cos(-midAngle * RADIAN)
+  const y = verticalStart + radius * Math.sin(-midAngle * RADIAN)
 
   return (
     <text
@@ -25,7 +33,7 @@ const renderCustomizedLabel = ({
       y={y}
       fill="white"
       fontWeight="bold"
-      textAnchor={x > cx ? 'start' : 'end'}
+      textAnchor={x > horizontalStart ? 'start' : 'end'}
       dominantBaseline="central"
     >
       {`${(percent * 100).toFixed(0)}%`}
@@ -37,18 +45,18 @@ export const CreditsPieChart = ({ data }) => {
   const sortedData = data.sort(compare)
 
   function sumValues(objects) {
-    let finalSum = 0
-
-    objects.map((object) => {
-      finalSum += object.value
-    })
-
-    return finalSum
+    const reducer = (previousValue, currentValue) =>
+      previousValue + currentValue.value
+    return objects.reduce(reducer, 0)
   }
 
   const finalData = [
-    ...sortedData.slice(0, 4),
-    { name: 'outros', value: sumValues(sortedData.slice(3, -1)) },
+    ...sortedData.slice(0, MAX_NUM_CATEGORIES),
+    {
+      name: 'outros',
+      // sum the values from the max_categories until the end of the array
+      value: sumValues(sortedData.slice(MAX_NUM_CATEGORIES - 1, -1)),
+    },
   ]
 
   return (
@@ -61,9 +69,8 @@ export const CreditsPieChart = ({ data }) => {
             cx="50%"
             cy="45%"
             labelLine={false}
-            label={renderCustomizedLabel}
+            label={customizedLabel}
             outerRadius="90%"
-            fill="#8884d8"
             dataKey="value"
           >
             {data.map((entry, index) => (
