@@ -7,7 +7,7 @@ export const OutWrapper = styled.div`
   box-sizing: border-box;
   position: relative;
   margin-right: ${({ isRetracted }) => (isRetracted ? '5rem' : '18rem')};
-  transition: 0.5s ease;
+  transition: 0.3s;
   z-index: 10;
 
   @media screen and (max-width: 1025px) {
@@ -26,7 +26,7 @@ export const Wrapper = styled.div`
   padding: ${({ isRetracted }) => (isRetracted ? '2rem 0rem' : '1.5rem 2rem')};
   justify-content: space-between;
   box-sizing: border-box;
-  transition: width 0.5s;
+  transition: width 0.5s, background-color 0.3s;
   overflow: hidden;
 
   @media screen and (max-width: 1025px) {
@@ -81,6 +81,7 @@ export const MenuFooter = styled(Link)``
 export const Header = styled.div`
   display: none;
   padding: 2rem 3rem;
+  background-color: transparent;
 
   @media screen and (max-width: 1025px) {
     padding: 2rem 1.5rem;

@@ -77,19 +77,19 @@ export const Menu = () => {
             })}
           </MenuBody>
           <MenuFooter to="/perfil" onClick={() => setIsActive(false)}>
-            <Profile isRetracted={isRetracted} />
+            <Profile isRetracted={isRetracted} name="Rodrigo Eloy" />
           </MenuFooter>
         </Wrapper>
       </OutWrapper>
       <Header>
         <div onClick={handleActive}>
-          <BurguerMenu />
+          <BurguerMenu color={theme['header-icons']} />
         </div>
         <Link to="/sobre">
           <Logo
             width={100}
             onClick={() => setIsActive(false)}
-            color={theme['main-green']}
+            color={theme['header-icons']}
           />
         </Link>
       </Header>

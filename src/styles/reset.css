@@ -148,25 +148,3 @@ html {
   overflow-y: hidden;
 }
 
-.App {
-  display: flex;
-  min-height: 100vh;
-  width: 100vw;
-  box-sizing: border-box;
-}
-
-.Body {
-  padding: 3.5rem 2.5rem;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-@media screen and (max-width: 1025px) {
-  .App {
-    display: block;
-  }
-
-  .Body {
-    padding: 2rem 1rem;
-  }
-}
