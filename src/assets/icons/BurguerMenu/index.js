@@ -6,7 +6,7 @@ export const BurguerMenu = ({ color, width }) => {
   const theme = useTheme()
 
   const currentColor =
-    !color || color !== theme['main-green'] ? theme['main-green'] : color
+    !color || color === theme['main-green'] ? theme['main-green'] : color
 
   return (
     <svg

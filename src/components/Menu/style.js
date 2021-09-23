@@ -10,7 +10,7 @@ export const OutWrapper = styled.div`
   transition: 0.5s ease;
   z-index: 10;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1025px) {
     transform: ${({ isActive }) => (isActive ? '' : 'translate(-50vh)')};
     position: absolute;
   }
