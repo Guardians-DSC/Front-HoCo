@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const OrganizationUrl = styled.a``
 
 export const OrganizationContainer = styled.div`
-  width: 100%;
+  width: 25rem;
   height: 12.5rem;
 
   position: relative;
