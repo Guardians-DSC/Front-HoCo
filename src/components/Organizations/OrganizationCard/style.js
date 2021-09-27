@@ -26,8 +26,13 @@ export const OrganizationContainer = styled.div`
     }
   }
 
+  @media screen and (max-width: 1366px) {
+    width: 20rem;
+    height: 10rem;
+  }
+
   @media screen and (max-width: 1024px) {
-    height: 17.5rem;
+    height: 12.5rem;
   }
 `
 

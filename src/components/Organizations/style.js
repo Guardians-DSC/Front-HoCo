@@ -4,7 +4,7 @@ export const OrganizationsDiv = styled.div`
   width: 100%;
 
   display: grid;
-  grid-template-columns: repeat(auto-fill, 29%);
+  grid-template-columns: repeat(auto-fill, 30%);
   align-items: center;
   justify-content: center;
   gap: 3rem 5rem;
@@ -13,7 +13,7 @@ export const OrganizationsDiv = styled.div`
   margin-top: 3.5rem;
 
   @media screen and (max-width: 1366px) {
-    grid-template-columns: repeat(auto-fill, 40%);
+    grid-template-columns: repeat(auto-fill, 28%);
   }
 
   @media screen and (max-width: 1024px) {
