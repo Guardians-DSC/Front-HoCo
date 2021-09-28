@@ -1,8 +1,12 @@
 import styled from 'styled-components'
 
-export const OrganizationUrl = styled.a``
+export const OrganizationUrl = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
 
-export const OrganizationContainer = styled.div`
+export const OrganizationContainer = styled.a`
   width: 25rem;
   height: 12.5rem;
 
@@ -15,8 +19,6 @@ export const OrganizationContainer = styled.div`
   box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.25);
 
   &:hover {
-    box-shadow: none;
-
     & > div {
       opacity: 0.8;
     }

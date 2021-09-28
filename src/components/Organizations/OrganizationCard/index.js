@@ -12,8 +12,13 @@ import {
 
 export function OrganizationCard({ image, name, url }) {
   return (
-    <OrganizationUrl href={url} target="_blank" rel="noreferrer">
-      <OrganizationContainer>
+    <OrganizationUrl>
+      <OrganizationContainer
+        href={url}
+        target="_blank"
+        rel="noreferrer"
+        alt="Imagem da organização"
+      >
         <OrganizationImage src={image} />
         <OrganizationName>{name}</OrganizationName>
         <ShadowLayer />
