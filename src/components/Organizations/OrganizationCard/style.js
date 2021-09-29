@@ -2,13 +2,13 @@ import styled from 'styled-components'
 
 export const OrganizationContainer = styled.div`
   display: flex;
-  width: 100%;
+  width: 25rem;
   align-items: center;
   justify-content: center;
 `
 
 export const OrganizationUrl = styled.a`
-  width: 25rem;
+  width: inherit;
   height: 12.5rem;
 
   position: relative;
@@ -27,15 +27,6 @@ export const OrganizationUrl = styled.a`
     & > p {
       opacity: 1;
     }
-  }
-
-  @media screen and (max-width: 1366px) {
-    width: 20rem;
-    height: 10rem;
-  }
-
-  @media screen and (max-width: 1024px) {
-    height: 12.5rem;
   }
 `
 
