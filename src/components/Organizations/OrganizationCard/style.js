@@ -2,12 +2,11 @@ import styled from 'styled-components'
 
 export const OrganizationContainer = styled.div`
   display: flex;
-  width: 25rem;
-  align-items: center;
   justify-content: center;
 `
 
 export const OrganizationUrl = styled.a`
+  min-width: 25rem;
   width: inherit;
   height: 12.5rem;
 
@@ -31,6 +30,7 @@ export const OrganizationUrl = styled.a`
 `
 
 export const OrganizationImage = styled.img`
+  object-fit: cover;
   width: 100%;
   height: 100%;
 `
