@@ -3,17 +3,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import {
-  OrganizationContainer,
   OrganizationName,
   ShadowLayer,
   OrganizationImage,
   OrganizationUrl,
+  OrganizationContainer,
 } from './style.js'
 
 export function OrganizationCard({ image, name, url }) {
   return (
-    <OrganizationUrl>
-      <OrganizationContainer
+    <OrganizationContainer>
+      <OrganizationUrl
         href={url}
         target="_blank"
         rel="noreferrer"
@@ -22,8 +22,8 @@ export function OrganizationCard({ image, name, url }) {
         <OrganizationImage src={image} />
         <OrganizationName>{name}</OrganizationName>
         <ShadowLayer />
-      </OrganizationContainer>
-    </OrganizationUrl>
+      </OrganizationUrl>
+    </OrganizationContainer>
   )
 }
 

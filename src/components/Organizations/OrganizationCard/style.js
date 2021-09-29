@@ -1,12 +1,13 @@
 import styled from 'styled-components'
 
-export const OrganizationUrl = styled.div`
+export const OrganizationContainer = styled.div`
   display: flex;
+  width: 100%;
   align-items: center;
   justify-content: center;
 `
 
-export const OrganizationContainer = styled.a`
+export const OrganizationUrl = styled.a`
   width: 25rem;
   height: 12.5rem;
 
