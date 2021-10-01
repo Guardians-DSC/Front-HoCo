@@ -116,7 +116,7 @@ section {
 }
 body {
   line-height: 1;
-  width: 100vw;
+  width: 100%;
 }
 ol,
 ul {
