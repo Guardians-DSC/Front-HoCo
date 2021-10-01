@@ -88,7 +88,7 @@ Caso você esteja interessada(o)(e) no projeto e queira contribuir para algum do
 ## Contribuidores
 
 <a href="https://github.com/Guardians-DSC/HoCo/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Guardians-DSC/HoCo" />
+  <img src="https://contrib.rocks/image?repo=Guardians-DSC/Front-HoCo" />
 </a>
 
 
