@@ -15,10 +15,9 @@
 
 ## :dart: Objetivo
 
-A falta de praticamente qualquer conhecimento sobre horas e atividades complementares do curso é um conhecido de longa data dos alunos da graduação de Ciência da Computação na UFCG e foi pensando nisso que o *HoCo* nasceu. 
+A falta de praticamente qualquer conhecimento sobre horas e atividades complementares do curso é um conhecido de longa data dos alunos da graduação de Ciência da Computação na UFCG e foi pensando nisso que o _HoCo_ nasceu.
 
 **O projeto tem como objetivo sanar essa deficiência do curso provendo um lugar onde os alunos além de salvarem suas horas possam ter conhecimento do seu funcionamento e das normas atuais do curso.**
-
 
 ---
 
@@ -33,7 +32,6 @@ A falta de praticamente qualquer conhecimento sobre horas e atividades complemen
 - [Mantenedores](#pushpin-mantenedores)
 - [Licença e Copyright](#pencil2-licença-e-copyright)
 
-
 ## :gear: Pré-requisitos
 
 Para executar o projeto você precisa ter instalado na sua máquina o `docker` e `docker-compose`. Abaixo estão alguns links úteis para a instalação dessas dependências:
@@ -47,18 +45,20 @@ Para executar o projeto você precisa ter instalado na sua máquina o `docker` e
 
 **Siga os seguintes passos para a execução do projeto:**
 
-1. Fazer o *clone* do projeto e dos seus submodulos de frontend e backend
+1. Fazer o _clone_ do projeto e dos seus submodulos de frontend e backend
 
 ```bash
   git clone https://github.com/Guardians-DSC/Front-HoCo
 ```
 
 2. Entrar na pasta do projeto
+
 ```bash
   cd Front-HoCo
 ```
 
 3. Fazer o build do projeto
+
 ```bash
   docker build . --tag='front-hoco'
 ```
@@ -79,18 +79,10 @@ Caso você esteja interessada(o)(e) no projeto e queira contribuir para algum do
 
 ## :pushpin: Mantenedores
 
-
 - [Franciclaudio Dantas](https://github.com/claudiodantas)
 - [Gustavo Farias](https://github.com/GusttaFS)
 - [Leandra Oliveira](https://github.com/LeandraOS)
 - [Rodrigo Eloy](https://github.com/RodrigoEC)
-
-## Contribuidores
-
-<a href="https://github.com/Guardians-DSC/HoCo/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Guardians-DSC/Front-HoCo" />
-</a>
-
 
 ## :pencil2: Licença e Copyright
 
