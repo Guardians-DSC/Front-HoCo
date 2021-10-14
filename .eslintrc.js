@@ -21,7 +21,7 @@ module.exports = {
   rules: {
     'prettier/prettier': 'warn',
     quotes: [0, 'double'],
-    semi: ['warn', 'never'],
+    semi: [1, 'never'],
     'no-console': 'off',
   },
-};
+}

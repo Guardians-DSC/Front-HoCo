@@ -113,6 +113,7 @@ export const Button = styled.button`
   border-radius: 2px;
   border: none;
   transition: 0.5s;
+  font-size: 1rem;
 
   &:hover {
     background-color: ${({ theme }) => theme['second-green']};

@@ -31,6 +31,7 @@ export const ActivitiesTable = ({ data }) => {
     },
     {
       title: 'Categoria',
+      align: 'center',
       key: 'category',
       dataIndex: 'category',
       render: (tag) => {
@@ -42,18 +43,40 @@ export const ActivitiesTable = ({ data }) => {
       },
     },
     {
-      title: 'Ações',
-      key: 'action',
+      title: 'Baixar certificado',
+      align: 'center',
+      width: 200,
+      key: 'download',
       render: (record) => (
         <Space size="middle">
           <DownloadOutlined
             style={{ fontSize: '18px' }}
             onClick={() => handleDownload(record)}
           />
+        </Space>
+      ),
+    },
+    {
+      title: 'Editar',
+      align: 'center',
+      width: 100,
+      key: 'edit',
+      render: (record) => (
+        <Space size="middle">
           <EditOutlined
             style={{ fontSize: '18px' }}
             onClick={() => handleEdit(record)}
           />
+        </Space>
+      ),
+    },
+    {
+      title: 'Apagar',
+      align: 'center',
+      width: 100,
+      key: 'delete',
+      render: (record) => (
+        <Space size="middle">
           <Popconfirm
             cancelText="Cancelar"
             okText="Apagar"

@@ -1,6 +1,7 @@
 const themeLight = {
   'main-green': '#539762',
   'second-green': '#497B54',
+  'third-green': '#539762',
   'main-white': '#f5f5f5',
   'main-black': '#514E4E',
   'main-background': '#fff',
@@ -17,6 +18,7 @@ const themeLight = {
 const themeDark = {
   'main-green': '#48674F',
   'second-green': '#5B8564',
+  'third-green': '#5B8564',
   'main-white': '#f5f5f5',
   'main-black': '#373E47',
   'main-background': '#373E47',

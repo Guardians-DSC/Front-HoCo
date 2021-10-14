@@ -9,6 +9,7 @@ import 'antd/lib/popover/style/index.css'
 import 'antd/lib/button/style/index.css'
 
 export const Table = styled(TableAntd)`
+  width: 100%;
   tr > th,
   tr > td {
     border-bottom: 0.5px solid ${({ theme }) => theme['main-border']};
@@ -24,6 +25,39 @@ export const Table = styled(TableAntd)`
 
   .ant-table-tbody > tr.ant-table-row:hover > td {
     background: ${({ theme }) => theme['second-background']};
+  }
+
+  li,
+  li a,
+  button {
+    background-color: ${({ theme }) => theme['main-background']} !important;
+    color: ${({ theme }) => theme['main-font']};
+  }
+
+  li:hover,
+  li:hover a,
+  button:hover {
+    border-color: ${({ theme }) => theme['third-green']};
+    color: ${({ theme }) => theme['third-green']} !important;
+  }
+
+  .ant-pagination-item-active {
+    border-color: ${({ theme }) => theme['third-green']};
+  }
+
+  .ant-pagination-item-active a {
+    color: ${({ theme }) => theme['third-green']};
+  }
+
+  .ant-pagination-item-link,
+  .ant-pagination-item-link:hover {
+    background-color: ${({ theme }) => theme['second-background']} !important;
+    color: ${({ theme }) => theme['main-font']};
+  }
+
+  .ant-pagination-item-link:hover {
+    border-color: ${({ theme }) => theme['third-green']};
+    color: ${({ theme }) => theme['third-green']};
   }
 `
 
