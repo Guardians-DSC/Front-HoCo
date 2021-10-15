@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Space, Tag, Popconfirm } from 'antd'
+import { Space, Popconfirm } from 'antd'
 import { EditOutlined, DeleteOutlined, DownloadOutlined } from '@ant-design/icons'
 
-import { Table } from './style'
+import { Table, Tag } from './style'
 
 export const ActivitiesTable = ({ data }) => {
   const columns = [
@@ -107,7 +107,7 @@ export const ActivitiesTable = ({ data }) => {
   return (
     <Table
       columns={columns}
-      pagination={{ pageSize: 6 }}
+      pagination={{ pageSize: 5 }}
       scroll={{ x: 600 }}
       dataSource={data}
     ></Table>

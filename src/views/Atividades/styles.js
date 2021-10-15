@@ -11,6 +11,5 @@ export const TableWrapper = styled.div`
 
   div {
     width: 100%;
-    max-width: 1500px;
   }
 `

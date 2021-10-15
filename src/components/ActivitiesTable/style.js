@@ -7,6 +7,7 @@ import 'antd/lib/pagination/style/index.css'
 import 'antd/lib/space/style/index.css'
 import 'antd/lib/popover/style/index.css'
 import 'antd/lib/button/style/index.css'
+import { Tag as TagAntd } from 'antd'
 
 export const Table = styled(TableAntd)`
   width: 100%;
@@ -63,4 +64,16 @@ export const Table = styled(TableAntd)`
 
 export const Confirm = styled(Popconfirm)`
   font-family: 'Roboto' sans-serif !important;
+`
+
+export const Tag = styled(TagAntd)`
+  background-color: ${({ theme }) => theme['main-background']} !important;
+  border-color: ${({ theme }) => theme['main-font']} !important;
+  color: ${({ theme }) => theme['main-font']} !important;
+
+  &:hover {
+    background-color: ${({ theme }) => theme['main-font']} !important;
+    color: ${({ theme }) => theme['main-background']} !important;
+    cursor: default;
+  }
 `
