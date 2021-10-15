@@ -19,6 +19,7 @@ export const ActivitiesTable = ({ data }) => {
       title: 'Horas',
       dataIndex: 'hours',
       key: 'hours',
+      width: 'fit-content',
       align: 'center',
       render: (hora) => (hora ? hora : '- - -'),
     },
@@ -26,6 +27,7 @@ export const ActivitiesTable = ({ data }) => {
       title: 'Créditos',
       dataIndex: 'credit',
       key: 'credit',
+      width: 'fit-content',
       align: 'center',
       render: (credito) => (credito ? credito : '- - -'),
     },
@@ -45,7 +47,6 @@ export const ActivitiesTable = ({ data }) => {
     {
       title: 'Baixar certificado',
       align: 'center',
-      width: 200,
       key: 'download',
       render: (record) => (
         <Space size="middle">
@@ -59,7 +60,6 @@ export const ActivitiesTable = ({ data }) => {
     {
       title: 'Editar',
       align: 'center',
-      width: 100,
       key: 'edit',
       render: (record) => (
         <Space size="middle">
@@ -73,7 +73,6 @@ export const ActivitiesTable = ({ data }) => {
     {
       title: 'Apagar',
       align: 'center',
-      width: 100,
       key: 'delete',
       render: (record) => (
         <Space size="middle">
