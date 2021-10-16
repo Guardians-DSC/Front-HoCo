@@ -97,10 +97,19 @@ export const Input = styled(InputAntd)`
   border-radius: 3px;
   height: 2.5rem;
   margin-top: 0.5rem;
+  background-color: ${({ theme }) => theme['second-background']};
+  color: ${({ theme }) => theme['main-font']};
 
-  &:focus {
-    border-color: #18ff3933;
+  &:focus,
+  &:hover {
+    border-color: ${({ theme }) => theme['second-green']};
     box-shadow: 0 0 0 2px rgb(24 255 57 / 20%);
+  }
+
+  &:disabled {
+    background-color: ${({ theme }) => theme['third-background']};
+    color: ${({ theme }) => theme['second-font']};
+    border-color: ${({ theme }) => theme['second-font']};
   }
 `
 
@@ -123,6 +132,5 @@ export const Button = styled.button`
 export const Form = styled(FormAntd)`
   display: flex;
   flex-direction: column;
-  max-width: 30rem;
   gap: 1rem;
 `
