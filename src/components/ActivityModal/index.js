@@ -4,6 +4,8 @@ import { CloseOutlined, FileTextOutlined, InboxOutlined } from '@ant-design/icon
 import React, { useState } from 'react'
 import { useTheme } from 'styled-components'
 import { Text, Title, Item, Input, Button } from '../../styles/base-styles'
+import categories from '../../util/constants/categories'
+import { Select } from '../Select'
 import {
   OutWrapper,
   Wrapper,
@@ -20,6 +22,11 @@ export const ActivityModal = ({ setIsActive }) => {
   const [credits, setCredits] = useState('')
   const [title, setTitle] = useState('')
   const [fileList, setFileList] = useState([])
+  const filteredCategories = Object.keys(categories).map((category, index) => {
+    return categories[category].text
+  })
+
+  console.log(filteredCategories)
 
   const onUpload = ({ fileList, newFileList }) => {
     console.log(newFileList)
@@ -72,7 +79,7 @@ export const ActivityModal = ({ setIsActive }) => {
         <Form>
           <UploadFile {...uploadProps}>
             <InboxOutlined style={{ fontSize: '48px', color: theme['main-font'] }} />
-            <p>Fazer upload do certificado</p>
+            <p>Click para fazer upload do certificado</p>
           </UploadFile>
           <Item label="Título da atividade complementar">
             <Input
@@ -82,7 +89,7 @@ export const ActivityModal = ({ setIsActive }) => {
           </Item>
           <SameLineInfoWrapper>
             <Item label="Categoria">
-              <Input placeholder="Ex.: Monitoria em Laboratório de Programação II" />
+              <Select options={filteredCategories} />
             </Item>
             <Item label="Horas">
               <Input

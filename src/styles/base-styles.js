@@ -99,6 +99,7 @@ export const Input = styled(InputAntd)`
   margin-top: 0.5rem;
   background-color: ${({ theme }) => theme['second-background']};
   color: ${({ theme }) => theme['main-font']};
+  border-color: ${({ theme }) => theme['main-border']};
 
   &:focus,
   &:hover {
