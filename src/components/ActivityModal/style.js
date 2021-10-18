@@ -7,9 +7,16 @@ export const OutWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+  height: 100vh;
+  z-index: 20;
+  width: 100vw;
+`
+
+export const Background = styled.div`
+  position: fixed;
   height: 100vh;
   width: 100vw;
   z-index: 20;
@@ -19,6 +26,7 @@ export const OutWrapper = styled.div`
 export const Wrapper = styled.div`
   padding: 1.5rem 1.75rem;
   width: 30rem;
+  z-index: 22;
   background-color: ${({ theme }) => theme['main-background']};
 `
 export const Header = styled.div`
@@ -44,6 +52,11 @@ export const UploadFile = styled(Dragger)`
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+  }
+
+  .ant-upload-text-icon span {
+    display: flex !important;
+    color: red !important;
   }
 `
 export const Form = styled(FormDefault)`
