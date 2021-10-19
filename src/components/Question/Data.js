@@ -1,15 +1,28 @@
 export const data = [
     {
-      question: 'Quais as atividades extra-curriculares que são consideradas atividades complementares?',
-      answer: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum'
+      question: 'Quais as atividades *extra-curriculares* que são consideradas atividades complementares?',
+      answer: '- [x] Lorem Ipsum is simply dummy text of the printing and **typesetting industry**. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker *including versions of Lorem Ipsum*'
     },
     {
-      question: 'Quantas horas complementares eu preciso ter durante a graduação?',
-      answer: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+      question: 'Quantas *horas* complementares eu preciso ter durante a **graduação**?',
+      answer: ` 
+
+  Nome | Tipo | Descrição | Programador(a)
+  :---: | :---: | :---: | :---:
+  imageURL| string | varíavel que recebe o link com endereço de imagem | Leandra
+  title | string | varíavel que recebe o título do comércio | Rodrigo
+  `
+
     },
     {
       question: 'Quais as atividades relacionadas a cada categoria?',
-      answer: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+      answer: ' - Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+
+    },
+    {
+      question: 'Quais as atividades relacionadas a cada categoria?',
+      answer: ' 1. Lorem Ipsum \n 2. is simply dummy text of the printing and typesetting industry.'
 
     }
   ];
+
