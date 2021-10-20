@@ -47,8 +47,22 @@ export const UploadFile = styled(Dragger)`
   color: ${({ theme }) => theme['main-font']};
   cursor: pointer;
 
+  .ant-upload {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .ant-upload-span {
+    display: flex;
+    gap: 1rem;
+    color: ${({ theme }) => theme['main-font']};
+  }
+
   .ant-upload-drag-container {
     display: flex;
+    width: 100%;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
@@ -59,6 +73,7 @@ export const UploadFile = styled(Dragger)`
     color: red !important;
   }
 `
+
 export const Form = styled(FormDefault)`
   gap: 1.5rem;
 

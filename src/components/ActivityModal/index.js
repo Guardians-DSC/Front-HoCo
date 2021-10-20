@@ -59,6 +59,8 @@ export const ActivityModal = ({ setIsActive }) => {
     },
   }
 
+  console.log(categories)
+
   return (
     <OutWrapper>
       <Background onClick={() => setIsActive(false)} />
