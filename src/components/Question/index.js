@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { IoChevronDownOutline as Dropdown } from 'react-icons/io5'
+import { DownOutlined } from '@ant-design/icons'
 import PropTypes from 'prop-types'
-import { Section, QuestionContent, Rotate, RotateActive, QuestionTitle, ResponseContent, ResponseText } from './style.js'
+import { Section, QuestionContent, Rotate, RotateActive, QuestionTitle, ResponseContent, ResponseText, Dropdown } from './style.js'
 import { data } from './Data.js'
 import ReactMarkdown from 'react-markdown'
 
@@ -21,19 +21,22 @@ export const Questions = () => {
     }
 
     return (
-        
+
         <Section>
             {data.map((item, index) => {
                 return (
                     <>
+
                         <QuestionContent onClick={() => toggle(index)} key={index}>
-                            <span>{clicked === index ? <RotateActive><Dropdown size={24} color="#514E4E" /></RotateActive> : <Rotate><Dropdown size={24} color="#514E4E" /></Rotate>}</span>
+                            <span>{clicked === index ? <RotateActive><Dropdown><DownOutlined /></Dropdown></RotateActive> : <Rotate><Dropdown><DownOutlined /></Dropdown></Rotate>}</span>
                             <QuestionTitle><ReactMarkdown remarkPlugins={[remarkGfm]}>{item.question}</ReactMarkdown></QuestionTitle>
                         </QuestionContent>
                         {clicked === index ? (
-                            <ResponseContent>
-                                <ResponseText id="response"><ReactMarkdown remarkPlugins={[remarkGfm]}>{item.answer}</ReactMarkdown></ResponseText>
-                            </ResponseContent>
+                            <div className='overflow'>
+                                <ResponseContent>
+                                    <ResponseText id="response"><ReactMarkdown remarkPlugins={[remarkGfm]}>{item.answer}</ReactMarkdown></ResponseText>
+                                </ResponseContent>
+                            </div>
                         ) : null}
                     </>
                 );
@@ -43,8 +46,6 @@ export const Questions = () => {
 
     )
 }
-
-
 
 Questions.propTypes = {
     question: PropTypes.string,
