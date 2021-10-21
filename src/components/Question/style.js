@@ -11,14 +11,15 @@ export const QuestionContent = styled.div`
     align-items: center;
     width: 100%;
     transition: 0.6s ease;
-    gap: 0.25rem;
+    gap: 0.80rem;
     vertical-align: middle;
     align-items: center;
     height: 58px;
+
     
     @media screen and (max-width: 550px) {
         gap: 0.50rem;
-        height: 94px;
+        height: 82px;
     }
     
 `
@@ -27,7 +28,7 @@ export const Dropdown = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    gap: 0.50rem;
 
     svg{
         height: 16px;
