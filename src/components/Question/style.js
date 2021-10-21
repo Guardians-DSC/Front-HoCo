@@ -80,6 +80,7 @@ export const ResponseContent = styled.div`
 
     ol{
     padding-left: 36px;
+    line-height: 26px;
 
     }
 
