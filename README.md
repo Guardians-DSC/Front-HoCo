@@ -75,7 +75,7 @@ Pronto! Com esses comandos simples você já conseguirá executar localmente o p
 
 ## :handshake: Como contribuir
 
-Caso esteja interessade(o/a) em contribuir com algum dos projetos do HoCom, verifique as [**issues**](https://github.com/Guardians-DSC/Front-HoCo/issues) de cada projeto. Caso encontre uma issue interessante e deseje contribuir, primeiramente leia os documentos do **[Código de conduta](https://github.com/Guardians-DSC/Front-HoCo/blob/main/CODE_OF_CONDUCT.md)** e **[Contribuindo](https://github.com/Guardians-DSC/Front-HoCo/blob/main/CONTRIBUTING.md)** para saber mais detalhes.
+Caso esteja interessade(o/a) em contribuir com algum dos projetos do HoCo, verifique as [**issues**](https://github.com/Guardians-DSC/Front-HoCo/issues) de cada projeto. Caso encontre uma issue interessante e deseje contribuir, primeiramente leia os documentos do **[Código de conduta](https://github.com/Guardians-DSC/Front-HoCo/blob/main/CODE_OF_CONDUCT.md)** e **[Contribuindo](https://github.com/Guardians-DSC/Front-HoCo/blob/main/CONTRIBUTING.md)** para saber mais detalhes.
 
 ⚠️ O projeto ainda se encontra em desenvolvimento, caso você queira acompanhar o avanço do repositório dê um estrelinha ⭐ para não perder as atualizações do repo.
 
