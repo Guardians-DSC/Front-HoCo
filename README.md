@@ -34,7 +34,7 @@ O pouco conhecimento sobre como adquirir e gerenciar horas e atividades compleme
 
 ## :gear: Pré-requisitos
 
-Para executar o projeto é necessário que ter instalado na sua máquina o [`docker`](https://docs.docker.com/get-docker/), o ambiente de implementação do projeto,  e o [`docker-compose`](https://docs.docker.com/compose/install/), a ferramenta de auxílio no gerenciamento do ambiente de docker. Para auxílio, abaixo estão listados alguns links úteis para a instalação dessas dependências:
+Para executar o projeto é necessário ter instalado na sua máquina o [`docker`](https://docs.docker.com/get-docker/), o ambiente de implementação do projeto,  e o [`docker-compose`](https://docs.docker.com/compose/install/), a ferramenta de auxílio no gerenciamento do ambiente de docker. Para auxílio, abaixo estão listados alguns links úteis para a instalação dessas dependências:
 
 - [Tutorial de instalação do docker](https://www.hostinger.com.br/tutoriais/install-docker-ubuntu)
 - [Tutorial de instalação do docker compose](https://docs.docker.com/compose/install/)
