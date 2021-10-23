@@ -42,7 +42,7 @@ Para executar o projeto é necessário ter instalado na sua máquina o [`docker`
 ## :running: Como executar o projeto
 
 ⚠️ **ATENÇÃO:** É necessário se atentar ao fato que este projeto é o front-end do  [Projeto HoCo](https://github.com/Guardians-DSC/HoCo). Assim, caso você necessite da execução completa, é necessário executar o back-end do projeto.
-O <b> passo-a-passo </b> a seguir, se limita a execução do front-end do projeto,abrangendo apenas as funcionalidades implementadas que não possuem a necessidade da execução do back-end.
+O **passo-a-passo** a seguir, se limita a execução do front-end do projeto, abrangendo apenas as funcionalidades implementadas que não possuem a necessidade da execução do back-end.
 
 
 **Siga os seguintes passos para a execução do projeto:**
