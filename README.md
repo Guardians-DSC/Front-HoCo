@@ -9,15 +9,15 @@
 
 <div align='center'>
   <p>
-  Olá! Bem-vinde ao HoCo. O HoCo é uma plataforma com objetivo de prover (inicialmente) aos alunos da graduação de Ciência da Computação na UFCG <b> uma plataforma onde ele/ela pode salvar e gerenciar as suas horas complementares do curso</b>.
+  Olá! Bem-vinde ao HoCo. O HoCo é uma plataforma que conta com o objetivo inicial de  prover aos alunos da graduação de Ciência da Computação na UFCG <b> uma maneira simples e facilitada de gerenciar suas horas complementares obrigatórias para a conclusão do curso.</b>.
   </p>
 </div>
 
 ## :dart: Objetivo
 
-A falta de praticamente qualquer conhecimento sobre horas e atividades complementares do curso é um conhecido de longa data dos alunos da graduação de Ciência da Computação na UFCG e foi pensando nisso que o _HoCo_ nasceu.
+O pouco conhecimento sobre como adquirir e gerenciar horas e atividades complementares durante a graduação é um fato conhecido de longa data pelos alunos da graduação em Ciência da Computação na UFCG. Pensando nisso, nasce o _HoCo_.
 
-**O projeto tem como objetivo sanar essa deficiência do curso provendo um lugar onde os alunos além de salvarem suas horas possam ter conhecimento do seu funcionamento e das normas atuais do curso.**
+**O projeto tem como objetivo sanar a deficiência de gerenciamento das horas complementares do curso, provendo uma ferramenta onde os graduandos gerenciem as horas complementares, tendo o conhecimento do funcionamento, normas atuais do curso, e assim melhorando a gestão do seu tempo de atividades extracurriculares ao longo da faculdade.**
 
 ---
 
@@ -34,48 +34,50 @@ A falta de praticamente qualquer conhecimento sobre horas e atividades complemen
 
 ## :gear: Pré-requisitos
 
-Para executar o projeto você precisa ter instalado na sua máquina o `docker` e `docker-compose`. Abaixo estão alguns links úteis para a instalação dessas dependências:
+Para executar o projeto é necessário ter instalado na sua máquina o [`docker`](https://docs.docker.com/get-docker/), o ambiente de implementação do projeto,  e o [`docker-compose`](https://docs.docker.com/compose/install/), a ferramenta de auxílio no gerenciamento do ambiente de docker. Para auxílio, abaixo estão listados alguns links úteis para a instalação dessas dependências:
 
-- [Link para instalação do docker](https://www.hostinger.com.br/tutoriais/install-docker-ubuntu)
-- [Link para instalação do docker compose](https://docs.docker.com/compose/install/)
+- [Tutorial de instalação do docker](https://www.hostinger.com.br/tutoriais/install-docker-ubuntu)
+- [Tutorial de instalação do docker compose](https://docs.docker.com/compose/install/)
 
 ## :running: Como executar o projeto
 
-⚠️ **ATENÇÃO:** Lembre-se que esse projeto é parte de um projeto maior, se você quer rodar todo o projeto entre no [link do projeto geral do HoCo](https://github.com/Guardians-DSC/HoCo) para executar o back e o front-end do projeto. O passo-a-passo a seguir serve apenas para executar o front-end do projeto, então algumas funcionalidades podem não funcionar da forma correta.
+⚠️ **ATENÇÃO:** É necessário se atentar ao fato que este projeto é o front-end do  [Projeto HoCo](https://github.com/Guardians-DSC/HoCo). Assim, caso você necessite da execução completa, é necessário executar o back-end do projeto.
+O **passo-a-passo** a seguir, se limita a execução do front-end do projeto, abrangendo apenas as funcionalidades implementadas que não possuem a necessidade da execução do back-end.
+
 
 **Siga os seguintes passos para a execução do projeto:**
 
-1. Fazer o _clone_ do projeto e dos seus submodulos de frontend e backend
+1. Faça o _clone_ do projeto e seus submódulos: front-end e back-end:
 
 ```bash
   git clone https://github.com/Guardians-DSC/Front-HoCo
 ```
 
-2. Entrar na pasta do projeto
+2. Entre na pasta do projeto:
 
 ```bash
   cd Front-HoCo
 ```
 
-3. Fazer o build do projeto
+3. Execute o build do projeto com o comando:
 
 ```bash
   docker build . --tag='front-hoco'
 ```
 
-4. Executar container
+4. Por fim, execute o comando de ativação do container:
 
 ```bash
   docker run -p 3000:3000 front-hoco
 ```
 
-Pronto! Simples assim e você já consegui executar localmente o projeto, caso você esteja executando o projeto e modificar alguma coisa no código o projeto será atualizado automaticamente.
+Pronto! Com esses comandos simples você já conseguirá executar localmente o projeto. No caso de modificação do código-fonte, o projeto irá atualizar automaticamente.
 
 ## :handshake: Como contribuir
 
-Caso você esteja interessada(o)(e) no projeto e queira contribuir para algum dos projetos do HoCo por favor dê uma olhada nas [**issues**](https://github.com/Guardians-DSC/Front-HoCo/issues) de cada projeto, se você achou uma issue que lhe interessa leia os documentos de **[Código de conduta](https://github.com/Guardians-DSC/Front-HoCo/blob/main/CODE_OF_CONDUCT.md)** e **[Contribuindo](https://github.com/Guardians-DSC/Front-HoCo/blob/main/CONTRIBUTING.md)** para saber mais detalhes.
+Caso esteja interessade(o/a) em contribuir com algum dos projetos do HoCo, verifique as [**issues**](https://github.com/Guardians-DSC/Front-HoCo/issues) de cada projeto. Caso encontre uma issue interessante e deseje contribuir, primeiramente leia os documentos do **[Código de conduta](https://github.com/Guardians-DSC/Front-HoCo/blob/main/CODE_OF_CONDUCT.md)** e **[Contribuindo](https://github.com/Guardians-DSC/Front-HoCo/blob/main/CONTRIBUTING.md)** para saber mais detalhes.
 
-⚠️ Ainda estamos trabalhando no projeto, caso você queira acompanhar o avanço do repositório dê um estrelinha ⭐ para você não perder as atualizações do rep.
+⚠️ O projeto ainda se encontra em desenvolvimento, caso você queira acompanhar o avanço do repositório dê um estrelinha ⭐ para não perder as atualizações do repo.
 
 ## :pushpin: Mantenedores
 
@@ -90,6 +92,6 @@ MIT © [Licença](https://github.com/Guardians-DSC/Front-HoCo/blob/main/LICENSE)
 
 <br/>
 <div align=center>
-  <p><i>No mais é isso! Obrigado por ler até aqui, espero que vocẽ tenha gostado do projeto!</i></p>
+  <p><i>No mais é isso! Obrigado por ler até aqui, esperamos que tenha gostado do projeto!</i></p>
   <img width=400 src='https://user-images.githubusercontent.com/42751604/125959482-99171781-d212-4bc2-af3c-1d0adcf813dd.gif'/>
 </div>
