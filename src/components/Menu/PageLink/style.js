@@ -8,8 +8,7 @@ export const Wrapper = styled.div`
   align-items: center;
   gap: 0.5rem;
   min-width: ${({ isRetracted }) => (isRetracted ? 'fit-content' : '12rem')};
-  width: fit-content;
-  height: 1.5rem;
+  width: 100%;
   font-family: 'sen';
   border-radius: 2px;
   transition: 0.3s;
@@ -17,7 +16,7 @@ export const Wrapper = styled.div`
 
 export const Icon = styled.div`
   filter: ${(props) => (props.isActive ? '' : 'brightness(500%)')};
-  fill: ${({ theme }) => theme['main-green']}};
+  fill: ${({ theme }) => theme['main-green']};
 `
 
 export const Text = styled.span`
