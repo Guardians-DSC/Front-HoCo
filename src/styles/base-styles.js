@@ -137,6 +137,10 @@ export const Modal = styled(ModalAntd)`
     border-radius: 10px;
   }
 
+  .ant-row {
+    margin-bottom: 1rem;
+  }
+
   .ant-modal-header {
     background-color: inherit;
     border-bottom: none;

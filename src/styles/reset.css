@@ -155,10 +155,14 @@ html {
   overflow-y: hidden;
 }
 
+/* reseting some antd css style */
+
 .ant-row {
   display: block;
+  margin-bottom: 0;
 }
 
-.ant-form-item-label > label::after {
+.ant-form-item-label > label::after,
+.ant-form-item-label > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before {
   content: none;
 }
