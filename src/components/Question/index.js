@@ -25,8 +25,7 @@ export const Questions = () => {
         <Section>
             {data.map((item, index) => {
                 return (
-                    <>
-
+                    <div key={index}>
                         <QuestionContent onClick={() => toggle(index)} key={index}>
                             <span>{clicked === index ? <RotateActive><Dropdown><DownOutlined /></Dropdown></RotateActive> : <Rotate><Dropdown><DownOutlined /></Dropdown></Rotate>}</span>
                             <QuestionTitle><ReactMarkdown remarkPlugins={[remarkGfm]}>{item.question}</ReactMarkdown></QuestionTitle>
@@ -38,7 +37,7 @@ export const Questions = () => {
                                 </ResponseContent>
                             </div>
                         ) : null}
-                    </>
+                    </div>
                 );
             })}
 
