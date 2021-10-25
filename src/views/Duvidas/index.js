@@ -17,5 +17,4 @@ export const Duvidas = () => {
     </Text>
     <Questions />
   </Content>
-  
 )}

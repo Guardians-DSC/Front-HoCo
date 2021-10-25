@@ -32,7 +32,7 @@ export const Questions = () => {
                             <QuestionTitle><ReactMarkdown remarkPlugins={[remarkGfm]}>{item.question}</ReactMarkdown></QuestionTitle>
                         </QuestionContent>
                         {clicked === index ? (
-                            <div className='overflow'>
+                            <div>
                                 <ResponseContent>
                                     <ResponseText id="response"><ReactMarkdown remarkPlugins={[remarkGfm]}>{item.answer}</ReactMarkdown></ResponseText>
                                 </ResponseContent>

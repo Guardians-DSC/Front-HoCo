@@ -1,6 +1,6 @@
 export const data = [
   {
-    question: 'Quais as atividades *extra-curriculares* que são consideradas atividades complementares?',
+    question: ' Quais as atividades [*extra-curriculares*](https://www.dicio.com.br/extracurricular/) que são consideradas atividades complementares?',
     answer: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker *including versions of Lorem Ipsum*'
   },
   {
@@ -16,12 +16,25 @@ export const data = [
   },
   {
     question: 'Quais as atividades relacionadas a cada categoria?',
-    answer: ' - Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+    answer: ' - Lorem Ipsum is simply dummy text of the printing and typesetting industry.![image](https://lh3.googleusercontent.com/proxy/gxO9XEeP-6O8IlwvC7z6O2Wnd3os_WDSVGuSjVhwpZH1EOF_EJ1dAituw_tFv5OWKoRn6DrZk0fTjVEhD3BcQUynU0jB00eLeixESUFbhIYmKy8zAyyUWbMd_71pkhtHVkeJ781wFhfmWQinFJtKvpRPqw)'
 
-  },
+},
+
   {
     question: 'Estágio é uma atividade complementar?',
     answer: ' 1. Lorem Ipsum \n 2. is simply dummy text of the printing and typesetting industry.'
+
+  },
+
+  {
+    question: 'Organizar **evento** é uma atividade complementar?',
+    answer: ' > Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+
+  },
+
+  {
+    question: 'Estágio é uma atividade complementar?',
+    answer: ' - [x] Lorem Ipsum \n - [ ] is simply dummy text of the printing and typesetting industry.'
 
   }
 ];
