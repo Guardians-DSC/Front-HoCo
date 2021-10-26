@@ -3,7 +3,6 @@ import styled from 'styled-components'
 export const Section = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 24px;
 
   .task-list-item {
     list-style-type: none;
@@ -55,7 +54,7 @@ export const QuestionContent = styled.div`
   gap: 0.8rem;
   vertical-align: middle;
   align-items: center;
-  padding-bottom: 22px;
+  padding-bottom: 28px;
 
   @media screen and (max-width: 550px) {
     gap: 0.5rem;
@@ -97,7 +96,7 @@ export const QuestionTitle = styled.div`
 
 export const ResponseContent = styled.div`
   padding-left: 14px;
-  padding-bottom: 22px;
+  padding-bottom: 28px;
 
   ol,
   ul {

@@ -69,5 +69,5 @@ Question.propTypes = {
   question: PropTypes.string,
   answer: PropTypes.string,
   item: PropTypes.string,
-  index: PropTypes.string,
+  index: PropTypes.number,
 }
