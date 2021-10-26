@@ -1,53 +1,73 @@
 import React, { useState } from 'react'
 import { DownOutlined } from '@ant-design/icons'
 import PropTypes from 'prop-types'
-import { Section, QuestionContent, Rotate, RotateActive, QuestionTitle, ResponseContent, ResponseText, Dropdown } from './style.js'
-import { data } from './Data.js'
+import {
+  Section,
+  QuestionContent,
+  Rotate,
+  RotateActive,
+  QuestionTitle,
+  ResponseContent,
+  ResponseText,
+  Dropdown,
+} from './style.js'
+
 import ReactMarkdown from 'react-markdown'
 
 import remarkGfm from 'remark-gfm'
 
-export const Questions = () => {
-
-    const [clicked, setClicked] = useState(false)
-
-    const toggle = index => {
-        if (clicked === index) {
-            console.log(index);
-            return setClicked(null);
-        }
-
-        setClicked(index);
+export const Question = ({ item, index }) => {
+  const [selected, setselected] = useState(false)
+  const toggle = (index) => {
+    if (selected === index) {
+      return setselected(null)
     }
+    setselected(index)
+  }
 
-    return (
+  return (
+    <Section>
+      <div key={index}>
+        <QuestionContent onClick={() => toggle(index)} key={index}>
+          <span>
+            {selected === index ? (
+              <RotateActive>
+                <Dropdown>
+                  <DownOutlined />
+                </Dropdown>
+              </RotateActive>
+            ) : (
+              <Rotate>
+                <Dropdown>
+                  <DownOutlined />
+                </Dropdown>
+              </Rotate>
+            )}
+          </span>
 
-        <Section>
-            {data.map((item, index) => {
-                return (
-                    <div key={index}>
-                        <QuestionContent onClick={() => toggle(index)} key={index}>
-                            <span>{clicked === index ? <RotateActive><Dropdown><DownOutlined /></Dropdown></RotateActive> : <Rotate><Dropdown><DownOutlined /></Dropdown></Rotate>}</span>
-                            <QuestionTitle><ReactMarkdown remarkPlugins={[remarkGfm]}>{item.question}</ReactMarkdown></QuestionTitle>
-                        </QuestionContent>
-                        {clicked === index ? (
-                            <div>
-                                <ResponseContent>
-                                    <ResponseText id="response"><ReactMarkdown remarkPlugins={[remarkGfm]}>{item.answer}</ReactMarkdown></ResponseText>
-                                </ResponseContent>
-                            </div>
-                        ) : null}
-                    </div>
-                );
-            })}
-
-        </Section>
-
-    )
+          <QuestionTitle>
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              {item.question}
+            </ReactMarkdown>
+          </QuestionTitle>
+        </QuestionContent>
+        {selected === index ? (
+          <ResponseContent>
+            <ResponseText id="response">
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                {item.answer}
+              </ReactMarkdown>
+            </ResponseText>
+          </ResponseContent>
+        ) : null}
+      </div>
+    </Section>
+  )
 }
 
-Questions.propTypes = {
-    question: PropTypes.string,
-    answer: PropTypes.string,
-
+Question.propTypes = {
+  question: PropTypes.string,
+  answer: PropTypes.string,
+  item: PropTypes.string,
+  index: PropTypes.string,
 }
