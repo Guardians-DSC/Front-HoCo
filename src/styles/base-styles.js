@@ -1,6 +1,5 @@
 import styled from 'styled-components'
-import { Form as FormAntd } from 'antd'
-import { Input as InputAntd } from 'antd'
+import { Form as FormAntd, Input as InputAntd, Modal as ModalAntd } from 'antd'
 import 'antd/lib/input/style/index.css'
 
 export const AppWrapper = styled.div`
@@ -9,11 +8,10 @@ export const AppWrapper = styled.div`
   min-height: 100vh;
   box-sizing: border-box;
   transition: width 0.3s;
-  
+
   @media screen and (max-width: 1025px) {
     display: block;
   }
-}
 `
 
 export const Page = styled.div`
@@ -125,4 +123,66 @@ export const Form = styled(FormAntd)`
   flex-direction: column;
   max-width: 30rem;
   gap: 1rem;
+
+  .ant-form-item-label label {
+    color: ${({ theme }) => theme['main-font']};
+  }
+`
+
+export const Modal = styled(ModalAntd)`
+  .ant-modal-content {
+    max-height: 95vh;
+    width: 400px;
+    background-color: ${({ theme }) => theme['main-background']};
+    color: ${({ theme }) => theme['main-font']};
+    border-radius: 10px;
+  }
+
+  .ant-row {
+    margin-bottom: 1rem;
+  }
+
+  .ant-modal-header {
+    background-color: inherit;
+    border-bottom: none;
+    border-radius: 10px 10px 0 0;
+    padding: 1.25rem 1.5rem 0;
+  }
+
+  .ant-modal-body {
+    max-height: 83vh;
+    overflow-y: scroll;
+    padding: 1.75rem 1.5rem;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .ant-modal-footer {
+    border-top: none;
+    text-align: center;
+    padding: 1rem 1rem 2.75rem;
+  }
+
+  .ant-modal-close-x {
+    color: ${({ theme }) => theme['main-font']};
+    font-size: 22px;
+  }
+
+  .ant-form-item-label {
+    padding: 0;
+
+    label {
+      color: ${({ theme }) => theme['main-font']};
+    }
+  }
+
+  @media (max-width: 600px) {
+    .ant-modal-content {
+      width: 100%;
+      max-width: 80vw;
+      margin: 0 auto;
+    }
+  }
 `
