@@ -128,10 +128,11 @@ export const Form = styled(FormAntd)`
     color: ${({ theme }) => theme['main-font']};
   }
 `
+
 export const Modal = styled(ModalAntd)`
   .ant-modal-content {
     max-height: 95vh;
-    width: 500px;
+    width: 400px;
     background-color: ${({ theme }) => theme['main-background']};
     color: ${({ theme }) => theme['main-font']};
     border-radius: 10px;
@@ -145,11 +146,13 @@ export const Modal = styled(ModalAntd)`
     background-color: inherit;
     border-bottom: none;
     border-radius: 10px 10px 0 0;
+    padding: 1.25rem 1.5rem 0;
   }
 
   .ant-modal-body {
     max-height: 83vh;
     overflow-y: scroll;
+    padding: 1.75rem 1.5rem;
 
     &::-webkit-scrollbar {
       display: none;
@@ -159,11 +162,12 @@ export const Modal = styled(ModalAntd)`
   .ant-modal-footer {
     border-top: none;
     text-align: center;
-    padding: 0 1rem 2.75rem;
+    padding: 1rem 1rem 2.75rem;
   }
 
   .ant-modal-close-x {
     color: ${({ theme }) => theme['main-font']};
+    font-size: 22px;
   }
 
   .ant-form-item-label {

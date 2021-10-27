@@ -166,3 +166,7 @@ html {
 .ant-form-item-label > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before {
   content: none;
 }
+
+.ant-form-item-has-error :not(.ant-input-disabled):not(.ant-input-borderless).ant-input {
+  background-color: inherit !important;
+}

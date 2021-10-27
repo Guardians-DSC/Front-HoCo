@@ -6,8 +6,8 @@ import LoginModal from './LoginModal'
 export const Login = () => {
   const [isModalVisible, setIsModalVisible] = useState(false)
 
+  // eslint-disable-next-line no-unused-vars
   const handleLogin = (data) => {
-    console.log(data)
     setIsModalVisible(false)
   }
 
