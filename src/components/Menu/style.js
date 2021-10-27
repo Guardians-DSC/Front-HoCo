@@ -74,6 +74,7 @@ export const MenuBody = styled.div`
   width: 100%;
   flex-direction: column;
   gap: 1rem;
+  align-items: center;
 `
 
 export const MenuFooter = styled(Link)``
