@@ -13,7 +13,6 @@ import {
   UploadFile,
   SameLineInfoWrapper,
   Form,
-  Background,
 } from './style'
 
 export const ActivityModal = ({ setIsActive }) => {
@@ -62,9 +61,8 @@ export const ActivityModal = ({ setIsActive }) => {
   console.log(categories)
 
   return (
-    <OutWrapper>
-      <Background onClick={() => setIsActive(false)} />
-      <Wrapper>
+    <OutWrapper onClick={() => setIsActive(false)}>
+      <Wrapper onClick={(e) => e.stopPropagation()}>
         <Header>
           <Title>
             <FileTextOutlined /> Cadastrar Atividade

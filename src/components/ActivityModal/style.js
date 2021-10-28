@@ -13,19 +13,12 @@ export const OutWrapper = styled.div`
   height: 100vh;
   z-index: 20;
   width: 100vw;
-`
-
-export const Background = styled.div`
-  position: fixed;
-  height: 100vh;
-  width: 100vw;
-  z-index: 20;
   background-color: #00000080;
 `
 
 export const Wrapper = styled.div`
   padding: 1.5rem 1.75rem;
-  width: 30rem;
+  width: 35rem;
   z-index: 22;
   background-color: ${({ theme }) => theme['main-background']};
 `
