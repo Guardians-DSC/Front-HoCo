@@ -27,7 +27,6 @@ h4,
 h5,
 h6,
 p,
-blockquote,
 pre,
 a,
 abbr,
@@ -35,10 +34,8 @@ acronym,
 address,
 big,
 cite,
-code,
 del,
 dfn,
-em,
 img,
 ins,
 kbd,
@@ -47,14 +44,12 @@ s,
 samp,
 small,
 strike,
-strong,
 sub,
 sup,
 tt,
+td,
+th,
 var,
-b,
-u,
-i,
 center,
 dl,
 dt,
@@ -66,14 +61,10 @@ fieldset,
 form,
 label,
 legend,
-table,
 caption,
 tbody,
 tfoot,
 thead,
-tr,
-th,
-td,
 article,
 aside,
 canvas,
@@ -83,7 +74,7 @@ figure,
 figcaption,
 footer,
 header,
-hgroup,
+hgroup,st
 menu,
 nav,
 output,
@@ -120,10 +111,7 @@ body {
   line-height: 1;
   width: 100%;
 }
-ol,
-ul {
-  list-style: none;
-}
+
 blockquote,
 q {
   quotes: none;
@@ -135,6 +123,7 @@ q:after {
   content: '';
   content: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
