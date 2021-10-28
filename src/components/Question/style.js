@@ -88,8 +88,7 @@ export const ResponseText = styled.p`
   font-size: 1.2rem;
   line-height: 1.75rem;
   width: fit-content;
-  padding-top: 1.3rem;
-  padding-left: 0.5rem;
+  padding: 1.3rem 0.5rem 0;
 
   ol,
   ul {
@@ -98,7 +97,6 @@ export const ResponseText = styled.p`
 
   @media screen and (max-width: 550px) {
     padding-left: 0;
-    overflow-x: scroll;
 
     ol {
       padding-left: 2.25rem;
