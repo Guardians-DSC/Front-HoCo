@@ -82,7 +82,7 @@ export const ResponseContent = styled.div`
   }
 `
 
-export const ResponseText = styled.div`
+export const ResponseText = styled.p`
   transition: 0.5s ease;
   color: var(--font-grey);
   font-size: 1.2rem;
