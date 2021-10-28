@@ -77,7 +77,10 @@ export const MenuBody = styled.div`
   align-items: center;
 `
 
-export const MenuFooter = styled(Link)``
+export const MenuFooter = styled.div`
+  color: #f5f5f5;
+  margin-bottom: 0.5rem;
+`
 
 export const Header = styled.div`
   display: none;
