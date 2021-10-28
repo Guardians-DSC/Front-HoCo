@@ -18,10 +18,10 @@ export const Duvidas = () => {
       extra-curriculares podem ser consideradas como atividade complementares?
       Esperamos que essa seção do site lhe ajude a tirar algumas dúvidas.`}
         </Text>
+        {data.map((item, index) => (
+          <Question item={item} key={index} />
+        ))}
       </Section>
-      {data.map((item, index) => (
-        <Question item={item} key={index} />
-      ))}
     </Content>
   )
 }

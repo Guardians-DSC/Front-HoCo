@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
 export const Section = styled.div`
-  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 `

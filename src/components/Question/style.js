@@ -18,18 +18,17 @@ export const Section = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 12px;
   }
 
   blockquote {
     border-left: 4px solid #8b949e;
-    margin: 0 12px;
-    padding-left: 16px;
-    line-height: 26px;
+    margin: 0 0.75rem;
+    padding-left: 1rem;
+    line-height: 1.7rem;
   }
 
   table {
-    border-radius: 3px;
+    border-radius: 0.2rem;
     display: block;
     width: fit-content;
 
@@ -38,9 +37,9 @@ export const Section = styled.div`
       border: 1px solid #555;
       text-align: left;
       vertical-align: middle;
-      padding: 8px 13px;
+      padding: 0.5rem 0.8rem;
       margin: 0;
-      line-height: 26px;
+      line-height: 1.65rem;
       overflow-x: auto;
     }
   }
@@ -54,53 +53,47 @@ export const QuestionContent = styled.div`
   gap: 0.8rem;
   vertical-align: middle;
   align-items: center;
-  padding-bottom: 28px;
 
   @media screen and (max-width: 550px) {
     gap: 0.5rem;
   }
 `
-export const Dropdown = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-
-  svg {
-    height: 16px;
-    vertical-align: middle;
-    flex-wrap: wrap;
-  }
-
-  @media screen and (max-width: 550px) {
-    padding: 0;
-  }
-`
 
 export const QuestionTitle = styled.div`
-  font-size: 22px;
+  font-size: 1.4rem;
   font-weight: 500;
   color: var(--font-grey);
   text-align: left;
-  line-height: 28px;
+  line-height: 2rem;
 
   a {
     color: var(--font-grey);
     text-decoration: underline;
   }
   @media screen and (max-width: 550px) {
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
   }
 `
 
 export const ResponseContent = styled.div`
-  padding-left: 14px;
-  padding-bottom: 28px;
+  @media screen and (max-width: 550px) {
+    overflow-x: scroll;
+  }
+`
+
+export const ResponseText = styled.div`
+  transition: 0.5s ease;
+  color: var(--font-grey);
+  font-size: 1.2rem;
+  line-height: 1.75rem;
+  width: fit-content;
+  padding-top: 1.3rem;
+  padding-left: 0.5rem;
 
   ol,
   ul {
-    padding-left: 48px;
+    padding-left: 3rem;
   }
 
   @media screen and (max-width: 550px) {
@@ -108,48 +101,35 @@ export const ResponseContent = styled.div`
     overflow-x: scroll;
 
     ol {
-      padding-left: 36px;
-      line-height: 26px;
+      padding-left: 2.25rem;
+      line-height: 1.7rem;
     }
 
     ul {
-      padding-left: 40px;
-      line-height: 26px;
+      padding-left: 2.5rem;
+      line-height: 1.7rem;
+      font-size: 1.2rem;
+      line-height: 1.2rem;
+      text-align: justify;
+      display: flex;
+      flex-direction: column;
+      width: fit-content;
     }
-  }
-`
-
-export const ResponseText = styled.div`
-  transition: 0.5s ease;
-  color: var(--font-grey);
-  font-size: 18px;
-  line-height: 28px;
-  width: fit-content;
-
-  @media screen and (max-width: 550px) {
-    font-size: 1.2rem;
-    line-height: 18px;
-
-    text-align: justify;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: fit-content;
-
     td,
     th {
-      padding: 12px 6px;
+      padding: 0.75rem 0.4rem;
     }
   }
 `
 
 export const Rotate = styled.div`
   transform: rotate(270deg);
-  transition: ease-in-out 0.4s;
+  transition: ease-in-out 0.25s;
   vertical-align: middle;
-`
 
-export const RotateActive = styled.div`
-  transform: rotate(360deg);
-  vertical-align: middle;
+  &.active {
+    transform: rotate(360deg);
+    transition: ease-in-out 0.3s;
+    vertical-align: middle;
+  }
 `

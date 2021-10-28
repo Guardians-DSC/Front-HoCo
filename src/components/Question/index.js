@@ -5,11 +5,9 @@ import {
   Section,
   QuestionContent,
   Rotate,
-  RotateActive,
   QuestionTitle,
-  ResponseContent,
   ResponseText,
-  Dropdown,
+  ResponseContent,
 } from './style.js'
 
 import ReactMarkdown from 'react-markdown'
@@ -27,47 +25,26 @@ export const Question = ({ item, index }) => {
 
   return (
     <Section>
-      <div key={index}>
-        <QuestionContent onClick={() => toggle(index)} key={index}>
-          <span>
-            {selected === index ? (
-              <RotateActive>
-                <Dropdown>
-                  <DownOutlined />
-                </Dropdown>
-              </RotateActive>
-            ) : (
-              <Rotate>
-                <Dropdown>
-                  <DownOutlined />
-                </Dropdown>
-              </Rotate>
-            )}
-          </span>
-
-          <QuestionTitle>
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>
-              {item.question}
-            </ReactMarkdown>
-          </QuestionTitle>
-        </QuestionContent>
-        {selected === index ? (
-          <ResponseContent>
-            <ResponseText id="response">
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                {item.answer}
-              </ReactMarkdown>
-            </ResponseText>
-          </ResponseContent>
-        ) : null}
-      </div>
+      <QuestionContent onClick={() => toggle(index)} key={index}>
+        <Rotate className={selected === index ? 'active' : ''}>
+          <DownOutlined />
+        </Rotate>
+        <QuestionTitle>
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>{item.question}</ReactMarkdown>
+        </QuestionTitle>
+      </QuestionContent>
+      {selected === index && (
+        <ResponseContent>
+          <ResponseText>
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>{item.answer}</ReactMarkdown>
+          </ResponseText>
+        </ResponseContent>
+      )}
     </Section>
   )
 }
 
 Question.propTypes = {
-  question: PropTypes.string,
-  answer: PropTypes.string,
-  item: PropTypes.string,
+  item: PropTypes.object,
   index: PropTypes.number,
 }
