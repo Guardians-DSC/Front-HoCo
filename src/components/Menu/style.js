@@ -71,11 +71,16 @@ export const LinkContainer = styled(Link)`
 
 export const MenuBody = styled.div`
   display: flex;
+  width: 100%;
   flex-direction: column;
   gap: 1rem;
+  align-items: center;
 `
 
-export const MenuFooter = styled(Link)``
+export const MenuFooter = styled.div`
+  color: #f5f5f5;
+  margin-bottom: 0.5rem;
+`
 
 export const Header = styled.div`
   display: none;

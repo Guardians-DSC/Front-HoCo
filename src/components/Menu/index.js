@@ -21,8 +21,11 @@ import { Arrow } from '../../assets/icons/Arrow'
 import { BurguerMenu } from '../../assets/icons/BurguerMenu'
 import { CloseOutlined } from '@ant-design/icons'
 import { useTheme } from 'styled-components'
+import useUserContext from '../../contexts/user.context'
+import { Login } from '../Login'
 
 export const Menu = () => {
+  const { userId, name } = useUserContext()
   const [isRetracted, setIsRetracted] = useState(
     localStorage.getItem('retracted') === 'true'
   )
@@ -76,8 +79,16 @@ export const Menu = () => {
               }
             })}
           </MenuBody>
-          <MenuFooter to="/perfil" onClick={() => setIsActive(false)}>
-            <Profile isRetracted={isRetracted} name="Rodrigo Eloy" />
+          <MenuFooter>
+            {userId ? (
+              <Link to="/perfil" onClick={() => setIsActive(false)}>
+                <Profile isRetracted={isRetracted} name={name} />
+              </Link>
+            ) : (
+              <>
+                <Login /> | Cadastrar-se
+              </>
+            )}
           </MenuFooter>
         </Wrapper>
       </OutWrapper>

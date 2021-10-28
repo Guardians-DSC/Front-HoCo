@@ -1,3 +1,4 @@
+@import '~antd/dist/antd.css';
 @import url('https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,100;1,300;1,400;1,500;1,900&family=Sen:wght@400;700;800&display=swap');
 
@@ -26,7 +27,6 @@ h4,
 h5,
 h6,
 p,
-blockquote,
 pre,
 a,
 abbr,
@@ -34,10 +34,8 @@ acronym,
 address,
 big,
 cite,
-code,
 del,
 dfn,
-em,
 img,
 ins,
 kbd,
@@ -46,14 +44,12 @@ s,
 samp,
 small,
 strike,
-strong,
 sub,
 sup,
 tt,
+td,
+th,
 var,
-b,
-u,
-i,
 center,
 dl,
 dt,
@@ -65,14 +61,10 @@ fieldset,
 form,
 label,
 legend,
-table,
 caption,
 tbody,
 tfoot,
 thead,
-tr,
-th,
-td,
 article,
 aside,
 canvas,
@@ -82,7 +74,7 @@ figure,
 figcaption,
 footer,
 header,
-hgroup,
+hgroup,st
 menu,
 nav,
 output,
@@ -99,6 +91,7 @@ video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  color: inherit;
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -118,10 +111,7 @@ body {
   line-height: 1;
   width: 100%;
 }
-ol,
-ul {
-  list-style: none;
-}
+
 blockquote,
 q {
   quotes: none;
@@ -133,6 +123,7 @@ q:after {
   content: '';
   content: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -151,4 +142,20 @@ html {
   box-sizing: border-box;
   overflow-x: hidden;
   overflow-y: hidden;
+}
+
+/* reseting some antd css style */
+
+.ant-row {
+  display: block;
+  margin-bottom: 0;
+}
+
+.ant-form-item-label > label::after,
+.ant-form-item-label > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before {
+  content: none;
+}
+
+.ant-form-item-has-error :not(.ant-input-disabled):not(.ant-input-borderless).ant-input {
+  background-color: inherit !important;
 }
