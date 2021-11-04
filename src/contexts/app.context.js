@@ -28,7 +28,9 @@ export function PagesProvider({ children }) {
     setTheme(getTheme())
   }
 
-  const [currentPathname, setCurrentPathname] = useState(window.location.pathname)
+  const [currentPathname, setCurrentPathname] = useState(
+    window.location.pathname === '/' ? '/sobre' : window.location.pathname
+  )
 
   useEffect(() => {
     history.listen((location) => {
