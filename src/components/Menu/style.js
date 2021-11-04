@@ -10,14 +10,16 @@ export const OutWrapper = styled.div`
   z-index: 10;
 
   @media screen and (max-width: 1025px) {
-    transform: ${({ isActive }) => (isActive ? '' : 'translate(-50vh)')};
+    transform: ${({ isActive }) => (isActive ? '' : 'translate(-100vw)')};
     position: absolute;
   }
 `
 export const Wrapper = styled.div`
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 2rem;
   position: fixed;
   background-color: ${(props) => props.theme['main-green']};
   height: inherit;
@@ -26,7 +28,11 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   box-sizing: border-box;
   transition: width 0.5s, background-color 0.3s;
-  overflow: hidden;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   @media screen and (max-width: 1025px) {
     position: block;
