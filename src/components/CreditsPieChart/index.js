@@ -103,6 +103,6 @@ CreditsPieChart.defaultProps = {
 
 CreditsPieChart.propTypes = {
   data: PropTypes.arrayOf(
-    PropTypes.shape([{ name: PropTypes.string, value: PropTypes.number }])
+    PropTypes.shape({ name: PropTypes.string, value: PropTypes.number })
   ),
 }

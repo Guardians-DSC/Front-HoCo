@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom'
 export const OutWrapper = styled.div`
   height: 100vh;
   position: relative;
-  margin-right: ${({ isRetracted }) => (isRetracted ? '5rem' : '18rem')};
+  margin-right: ${({ isretracted }) => (isretracted ? '5rem' : '18rem')};
   transition: 0.3s;
   z-index: 10;
 
   @media screen and (max-width: 1025px) {
-    transform: ${({ isActive }) => (isActive ? '' : 'translate(-100vw)')};
+    transform: ${({ isactive }) => (isactive ? '' : 'translate(-100vw)')};
     position: absolute;
   }
 `
@@ -23,8 +23,8 @@ export const Wrapper = styled.div`
   position: fixed;
   background-color: ${(props) => props.theme['main-green']};
   height: inherit;
-  width: ${({ isRetracted }) => (isRetracted ? '5rem' : '18rem')};
-  padding: ${({ isRetracted }) => (isRetracted ? '2rem 0rem' : '1.5rem 2rem')};
+  width: ${({ isretracted }) => (isretracted ? '5rem' : '18rem')};
+  padding: ${({ isretracted }) => (isretracted ? '2rem 0rem' : '1.5rem 2rem')};
   justify-content: space-between;
   box-sizing: border-box;
   transition: width 0.5s, background-color 0.3s;
@@ -51,8 +51,8 @@ export const MenuHeader = styled.div`
 
 export const ArrowContainer = styled.div`
   cursor: pointer;
-  align-self: ${({ isRetracted }) => (isRetracted ? '' : 'flex-end')};
-  transform: ${({ isRetracted }) => (isRetracted ? 'rotate(180deg)' : '')};
+  align-self: ${({ isretracted }) => (isretracted ? '' : 'flex-end')};
+  transform: ${({ isretracted }) => (isretracted ? 'rotate(180deg)' : '')};
   transition: transform 0.5s ease;
 
   @media screen and (max-width: 1025px) {
@@ -72,7 +72,7 @@ export const CloseContainer = styled.div`
 `
 
 export const LinkContainer = styled(Link)`
-  display: ${({ isRetracted }) => (isRetracted ? 'none' : '')};
+  display: ${({ isretracted }) => (isretracted ? 'none' : '')};
 `
 
 export const MenuBody = styled.div`

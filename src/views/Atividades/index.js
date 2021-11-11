@@ -7,43 +7,43 @@ import { TableWrapper, Wrapper } from './styles'
 export const Atividades = () => {
   const data = [
     {
-      key: 1,
+      key: '1',
       title: 'Projeto ePol',
       credit: 12,
       category: 'projeto',
     },
     {
-      key: 2,
+      key: '2',
       title: 'CodeSQ',
       credit: 12,
       category: 'projeto',
     },
     {
-      key: 3,
+      key: '3',
       title: 'Andromedev',
       hours: 135,
       category: 'evento',
     },
     {
-      key: 4,
+      key: '4',
       title: 'Hacktoberfest',
       hours: 20,
       category: 'evento',
     },
     {
-      key: 5,
+      key: '5',
       title: 'Projeto ePol',
       credit: 12,
       category: 'projeto',
     },
     {
-      key: 6,
+      key: '6',
       title: 'Andromedev',
       hours: 135,
       category: 'evento',
     },
     {
-      key: 7,
+      key: '7',
       title: 'semana acadêmica',
       hours: 10,
       category: 'evento',

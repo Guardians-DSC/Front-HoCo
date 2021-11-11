@@ -84,14 +84,14 @@ export const ActivitiesBarChart = ({ data }) => {
 }
 
 ActivitiesBarChart.propTypes = {
-  data: PropTypes.shape([
-    {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
       name: PropTypes.string,
-      'Creditos totais': PropTypes.string,
-      'Max creditos': PropTypes.string,
+      'Creditos totais': PropTypes.number,
+      'Max creditos': PropTypes.number,
       top: PropTypes.number,
-    },
-  ]),
+    })
+  ),
 }
 
 ActivitiesBarChart.defaultProps = {

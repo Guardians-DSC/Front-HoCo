@@ -114,12 +114,12 @@ export const ActivitiesTable = ({ data }) => {
 }
 
 ActivitiesTable.propTypes = {
-  data: PropTypes.shape([
-    {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
       key: PropTypes.string,
       title: PropTypes.string,
       credit: PropTypes.number,
       category: PropTypes.string,
-    },
-  ]).isRequired,
+    })
+  ).isRequired,
 }

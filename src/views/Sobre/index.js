@@ -12,8 +12,8 @@ export const Sobre = () => {
   return (
     <Content>
       <Title>
-        <ShortLogo width={'2rem'} color={[theme['main-font']]} />
-        <h1>{`Sobre o HoCo`}</h1>
+        <ShortLogo width={32} color={theme['main-font']} />
+        <span>{`Sobre o HoCo`}</span>
       </Title>
       <Subtitle>{`O que é o HoCo?`}</Subtitle>
       <Text>

@@ -5,11 +5,11 @@ import { UserOutlined } from '@ant-design/icons'
 import eu from '../../assets/images/eu.jpeg'
 import useUserContext from '../../contexts/user.context'
 
-export const Profile = ({ isRetracted, width, displayName }) => {
+export const Profile = ({ isretracted, width, displayName }) => {
   const { avatar, name } = useUserContext()
 
   return (
-    <Wrapper isRetracted={isRetracted}>
+    <Wrapper isretracted={isretracted ? 1 : 0}>
       {avatar ? (
         <Image src={avatar} width={width} />
       ) : (
@@ -25,7 +25,7 @@ export const Profile = ({ isRetracted, width, displayName }) => {
 }
 
 Profile.propTypes = {
-  isRetracted: PropTypes.bool,
+  isretracted: PropTypes.bool,
   width: PropTypes.number,
   displayName: PropTypes.bool,
 }

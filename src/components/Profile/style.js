@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   gap: 1rem;
 
   span {
-    display: ${({ isRetracted }) => (isRetracted ? 'none' : '')};
+    display: ${({ isretracted }) => (isretracted ? 'none' : '')};
   }
 `
 
