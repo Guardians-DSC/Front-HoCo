@@ -30,5 +30,5 @@ export function OrganizationCard({ image, name, url }) {
 OrganizationCard.propTypes = {
   name: PropTypes.string,
   url: PropTypes.string,
-  image: PropTypes.element,
+  image: PropTypes.string,
 }

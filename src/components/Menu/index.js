@@ -26,31 +26,35 @@ import { Login } from '../Login'
 
 export const Menu = () => {
   const { userId, name } = useUserContext()
-  const [isRetracted, setIsRetracted] = useState(
-    localStorage.getItem('retracted') === 'true'
+  const [isretracted, setisretracted] = useState(
+    localStorage.getItem('@hoco/retracted') === 'true'
   )
-  const [isActive, setIsActive] = useState(false)
+
+  const [isactive, setisactive] = useState(false)
   const theme = useTheme()
 
   useEffect(() => {
-    localStorage.setItem('retracted', isRetracted)
-  }, [isRetracted])
+    localStorage.setItem('@hoco/retracted', isretracted)
+  }, [isretracted])
 
   const handleRetract = () => {
-    setIsRetracted(!isRetracted)
+    setisretracted(!isretracted)
   }
 
   const handleActive = () => {
-    setIsRetracted(false)
-    setIsActive(!isActive)
+    setisretracted(false)
+    setisactive(!isactive)
   }
 
   return (
     <>
-      <OutWrapper isRetracted={isRetracted} isActive={isActive}>
-        <Wrapper isRetracted={isRetracted}>
-          <MenuHeader isRetracted={isRetracted}>
-            <ArrowContainer onClick={handleRetract} isRetracted={isRetracted}>
+      <OutWrapper isretracted={isretracted ? 1 : 0} isactive={isactive ? 1 : 0}>
+        <Wrapper isretracted={isretracted ? 1 : 0}>
+          <MenuHeader isretracted={isretracted ? 1 : 0}>
+            <ArrowContainer
+              onClick={handleRetract}
+              isretracted={isretracted ? 1 : 0}
+            >
               <Arrow />
             </ArrowContainer>
             <CloseContainer onClick={handleActive}>
@@ -58,9 +62,9 @@ export const Menu = () => {
             </CloseContainer>
             <LinkContainer
               to="/sobre"
-              onClick={() => setIsActive(false)}
-              isRetracted={isRetracted}
-              isActive={isActive}
+              onClick={() => setisactive(false)}
+              isretracted={isretracted ? 1 : 0}
+              isactive={isactive ? 1 : 0}
             >
               <Logo width={200} />
             </LinkContainer>
@@ -71,9 +75,9 @@ export const Menu = () => {
                 return (
                   <PageLink
                     key={index}
-                    setIsActive={setIsActive}
+                    setisactive={setisactive}
                     page={page}
-                    isRetracted={isRetracted}
+                    isretracted={isretracted}
                   />
                 )
               }
@@ -81,8 +85,8 @@ export const Menu = () => {
           </MenuBody>
           <MenuFooter>
             {userId ? (
-              <Link to="/perfil" onClick={() => setIsActive(false)}>
-                <Profile isRetracted={isRetracted} name={name} />
+              <Link to="/perfil" onClick={() => setisactive(false)}>
+                <Profile isretracted={isretracted} name={name} />
               </Link>
             ) : (
               <>
@@ -99,7 +103,7 @@ export const Menu = () => {
         <Link to="/sobre">
           <Logo
             width={100}
-            onClick={() => setIsActive(false)}
+            onClick={() => setisactive(false)}
             color={theme['header-icons']}
           />
         </Link>

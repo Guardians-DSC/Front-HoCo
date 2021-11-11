@@ -11,7 +11,7 @@ export const Orgs = () => {
   return (
     <Content>
       <Title>
-        <OrganizationsIcon width={'2rem'} color={theme['main-font']} />
+        <OrganizationsIcon width={32} color={theme['main-font']} />
         {`Organizações`}
       </Title>
       <Text>
