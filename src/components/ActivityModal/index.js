@@ -1,19 +1,14 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { CloseOutlined, FileTextOutlined, InboxOutlined } from '@ant-design/icons'
+import { Col, Row } from 'antd'
 import React, { useState } from 'react'
 import { useTheme } from 'styled-components'
 import { Text, Title, Item, Input, Button } from '../../styles/base-styles'
 import categories from '../../util/constants/categories'
 import { Select } from '../Select'
-import {
-  OutWrapper,
-  Wrapper,
-  Header,
-  UploadFile,
-  SameLineInfoWrapper,
-  Form,
-} from './style'
+import { UploadFile } from '../UploadFile'
+import { OutWrapper, Wrapper, Header, Form } from './style'
 
 export const ActivityModal = ({ setIsActive }) => {
   const theme = useTheme()
@@ -25,8 +20,6 @@ export const ActivityModal = ({ setIsActive }) => {
     return categories[category].text
   })
 
-  console.log(filteredCategories)
-
   const onUpload = ({ fileList, newFileList }) => {
     console.log(newFileList)
     setFileList(newFileList)
@@ -37,28 +30,7 @@ export const ActivityModal = ({ setIsActive }) => {
     setIsActive(false)
   }
 
-  const uploadProps = {
-    name: 'file',
-    multiple: true,
-    action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
-    onChange(info) {
-      const { status } = info.file
-      if (status !== 'uploading') {
-        console.log(info.file, info.fileList)
-      }
-      if (status === 'done') {
-        console.log(info.file, info.fileList, 'xuxu')
-      } else if (status === 'error') {
-        console.log(`${info.file.name} file upload failed.`)
-      }
-      console.log(info.file)
-    },
-    onDrop(e) {
-      console.log('Dropped files', e.dataTransfer.files)
-    },
-  }
-
-  console.log(categories)
+  const style = { background: '#0092ff', padding: '8px 0' }
 
   return (
     <OutWrapper onClick={() => setIsActive(false)}>
@@ -76,36 +48,48 @@ export const ActivityModal = ({ setIsActive }) => {
           Olá usuário, caso você queira saber o que cada categoria das atividades
           complementares significa, por favor acesse a página de dúvidas do HoCo
         </Text>
+
         <Form>
-          <UploadFile {...uploadProps}>
-            <InboxOutlined style={{ fontSize: '48px', color: theme['main-font'] }} />
-            <p>Click para fazer upload do certificado</p>
-          </UploadFile>
-          <Item label="Título da atividade complementar">
-            <Input
-              placeholder="Ex.: Monitoria em Laboratório de Programação II"
-              onChange={(e) => setTitle(e.target.value)}
-            />
+          <Item>
+            <UploadFile />
           </Item>
-          <SameLineInfoWrapper>
+          <Row>
+            <Col span={24}>
+              <Item label="Título da atividade complementar">
+                <Input
+                  placeholder="Ex.: Monitoria em Laboratório de Programação II"
+                  onChange={(e) => setTitle(e.target.value)}
+                />
+              </Item>
+            </Col>
+          </Row>
+          <Row gutter={[16, 16]}>
+            <Col className="gutter-row" span={12}>
+              <Item label="Horas">
+                <Input
+                  type="number"
+                  onChange={(e) => setHours(e.target.value)}
+                  placeholder="Ex.: 20"
+                />
+              </Item>
+            </Col>
+            <Col className="gutter-row" span={12}>
+              <Item label="Créditos">
+                <Input
+                  type="number"
+                  onChange={(e) => setCredits(e.target.value)}
+                  placeholder="Ex.: 8"
+                />
+              </Item>
+            </Col>
+          </Row>
+
+          <Col span={24}>
             <Item label="Categoria">
               <Select options={filteredCategories} />
             </Item>
-            <Item label="Horas">
-              <Input
-                type="number"
-                onChange={(e) => setHours(e.target.value)}
-                placeholder="Ex.: 20"
-              />
-            </Item>
-            <Item label="Créditos">
-              <Input
-                type="number"
-                onChange={(e) => setCredits(e.target.value)}
-                placeholder="Ex.: 8"
-              />
-            </Item>
-          </SameLineInfoWrapper>
+          </Col>
+
           <Button onClick={handleSubmit}>Finalizar cadastro</Button>
         </Form>
       </Wrapper>

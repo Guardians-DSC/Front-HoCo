@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { Form as FormAntd, Input as InputAntd, Modal as ModalAntd } from 'antd'
-import 'antd/lib/input/style/index.css'
+import 'antd/dist/antd.css'
 
 export const AppWrapper = styled.div`
   background-color: ${({ theme }) => theme['main-background']};
@@ -88,7 +88,10 @@ export const Subtitle = styled.h2`
   }
 `
 
-export const Item = styled(FormAntd.Item)``
+export const Item = styled(FormAntd.Item)`
+  display: block;
+  margin: 0;
+`
 
 export const Input = styled(InputAntd)`
   width: 100%;

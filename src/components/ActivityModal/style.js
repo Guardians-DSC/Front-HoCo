@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { Upload } from 'antd'
-import { Item, Form as FormDefault, Button } from '../../styles/base-styles'
+import { Form as FormDefault, Button } from '../../styles/base-styles'
+
 const { Dragger } = Upload
 
 export const OutWrapper = styled.div`
@@ -18,7 +19,7 @@ export const OutWrapper = styled.div`
 
 export const Wrapper = styled.div`
   padding: 1.5rem 1.75rem;
-  width: 35rem;
+  width: 32rem;
   z-index: 22;
   background-color: ${({ theme }) => theme['main-background']};
 `
@@ -68,29 +69,19 @@ export const UploadFile = styled(Dragger)`
 `
 
 export const Form = styled(FormDefault)`
-  gap: 1.5rem;
+  display: flex;
+  justify-content: center;
+
+  &.dgeeIi {
+    gap: 0rem;
+  }
 
   ${Button} {
-    margin: 0.75rem auto 0;
+    margin: 2rem auto 0;
   }
 `
 
 export const SameLineInfoWrapper = styled.div`
   display: flex;
   gap: 1rem;
-
-  ${Item}:nth-of-type(1) {
-    width: 50%;
-    flex-grow: 4;
-  }
-
-  ${Item}:nth-of-type(2) {
-    width: 25%;
-    flex-grow: 1;
-  }
-
-  ${Item}:nth-of-type(3) {
-    width: 25%;
-    flex-grow: 1;
-  }
 `

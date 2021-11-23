@@ -21,6 +21,7 @@ module.exports = {
   plugins: ['react', 'prettier'],
   rules: {
     'prettier/prettier': 'warn',
+    'no-unused-vars': 'warn',
     quotes: [0, 'double'],
     semi: [1, 'never'],
     'no-console': 'off',
