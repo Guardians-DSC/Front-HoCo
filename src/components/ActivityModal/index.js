@@ -22,7 +22,6 @@ export const ActivityModal = ({ setIsActive }) => {
   })
 
   const handleFileUpload = (files) => {
-    console.log(files)
     const file = files[0]
 
     const fileObject = {
@@ -37,8 +36,6 @@ export const ActivityModal = ({ setIsActive }) => {
   const handleSubmit = () => {
     setIsActive(false)
   }
-
-  useEffect(() => console.log(uploadedFile), [uploadedFile])
 
   return (
     <OutWrapper onClick={() => setIsActive(false)}>

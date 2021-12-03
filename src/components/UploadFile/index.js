@@ -65,7 +65,6 @@ export const UploadFile = ({ handleUpload, uploadedFile }) => {
         </UploadMessage>
       )
     }
-    console.log('uploadedFile:', uploadedFile)
 
     return <UploadMessage>Solte os arquivos aqui</UploadMessage>
   }
