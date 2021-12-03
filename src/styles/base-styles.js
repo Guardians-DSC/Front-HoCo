@@ -103,13 +103,13 @@ export const Input = styled(InputAntd)`
   border-radius: 3px;
   height: 2.5rem;
   margin-top: 0.5rem;
-  background-color: ${({ theme }) => theme['second-background']};
+  background-color: ${({ theme }) => theme['main-background']};
   color: ${({ theme }) => theme['main-font']};
   border-color: ${({ theme }) => theme['main-border']};
 
   &:focus,
   &:hover {
-    border-color: ${({ theme }) => theme['second-green']};
+    border-color: #18ff3933;
     box-shadow: 0 0 0 2px rgb(24 255 57 / 20%);
   }
 
