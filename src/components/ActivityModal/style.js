@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { Upload } from 'antd'
-import { Form as FormDefault, Button } from '../../styles/base-styles'
+import { Form as FormDefault, Button, Text } from '../../styles/base-styles'
 
 const { Dragger } = Upload
 
@@ -18,10 +18,16 @@ export const OutWrapper = styled.div`
 `
 
 export const Wrapper = styled.div`
-  padding: 1.5rem 1.75rem;
-  width: 32rem;
+  padding: 1.75rem 2rem;
+  width: 34rem;
   z-index: 22;
   background-color: ${({ theme }) => theme['main-background']};
+  border-radius: 10px;
+
+  ${Text} {
+    text-align: justify;
+    word-spacing: -2px;
+  }
 `
 export const Header = styled.div`
   display: flex;

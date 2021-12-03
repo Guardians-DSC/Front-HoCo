@@ -1,9 +1,8 @@
 /* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 import { CloseOutlined, FileTextOutlined, InboxOutlined } from '@ant-design/icons'
 import { Col, Row } from 'antd'
-import React, { useState } from 'react'
-import { useEffect } from 'react'
 import { useTheme } from 'styled-components'
 import { Text, Title, Item, Input, Button } from '../../styles/base-styles'
 import categories from '../../util/constants/categories'
@@ -102,4 +101,8 @@ export const ActivityModal = ({ setIsActive }) => {
       </Wrapper>
     </OutWrapper>
   )
+}
+
+ActivityModal.propTypes = {
+  setIsActive: PropTypes.bool.isRequired,
 }

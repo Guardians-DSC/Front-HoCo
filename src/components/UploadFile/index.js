@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React from 'react'
+import PropTypes from 'prop-types'
 import {
   DropContainer,
   UploadMessage,
@@ -77,4 +77,19 @@ export const UploadFile = ({ handleUpload, uploadedFile }) => {
       )}
     </Dropzone>
   )
+}
+
+UploadFile.propTypes = {
+  handleUpload: PropTypes.func.isRequired,
+  uploadedFile: PropTypes.objectOf(
+    PropTypes.shape({
+      preview: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+    })
+  ),
+}
+
+UploadedFileMessage.propTypes = {
+  fileName: PropTypes.string.isRequired,
+  previewURL: PropTypes.string.isRequired,
 }
