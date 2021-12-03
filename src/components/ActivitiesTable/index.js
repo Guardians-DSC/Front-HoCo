@@ -4,8 +4,16 @@ import { Space, Popconfirm } from 'antd'
 import { EditOutlined, DeleteOutlined, DownloadOutlined } from '@ant-design/icons'
 
 import { Table, Tag } from './style'
+import categories from '../../util/constants/categories'
 
 export const ActivitiesTable = ({ data }) => {
+  const formatFilterCategories = (categoryList) => {
+    return categoryList.map((category) => ({
+      text: category.text,
+      value: category.text.toLowerCase(),
+    }))
+  }
+
   const columns = [
     {
       title: 'Título',
@@ -21,7 +29,8 @@ export const ActivitiesTable = ({ data }) => {
       key: 'hours',
       width: 'fit-content',
       align: 'center',
-      render: (hora) => (hora ? hora : '- - -'),
+      render: (hora) => (hora > 0 ? hora : '- - -'),
+      sorter: (a, b) => a.hours - b.hours,
     },
     {
       title: 'Créditos',
@@ -29,7 +38,8 @@ export const ActivitiesTable = ({ data }) => {
       key: 'credit',
       width: 'fit-content',
       align: 'center',
-      render: (credito) => (credito ? credito : '- - -'),
+      render: (credito) => (credito > 0 ? credito : '- - -'),
+      sorter: (a, b) => a.credit - b.credit,
     },
     {
       title: 'Categoria',
@@ -43,6 +53,8 @@ export const ActivitiesTable = ({ data }) => {
           </Tag>
         )
       },
+      filters: formatFilterCategories(Object.values(categories)),
+      onFilter: (value, record) => record.category.indexOf(value) === 0,
     },
     {
       title: 'Baixar certificado',
@@ -106,7 +118,7 @@ export const ActivitiesTable = ({ data }) => {
   return (
     <Table
       columns={columns}
-      pagination={{ pageSize: 5 }}
+      pagination={{ pageSize: 7 }}
       scroll={{ x: 600 }}
       dataSource={data}
     ></Table>

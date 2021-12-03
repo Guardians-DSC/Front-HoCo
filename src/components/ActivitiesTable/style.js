@@ -10,7 +10,6 @@ import 'antd/lib/button/style/index.css'
 import { Tag as TagAntd } from 'antd'
 
 export const Table = styled(TableAntd)`
-  width: 100%;
   tr > th,
   tr > td {
     border-bottom: 0.5px solid ${({ theme }) => theme['second-border']};
@@ -26,6 +25,13 @@ export const Table = styled(TableAntd)`
 
   .ant-table-tbody > tr.ant-table-row:hover > td {
     background: ${({ theme }) => theme['second-background']};
+  }
+  .ant-dropdown-trigger {
+    color: ${({ theme }) => theme['second-font']};
+  }
+  .ant-table-filter-trigger,
+  .ant-dropdown-open {
+    color: ${({ theme }) => theme['main-font']};
   }
 
   li,
@@ -51,7 +57,8 @@ export const Table = styled(TableAntd)`
   }
 
   .ant-pagination-item-link,
-  .ant-pagination-item-link:hover {
+  .ant-pagination-item-link:hover,
+  .ant-table-column-has-sorters {
     background-color: ${({ theme }) => theme['second-background']} !important;
     color: ${({ theme }) => theme['main-font']};
   }
@@ -59,6 +66,25 @@ export const Table = styled(TableAntd)`
   .ant-pagination-item-link:hover {
     border-color: ${({ theme }) => theme['third-green']};
     color: ${({ theme }) => theme['third-green']};
+  }
+
+  .ant-table-placeholder:hover > td {
+    background-color: ${({ theme }) => theme['main-background']} !important;
+  }
+
+  .ant-empty-img-simple * {
+    fill: ${({ theme }) => theme['main-background']} !important;
+  }
+
+  .ant-empty-description {
+    color: ${({ theme }) => theme['main-font']};
+  }
+
+  @media screen and (max-width: 600px) {
+    tr > th,
+    tr > td {
+      width: 9rem;
+    }
   }
 `
 
