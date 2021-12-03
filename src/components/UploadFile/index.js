@@ -81,12 +81,10 @@ export const UploadFile = ({ handleUpload, uploadedFile }) => {
 
 UploadFile.propTypes = {
   handleUpload: PropTypes.func.isRequired,
-  uploadedFile: PropTypes.objectOf(
-    PropTypes.shape({
-      preview: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-    })
-  ),
+  uploadedFile: PropTypes.PropTypes.shape({
+    preview: PropTypes.string,
+    name: PropTypes.string,
+  }),
 }
 
 UploadedFileMessage.propTypes = {

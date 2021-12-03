@@ -104,5 +104,5 @@ export const ActivityModal = ({ setIsActive }) => {
 }
 
 ActivityModal.propTypes = {
-  setIsActive: PropTypes.bool.isRequired,
+  setIsActive: PropTypes.func.isRequired,
 }
