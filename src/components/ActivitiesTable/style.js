@@ -27,6 +27,13 @@ export const Table = styled(TableAntd)`
   .ant-table-tbody > tr.ant-table-row:hover > td {
     background: ${({ theme }) => theme['second-background']};
   }
+  .ant-dropdown-trigger {
+    color: ${({ theme }) => theme['second-font']};
+  }
+  .ant-table-filter-trigger,
+  .ant-dropdown-open {
+    color: ${({ theme }) => theme['main-font']};
+  }
 
   li,
   li a,
@@ -59,6 +66,18 @@ export const Table = styled(TableAntd)`
   .ant-pagination-item-link:hover {
     border-color: ${({ theme }) => theme['third-green']};
     color: ${({ theme }) => theme['third-green']};
+  }
+
+  .ant-table-placeholder:hover > td {
+    background-color: ${({ theme }) => theme['main-background']} !important;
+  }
+
+  .ant-empty-img-simple * {
+    fill: ${({ theme }) => theme['main-background']} !important;
+  }
+
+  .ant-empty-description {
+    color: ${({ theme }) => theme['main-font']};
   }
 `
 

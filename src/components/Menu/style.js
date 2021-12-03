@@ -30,6 +30,10 @@ export const Wrapper = styled.div`
   transition: width 0.5s, background-color 0.3s;
   overflow-x: hidden;
 
+  svg {
+    cursor: pointer;
+  }
+
   &::-webkit-scrollbar {
     display: none;
   }
@@ -88,10 +92,14 @@ export const MenuFooter = styled.div`
   margin-bottom: 0.5rem;
 `
 
-export const Header = styled.div`
+export const Header = styled.header`
   display: none;
   padding: 2rem 3rem;
   background-color: transparent;
+
+  svg {
+    cursor: pointer;
+  }
 
   @media screen and (max-width: 1025px) {
     padding: 2rem 1.5rem;
