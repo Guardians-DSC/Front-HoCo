@@ -3,10 +3,11 @@ import styled from 'styled-components'
 export const Wrapper = styled.div`
   display: flex;
   position: relative;
+  cursor: pointer;
 
   .anticon-down {
     position: absolute;
-    margin-top: 1.25rem;
+    margin-top: 0.9rem;
     margin-right: 1rem;
     right: 0;
   }
@@ -23,6 +24,7 @@ export const Select = styled.select`
   border: 1px solid ${({ theme }) => theme['main-border']};
   padding-left: 0.5rem;
   appearance: none;
+  cursor: pointer;
   outline: none;
 
   &:focus,

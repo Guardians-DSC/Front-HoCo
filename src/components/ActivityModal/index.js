@@ -3,6 +3,7 @@
 import { CloseOutlined, FileTextOutlined, InboxOutlined } from '@ant-design/icons'
 import { Col, Row } from 'antd'
 import React, { useState } from 'react'
+import { useEffect } from 'react'
 import { useTheme } from 'styled-components'
 import { Text, Title, Item, Input, Button } from '../../styles/base-styles'
 import categories from '../../util/constants/categories'
@@ -15,22 +16,29 @@ export const ActivityModal = ({ setIsActive }) => {
   const [hours, setHours] = useState('')
   const [credits, setCredits] = useState('')
   const [title, setTitle] = useState('')
-  const [fileList, setFileList] = useState([])
+  const [uploadedFile, setUploadedFile] = useState({})
   const filteredCategories = Object.keys(categories).map((category, index) => {
     return categories[category].text
   })
 
-  const onUpload = ({ fileList, newFileList }) => {
-    console.log(newFileList)
-    setFileList(newFileList)
+  const handleFileUpload = (files) => {
+    console.log(files)
+    const file = files[0]
+
+    const fileObject = {
+      file,
+      name: file.name,
+      preview: URL.createObjectURL(file),
+    }
+
+    setUploadedFile(fileObject)
   }
 
   const handleSubmit = () => {
-    console.log(fileList)
     setIsActive(false)
   }
 
-  const style = { background: '#0092ff', padding: '8px 0' }
+  useEffect(() => console.log(uploadedFile), [uploadedFile])
 
   return (
     <OutWrapper onClick={() => setIsActive(false)}>
@@ -51,7 +59,10 @@ export const ActivityModal = ({ setIsActive }) => {
 
         <Form>
           <Item>
-            <UploadFile />
+            <UploadFile
+              handleUpload={handleFileUpload}
+              uploadedFile={uploadedFile}
+            />
           </Item>
           <Row>
             <Col span={24}>
@@ -64,7 +75,12 @@ export const ActivityModal = ({ setIsActive }) => {
             </Col>
           </Row>
           <Row gutter={[16, 16]}>
-            <Col className="gutter-row" span={12}>
+            <Col span={12}>
+              <Item label="Categoria">
+                <Select options={filteredCategories} />
+              </Item>
+            </Col>
+            <Col className="gutter-row" span={6}>
               <Item label="Horas">
                 <Input
                   type="number"
@@ -73,7 +89,7 @@ export const ActivityModal = ({ setIsActive }) => {
                 />
               </Item>
             </Col>
-            <Col className="gutter-row" span={12}>
+            <Col className="gutter-row" span={6}>
               <Item label="Créditos">
                 <Input
                   type="number"
@@ -83,12 +99,6 @@ export const ActivityModal = ({ setIsActive }) => {
               </Item>
             </Col>
           </Row>
-
-          <Col span={24}>
-            <Item label="Categoria">
-              <Select options={filteredCategories} />
-            </Item>
-          </Col>
 
           <Button onClick={handleSubmit}>Finalizar cadastro</Button>
         </Form>

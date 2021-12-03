@@ -91,6 +91,11 @@ export const Subtitle = styled.h2`
 export const Item = styled(FormAntd.Item)`
   display: block;
   margin: 0;
+
+  input,
+  select {
+    margin-top: 0;
+  }
 `
 
 export const Input = styled(InputAntd)`
