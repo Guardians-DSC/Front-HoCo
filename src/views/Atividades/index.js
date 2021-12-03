@@ -1,10 +1,12 @@
 import { BookOutlined } from '@ant-design/icons'
-import React from 'react'
+import React, { useState } from 'react'
 import { ActivitiesTable } from '../../components/ActivitiesTable'
+import { ActivityModal } from '../../components/ActivityModal'
 import { Button, Text, Title } from '../../styles/base-styles'
 import { TableWrapper, Wrapper } from './styles'
 
 export const Atividades = () => {
+  const [isActive, setIsActive] = useState(false)
   const data = [
     {
       key: '1',
@@ -79,11 +81,12 @@ export const Atividades = () => {
         </Text>
       </div>
       <TableWrapper>
-        <Button onClick={() => console.log('vacas')}>Adicionar</Button>
+        <Button onClick={() => setIsActive(true)}>Adicionar</Button>
         <div>
           <ActivitiesTable data={data} />
         </div>
       </TableWrapper>
+      {isActive ? <ActivityModal setIsActive={setIsActive} /> : <></>}
     </Wrapper>
   )
 }

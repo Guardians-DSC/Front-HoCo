@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { Form as FormAntd, Input as InputAntd, Modal as ModalAntd } from 'antd'
-import 'antd/lib/input/style/index.css'
+import 'antd/dist/antd.css'
 
 export const AppWrapper = styled.div`
   background-color: ${({ theme }) => theme['main-background']};
@@ -88,17 +88,35 @@ export const Subtitle = styled.h2`
   }
 `
 
-export const Item = styled(FormAntd.Item)``
+export const Item = styled(FormAntd.Item)`
+  display: block;
+  margin: 0;
+
+  input,
+  select {
+    margin-top: 0;
+  }
+`
 
 export const Input = styled(InputAntd)`
   width: 100%;
   border-radius: 3px;
   height: 2.5rem;
   margin-top: 0.5rem;
+  background-color: ${({ theme }) => theme['main-background']};
+  color: ${({ theme }) => theme['main-font']};
+  border-color: ${({ theme }) => theme['main-border']};
 
-  &:focus {
+  &:focus,
+  &:hover {
     border-color: #18ff3933;
     box-shadow: 0 0 0 2px rgb(24 255 57 / 20%);
+  }
+
+  &:disabled {
+    background-color: ${({ theme }) => theme['third-background']};
+    color: ${({ theme }) => theme['second-font']};
+    border-color: ${({ theme }) => theme['second-font']};
   }
 `
 
@@ -121,7 +139,6 @@ export const Button = styled.button`
 export const Form = styled(FormAntd)`
   display: flex;
   flex-direction: column;
-  max-width: 30rem;
   gap: 1rem;
 
   .ant-form-item-label label {

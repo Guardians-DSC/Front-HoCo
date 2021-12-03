@@ -7,13 +7,17 @@ const themeLight = {
   'main-background': '#fff',
   'second-background': '#fafafa',
   'third-background': '#00000003',
-  'main-border': '#f0f0f0',
+  'main-border': '#BABABA',
+  'second-border': '#f0f0f0',
   'main-font': '#514E4E',
   'second-font': '#938F8F',
+  'third-font': '#7E7B7B',
   'main-emphasis': '#dfdfdf',
   'header-icons': '#539762',
   'main-bar': '#975858',
   'second-bar': '#514E4E60',
+  'bright-red': '#D12828',
+  'bright-green': '#6CBD7E',
 }
 
 const themeDark = {
@@ -25,13 +29,17 @@ const themeDark = {
   'main-background': '#373E47',
   'second-background': '#363A40',
   'third-background': '#00000020',
-  'main-border': '#656565',
+  'main-border': '#8B8787',
+  'second-border': '#8B8787',
   'main-font': '#f5f5f5',
   'second-font': '#B4B4B4',
+  'third-font': '#AFA7A7',
   'main-emphasis': '#666E78',
   'header-icons': '#f5f5f5',
   'main-bar': '#C67979',
   'second-bar': '#f5f5f590',
+  'bright-red': '#D12828',
+  'bright-green': '#6CBD7E',
 }
 
 export default { light: themeLight, dark: themeDark }

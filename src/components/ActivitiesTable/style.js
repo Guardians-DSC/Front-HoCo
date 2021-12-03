@@ -12,7 +12,7 @@ import { Tag as TagAntd } from 'antd'
 export const Table = styled(TableAntd)`
   tr > th,
   tr > td {
-    border-bottom: 0.5px solid ${({ theme }) => theme['main-border']};
+    border-bottom: 0.5px solid ${({ theme }) => theme['second-border']};
     color: ${({ theme }) => theme['main-font']};
   }
 

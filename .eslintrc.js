@@ -9,6 +9,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:prettier/recommended',
+    'prettier',
   ],
   parserOptions: {
     ecmaFeatures: {
@@ -17,9 +18,10 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['react'],
+  plugins: ['react', 'prettier'],
   rules: {
     'prettier/prettier': 'warn',
+    'no-unused-vars': 'warn',
     quotes: [0, 'double'],
     semi: [1, 'never'],
     'no-console': 'off',
