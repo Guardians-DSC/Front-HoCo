@@ -8,24 +8,14 @@ import {
 } from './styles'
 import Dropzone from 'react-dropzone'
 import { CheckOutlined } from '@ant-design/icons'
+import { formatFileName } from '../../util/util'
 
 const UploadedFileMessage = ({ fileName, previewURL }) => {
-  const formatFileName = () => {
-    const charLimit = 30
-    const stringList = fileName.split('.')
-
-    if (stringList[0].length > charLimit) {
-      return stringList[0].slice(0, charLimit) + '...' + stringList.at(-1)
-    }
-
-    return fileName
-  }
-
   return (
     <MessageWrapper>
       <FileInfoContainer>
         <CheckOutlined style={{ fontSize: '2rem' }} />
-        <strong>{formatFileName()}</strong>
+        <strong>{formatFileName(fileName)}</strong>
       </FileInfoContainer>
       <a
         href={previewURL}
@@ -39,36 +29,36 @@ const UploadedFileMessage = ({ fileName, previewURL }) => {
   )
 }
 
-export const UploadFile = ({ handleUpload, uploadedFile }) => {
-  const renderDragMessage = (isDragReject, isDragActive) => {
-    if (uploadedFile.file) {
-      return (
-        <UploadedFileMessage
-          fileName={uploadedFile.name}
-          previewURL={uploadedFile.preview}
-        />
-      )
-    }
-
-    if (!isDragActive) {
-      return (
-        <UploadMessage>
-          Clique ou arraste o arquivo do seu certificado para fazer o upload
-        </UploadMessage>
-      )
-    }
-
-    if (isDragReject) {
-      return (
-        <UploadMessage>
-          Formato de arquivo invalido ou número muito grande de arquivos
-        </UploadMessage>
-      )
-    }
-
-    return <UploadMessage>Solte os arquivos aqui</UploadMessage>
+const renderDragMessage = (isDragReject, isDragActive, uploadedFile) => {
+  if (uploadedFile.file) {
+    return (
+      <UploadedFileMessage
+        fileName={uploadedFile.name}
+        previewURL={uploadedFile.preview}
+      />
+    )
   }
 
+  if (!isDragActive) {
+    return (
+      <UploadMessage>
+        Clique ou arraste o arquivo do seu certificado para fazer o upload
+      </UploadMessage>
+    )
+  }
+
+  if (isDragReject) {
+    return (
+      <UploadMessage>
+        Formato de arquivo invalido ou número muito grande de arquivos
+      </UploadMessage>
+    )
+  }
+
+  return <UploadMessage>Solte os arquivos aqui</UploadMessage>
+}
+
+export const UploadFile = ({ handleUpload, uploadedFile }) => {
   return (
     <Dropzone
       accept="image/jpeg, image/png, image/jpg, application/pdf"
@@ -82,7 +72,7 @@ export const UploadFile = ({ handleUpload, uploadedFile }) => {
           isDragReject={isDragReject}
         >
           <input {...getInputProps()} />
-          {renderDragMessage(isDragReject, isDragActive)}
+          {renderDragMessage(isDragReject, isDragActive, uploadedFile)}
         </DropContainer>
       )}
     </Dropzone>
