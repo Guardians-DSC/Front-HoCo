@@ -1,6 +1,5 @@
 import { BookOutlined } from '@ant-design/icons'
-import React from 'react'
-import { useState } from 'react/cjs/react.development'
+import React, { useState } from 'react'
 import { ActivitiesTable } from '../../components/ActivitiesTable'
 import { ActivityModal } from '../../components/ActivityModal'
 import { Button, Text, Title } from '../../styles/base-styles'
