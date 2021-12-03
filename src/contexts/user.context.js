@@ -8,7 +8,7 @@ export function UserProvider({ children }) {
   const [name, setName] = useState('Rodrigo Eloy')
   const [email, setEmail] = useState('rodrigo.cavalcanti@ccc.ufcg.edu.br')
   const [course, setCourse] = useState('Ciência da computação')
-  const [userId, setUserId] = useState(null)
+  const [userId, setUserId] = useState('118210111')
   const [avatar, setAvatar] = useState(eu)
 
   const values = {
