@@ -10,7 +10,6 @@ import 'antd/lib/button/style/index.css'
 import { Tag as TagAntd } from 'antd'
 
 export const Table = styled(TableAntd)`
-  width: 100%;
   tr > th,
   tr > td {
     border-bottom: 0.5px solid ${({ theme }) => theme['main-border']};
@@ -58,7 +57,8 @@ export const Table = styled(TableAntd)`
   }
 
   .ant-pagination-item-link,
-  .ant-pagination-item-link:hover {
+  .ant-pagination-item-link:hover,
+  .ant-table-column-has-sorters {
     background-color: ${({ theme }) => theme['second-background']} !important;
     color: ${({ theme }) => theme['main-font']};
   }
@@ -78,6 +78,13 @@ export const Table = styled(TableAntd)`
 
   .ant-empty-description {
     color: ${({ theme }) => theme['main-font']};
+  }
+
+  @media screen and (max-width: 600px) {
+    tr > th,
+    tr > td {
+      width: 9rem;
+    }
   }
 `
 
