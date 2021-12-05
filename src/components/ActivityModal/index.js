@@ -8,7 +8,7 @@ import categories from '../../util/constants/categories'
 import { Select } from '../Select'
 import { UploadFile } from '../UploadFile'
 import { OutWrapper, Wrapper, Header, Form } from './style'
-import { registerActivity } from '../../services/api'
+import { editActivity, registerActivity } from '../../services/api'
 import { create_UUID } from '../../util/util'
 
 export const ActivityModal = ({ setIsActive, data }) => {
@@ -36,14 +36,19 @@ export const ActivityModal = ({ setIsActive, data }) => {
   const handleSubmit = () => {
     setIsActive(false)
 
-    const response = registerActivity({
-      id: create_UUID(),
-      titulo: title,
-      creditos: credits,
-      horas: hours,
-      categoria: category,
-      file: uploadedFile,
-    })
+    let response
+    if (!data) {
+      response = registerActivity({
+        id: create_UUID(),
+        titulo: title,
+        creditos: credits,
+        horas: hours,
+        categoria: category,
+        file: uploadedFile,
+      })
+    } else {
+      response = editActivity(data.id, data)
+    }
 
     console.log(response)
   }
