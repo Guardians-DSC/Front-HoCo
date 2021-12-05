@@ -21,9 +21,9 @@ export const ActivitiesBarChart = ({ data }) => {
 
   const updatedData = data.map((objectData) => {
     return {
-      'creditos disponiveis':
-        objectData['Max creditos'] - objectData['Creditos totais'],
+      'creditos disponiveis': objectData.maximo - objectData.acumulado,
       ...objectData,
+      top: 20,
     }
   })
 
@@ -42,7 +42,7 @@ export const ActivitiesBarChart = ({ data }) => {
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
+          <XAxis dataKey="categoria" />
           <YAxis dataKey="top" width={30} />
           <Tooltip
             cursor={{ fill: theme['third-background'] }}
@@ -50,7 +50,7 @@ export const ActivitiesBarChart = ({ data }) => {
           />
           <Bar
             legendType="rect"
-            dataKey="Creditos totais"
+            dataKey="acumulado"
             stackId="a"
             maxBarSize={25}
             fill={theme['main-bar']}
@@ -66,7 +66,7 @@ export const ActivitiesBarChart = ({ data }) => {
             verticalAlign
             payload={[
               {
-                value: 'Creditos totais',
+                value: 'Creditos acumulados',
                 type: 'rect',
                 color: theme['main-bar'],
               },
@@ -86,9 +86,9 @@ export const ActivitiesBarChart = ({ data }) => {
 ActivitiesBarChart.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
-      name: PropTypes.string,
-      'Creditos totais': PropTypes.number,
-      'Max creditos': PropTypes.number,
+      categoria: PropTypes.string,
+      acumulado: PropTypes.number,
+      maximo: PropTypes.number,
       top: PropTypes.number,
     })
   ),
@@ -97,58 +97,49 @@ ActivitiesBarChart.propTypes = {
 ActivitiesBarChart.defaultProps = {
   data: [
     {
-      name: 'Projeto',
-      'Creditos totais': 12,
-      'Max creditos': 18,
-      top: 20,
+      categoria: 'Projeto',
+      acumulado: 12,
+      maximo: 18,
     },
     {
-      name: 'Monitoria',
-      'Creditos totais': 8,
-      'Max creditos': 16,
-      top: 20,
+      categoria: 'Monitoria',
+      acumulado: 8,
+      maximo: 16,
     },
     {
-      name: 'Evento',
-      'Creditos totais': 2,
-      'Max creditos': 18,
-      top: 20,
+      categoria: 'Evento',
+      acumulado: 2,
+      maximo: 18,
     },
     {
-      name: 'init. científica',
-      'Creditos totais': 8,
-      'Max creditos': 16,
-      top: 20,
+      categoria: 'init. científica',
+      acumulado: 8,
+      maximo: 16,
     },
     {
-      name: 'Estágio',
-      'Creditos totais': 15,
-      'Max creditos': 16,
-      top: 20,
+      categoria: 'Estágio',
+      acumulado: 15,
+      maximo: 16,
     },
     {
-      name: 'Caesi',
-      'Creditos totais': 9,
-      'Max creditos': 16,
-      top: 20,
+      categoria: 'Caesi',
+      acumulado: 9,
+      maximo: 16,
     },
     {
-      name: 'Atv. extensão',
-      'Creditos totais': 1,
-      'Max creditos': 14,
-      top: 20,
+      categoria: 'Atv. extensão',
+      acumulado: 1,
+      maximo: 14,
     },
     {
-      name: 'Atv. profissionais',
-      'Creditos totais': 1,
-      'Max creditos': 16,
-      top: 20,
+      categoria: 'Atv. profissionais',
+      acumulado: 1,
+      maximo: 16,
     },
     {
-      name: 'outros',
-      'Creditos totais': 2,
-      'Max creditos': 16,
-      top: 20,
+      categoria: 'outros',
+      acumulado: 2,
+      maximo: 16,
     },
   ],
 }

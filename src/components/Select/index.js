@@ -4,12 +4,15 @@ import { Select as SelectDefault, Option, Wrapper } from './style'
 import { useTheme } from 'styled-components'
 import { DownOutlined } from '@ant-design/icons'
 
-export const Select = ({ options }) => {
+export const Select = ({ options, onChange }) => {
   const theme = useTheme()
 
   return (
     <Wrapper>
-      <SelectDefault defaultValue="default">
+      <SelectDefault
+        defaultValue="default"
+        onChange={(e) => onChange(e.target.value)}
+      >
         <Option value="default" disabled>
           Selecionar
         </Option>
@@ -26,8 +29,5 @@ export const Select = ({ options }) => {
 
 Select.propTypes = {
   options: PropTypes.arrayOf(PropTypes.string),
-}
-
-Select.defaultProps = {
-  options: ['sapato'],
+  onChange: PropTypes.func.isRequired,
 }

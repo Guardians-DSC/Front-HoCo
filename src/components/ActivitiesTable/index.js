@@ -6,7 +6,7 @@ import { EditOutlined, DeleteOutlined, DownloadOutlined } from '@ant-design/icon
 import { Table, Tag } from './style'
 import categories from '../../util/constants/categories'
 
-export const ActivitiesTable = ({ data }) => {
+export const ActivitiesTable = ({ data, setIsActive }) => {
   const formatFilterCategories = (categoryList) => {
     return categoryList.map((category) => ({
       text: category.text,
@@ -17,16 +17,16 @@ export const ActivitiesTable = ({ data }) => {
   const columns = [
     {
       title: 'Título',
-      dataIndex: 'title',
-      key: 'title',
+      dataIndex: 'titulo',
+      key: 'titulo',
       width: 'fit-content',
       fixed: 'left',
       render: (text) => text,
     },
     {
       title: 'Horas',
-      dataIndex: 'hours',
-      key: 'hours',
+      dataIndex: 'horas',
+      key: 'horas',
       width: 'fit-content',
       align: 'center',
       render: (hora) => (hora > 0 ? hora : '- - -'),
@@ -34,8 +34,8 @@ export const ActivitiesTable = ({ data }) => {
     },
     {
       title: 'Créditos',
-      dataIndex: 'credit',
-      key: 'credit',
+      dataIndex: 'creditos',
+      key: 'creditos',
       width: 'fit-content',
       align: 'center',
       render: (credito) => (credito > 0 ? credito : '- - -'),
@@ -44,8 +44,8 @@ export const ActivitiesTable = ({ data }) => {
     {
       title: 'Categoria',
       align: 'center',
-      key: 'category',
-      dataIndex: 'category',
+      key: 'categoria',
+      dataIndex: 'categoria',
       render: (tag) => {
         return (
           <Tag color="green" key={tag}>
@@ -108,6 +108,7 @@ export const ActivitiesTable = ({ data }) => {
   }
 
   const handleEdit = (record) => {
+    setIsActive(true)
     console.log('editando...', record)
   }
 
@@ -120,18 +121,20 @@ export const ActivitiesTable = ({ data }) => {
       columns={columns}
       pagination={{ pageSize: 7 }}
       scroll={{ x: 600 }}
-      dataSource={data}
-    ></Table>
+      dataSource={data.map((cell) => ({ ...cell, key: cell.id }))}
+    />
   )
 }
 
 ActivitiesTable.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
-      key: PropTypes.string,
-      title: PropTypes.string,
-      credit: PropTypes.number,
-      category: PropTypes.string,
+      id: PropTypes.number,
+      titulo: PropTypes.string,
+      creditos: PropTypes.number,
+      horas: PropTypes.number,
+      categoria: PropTypes.string,
     })
   ).isRequired,
+  setIsActive: PropTypes.func.isRequired,
 }

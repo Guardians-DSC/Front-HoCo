@@ -45,18 +45,27 @@ export const CreditsPieChart = ({ data }) => {
 
   function sumValues(objects) {
     const reducer = (previousValue, currentValue) =>
-      previousValue + currentValue.value
+      previousValue + currentValue.porcentagem
     return objects.reduce(reducer, 0)
   }
 
-  const finalData = [
-    ...sortedData.slice(0, MAX_NUM_CATEGORIES),
+  let finalData = sortedData.map((cell) => {
+    return {
+      ...cell,
+      name: cell.categoria,
+    }
+  })
+
+  finalData = [
+    ...finalData,
     {
       name: 'outros',
       // sum the values from the max_categories until the end of the array
-      value: sumValues(sortedData.slice(MAX_NUM_CATEGORIES - 1, -1)),
+      porcentagem: 1 - sumValues(sortedData.slice(0, MAX_NUM_CATEGORIES)),
     },
   ]
+
+  console.log(finalData)
 
   return (
     <Wrapper>
@@ -70,7 +79,7 @@ export const CreditsPieChart = ({ data }) => {
             labelLine={false}
             label={customizedLabel}
             outerRadius="90%"
-            dataKey="value"
+            dataKey="porcentagem"
           >
             {data.map((entry, index) => (
               <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
@@ -81,8 +90,9 @@ export const CreditsPieChart = ({ data }) => {
       </ResponsiveContainer>
       <Text>
         Você tem 11 créditos aprovados atualmente e as suas principais fontes de
-        atividades <br /> complementares são <span>{sortedData[0].name}</span>,
-        <span>{sortedData[1].name}</span> e <span>{sortedData[2].name}</span>.
+        atividades <br /> complementares são <span>{sortedData[0].categoria}</span>,
+        <span>{sortedData[1].categoria}</span> e{' '}
+        <span>{sortedData[2].categoria}</span>.
       </Text>
     </Wrapper>
   )
@@ -90,14 +100,22 @@ export const CreditsPieChart = ({ data }) => {
 
 CreditsPieChart.defaultProps = {
   data: [
-    { name: 'Projeto', value: 12 },
-    { name: 'Monitoria', value: 8 },
-    { name: 'Evento', value: 4 },
-    { name: 'Caesi', value: 1 },
-    { name: 'Atv. extensã', value: 2 },
-    { name: 'Atv. extenso', value: 1 },
-    { name: 'Atv. extenão', value: 1 },
-    { name: 'Atv. extesão', value: 1 },
+    {
+      categoria: 'Projeto',
+      porcentagem: 0.45,
+    },
+    {
+      categoria: 'Evento',
+      porcentagem: 0.2,
+    },
+    {
+      categoria: 'Monitoria',
+      porcentagem: 0.1,
+    },
+    {
+      categoria: 'Caesi',
+      porcentagem: 0.2,
+    },
   ],
 }
 
