@@ -20,6 +20,7 @@ export const OutWrapper = styled.div`
 export const Wrapper = styled.div`
   padding: 1.75rem 2rem;
   width: 34rem;
+  max-width: 34rem;
   z-index: 22;
   background-color: ${({ theme }) => theme['main-background']};
   border-radius: 10px;

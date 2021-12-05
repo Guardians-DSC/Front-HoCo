@@ -1,6 +1,6 @@
 const categories = {
   evento: { text: 'Evento', color: 'green' },
-  iniciacaoCientifica: { text: 'Inic. Científica', color: 'yellow' },
+  iniciacaoCientifica: { text: 'Inic. Cientifica', color: 'yellow' },
   projeto: { text: 'Projeto', color: 'blue' },
   monitoria: { text: 'Monitoria', color: 'red' },
   estagio: { text: 'Estágio', color: 'orange' },

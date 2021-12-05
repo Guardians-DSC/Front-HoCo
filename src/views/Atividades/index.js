@@ -9,11 +9,15 @@ import { TableWrapper, Wrapper } from './styles'
 
 export const Atividades = () => {
   const [isActive, setIsActive] = useState(false)
-  const [activities, setActivities] = useState(null)
+  const [activities, setActivities] = useState([])
 
   useEffect(() => {
-    const data = getActivities()
-    setActivities(data)
+    const getData = async () => {
+      const data = await getActivities()
+      setActivities(data)
+    }
+
+    getData()
   }, [])
 
   return (

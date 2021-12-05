@@ -30,11 +30,11 @@ const UploadedFileMessage = ({ fileName, previewURL }) => {
 }
 
 const renderDragMessage = (isDragReject, isDragActive, uploadedFile) => {
-  if (uploadedFile.file) {
+  if (uploadedFile) {
     return (
       <UploadedFileMessage
-        fileName={uploadedFile.name}
-        previewURL={uploadedFile.preview}
+        fileName={uploadedFile.titulo}
+        previewURL={uploadedFile.previewURL}
       />
     )
   }

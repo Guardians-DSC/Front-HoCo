@@ -23,6 +23,10 @@ export const Table = styled(TableAntd)`
     background-color: ${({ theme }) => theme['main-background']};
   }
 
+  .ant-form-item-label {
+    text-align: left;
+  }
+
   .ant-table-tbody > tr.ant-table-row:hover > td {
     background: ${({ theme }) => theme['second-background']};
   }
@@ -35,8 +39,7 @@ export const Table = styled(TableAntd)`
   }
 
   li,
-  li a,
-  button {
+  li a {
     background-color: ${({ theme }) => theme['main-background']} !important;
     color: ${({ theme }) => theme['main-font']};
   }

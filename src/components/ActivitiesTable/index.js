@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { Space, Popconfirm } from 'antd'
 import { EditOutlined, DeleteOutlined, DownloadOutlined } from '@ant-design/icons'
 
 import { Table, Tag } from './style'
 import categories from '../../util/constants/categories'
+import { deleteActivity } from '../../services/api'
+import { ActivityModal } from '../ActivityModal'
 
-export const ActivitiesTable = ({ data, setIsActive }) => {
+export const ActivitiesTable = ({ data }) => {
   const formatFilterCategories = (categoryList) => {
     return categoryList.map((category) => ({
       text: category.text,
@@ -30,7 +32,7 @@ export const ActivitiesTable = ({ data, setIsActive }) => {
       width: 'fit-content',
       align: 'center',
       render: (hora) => (hora > 0 ? hora : '- - -'),
-      sorter: (a, b) => a.hours - b.hours,
+      sorter: (a, b) => a.horas - b.horas,
     },
     {
       title: 'Créditos',
@@ -39,7 +41,7 @@ export const ActivitiesTable = ({ data, setIsActive }) => {
       width: 'fit-content',
       align: 'center',
       render: (credito) => (credito > 0 ? credito : '- - -'),
-      sorter: (a, b) => a.credit - b.credit,
+      sorter: (a, b) => a.creditos - b.creditos,
     },
     {
       title: 'Categoria',
@@ -54,7 +56,7 @@ export const ActivitiesTable = ({ data, setIsActive }) => {
         )
       },
       filters: formatFilterCategories(Object.values(categories)),
-      onFilter: (value, record) => record.category.indexOf(value) === 0,
+      onFilter: (value, record) => record.categoria.indexOf(value) === 0,
     },
     {
       title: 'Baixar certificado',
@@ -73,14 +75,21 @@ export const ActivitiesTable = ({ data, setIsActive }) => {
       title: 'Editar',
       align: 'center',
       key: 'edit',
-      render: (record) => (
-        <Space size="middle">
-          <EditOutlined
-            style={{ fontSize: '18px' }}
-            onClick={() => handleEdit(record)}
-          />
-        </Space>
-      ),
+      render: (record) => {
+        const [modalActive, setModalActive] = useState(false)
+
+        return (
+          <Space size="middle">
+            <EditOutlined
+              style={{ fontSize: '18px' }}
+              onClick={() => setModalActive(true)}
+            />
+            {modalActive && (
+              <ActivityModal setIsActive={setModalActive} data={record} />
+            )}
+          </Space>
+        )
+      },
     },
     {
       title: 'Apagar',
@@ -107,12 +116,8 @@ export const ActivitiesTable = ({ data, setIsActive }) => {
     console.log('baixando...', record)
   }
 
-  const handleEdit = (record) => {
-    setIsActive(true)
-    console.log('editando...', record)
-  }
-
   const handleDelete = (record) => {
+    deleteActivity(record.id)
     console.log('deletando...', record)
   }
 
@@ -134,7 +139,10 @@ ActivitiesTable.propTypes = {
       creditos: PropTypes.number,
       horas: PropTypes.number,
       categoria: PropTypes.string,
+      certificado: PropTypes.shape({
+        titulo: PropTypes.string,
+        previewURL: PropTypes.string,
+      }),
     })
   ).isRequired,
-  setIsActive: PropTypes.func.isRequired,
 }

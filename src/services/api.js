@@ -6,8 +6,8 @@ const api = axios.create({
 })
 
 export const getCredits = async () => {
-  const response = api.get('/creditos')
-  console.log(response)
+  // const response = await api.get('/creditos')
+  // console.log(response)
   return {
     creditos: 11,
     maximo: 22,
@@ -15,9 +15,9 @@ export const getCredits = async () => {
   // return response.data
 }
 
-export const getCreditsPerCategory = () => {
-  const response = api.get('/categorias/creditos')
-  console.log(response)
+export const getCreditsPerCategory = async () => {
+  // const response = await api.get('/categorias/creditos')
+  // console.log(response)
 
   return [
     {
@@ -70,8 +70,8 @@ export const getCreditsPerCategory = () => {
   // return response.data
 }
 
-export const getRankCategories = () => {
-  const response = api.get('/categorias/top')
+export const getRankCategories = async () => {
+  // const response = await api.get('/categorias/top')
   return [
     {
       categoria: 'Projeto',
@@ -94,14 +94,14 @@ export const getRankCategories = () => {
   // return response.data
 }
 
-export const registerActivity = (activityData) => {
-  const response = api.post('/atividade', { activityData })
+export const registerActivity = async (activityData) => {
+  const response = await api.post('/atividade', { activityData })
   console.log('Dados enviados:', activityData)
   return response.data
 }
 
-export const getActivities = () => {
-  const response = api.get('/atividades')
+export const getActivities = async () => {
+  // const response = await api.get('/atividades')
   return [
     {
       id: 129087124908,
@@ -109,6 +109,10 @@ export const getActivities = () => {
       horas: 0,
       creditos: 12,
       categoria: 'projeto',
+      certificado: {
+        titulo: 'meu_certificado.jpeg',
+        previewURL: 'https://giphy.com/embed/6ZorD2fyy1nj8GqunP',
+      },
     },
     {
       id: 129087124901,
@@ -116,13 +120,21 @@ export const getActivities = () => {
       horas: 0,
       creditos: 12,
       categoria: 'projeto',
+      certificado: {
+        titulo: 'meu_certificado.jpeg',
+        previewURL: 'https://giphy.com/embed/6ZorD2fyy1nj8GqunP',
+      },
     },
     {
       id: 13231321312312,
-      titulo: 'Andromedev',
+      titulo: 'Andromedevi',
       horas: 135,
       creditos: 1,
       categoria: 'evento',
+      certificado: {
+        titulo: 'meu_certificado.jpeg',
+        previewURL: 'https://giphy.com/embed/6ZorD2fyy1nj8GqunP',
+      },
     },
     {
       id: 132313123312,
@@ -130,20 +142,32 @@ export const getActivities = () => {
       horas: 20,
       creditos: 0,
       categoria: 'evento',
+      certificado: {
+        titulo: 'meu_certificado.jpeg',
+        previewURL: 'https://giphy.com/embed/6ZorD2fyy1nj8GqunP',
+      },
     },
     {
       id: 13231321312318,
-      titulo: 'Projeto ePol',
+      titulo: 'Projeto ePoli',
       horas: 0,
       creditos: 12,
-      categoria: 'projeto',
+      categoria: 'caesi',
+      certificado: {
+        titulo: 'meu_certificado.jpeg',
+        previewURL: 'https://giphy.com/embed/6ZorD2fyy1nj8GqunP',
+      },
     },
     {
       id: 13231321312310,
       titulo: 'Andromedev',
       horas: 135,
       creditos: 0,
-      categoria: 'evento',
+      categoria: 'inic. cientifica',
+      certificado: {
+        titulo: 'meu_certificado.jpeg',
+        previewURL: 'https://giphy.com/embed/6ZorD2fyy1nj8GqunP',
+      },
     },
     {
       id: 23231321312312,
@@ -151,18 +175,22 @@ export const getActivities = () => {
       horas: 10,
       creditos: 0,
       categoria: 'evento',
+      certificado: {
+        titulo: 'meu_certificado.jpeg',
+        previewURL: 'https://giphy.com/embed/6ZorD2fyy1nj8GqunP',
+      },
     },
   ]
 
   // return response.data
 }
 
-export const editActivity = (activityID, data) => {
-  const response = api.patch(`/atividade?id=${activityID}`, data)
+export const editActivity = async (activityID, data) => {
+  const response = await api.patch(`/atividade?id=${activityID}`, data)
   console.log(response)
 }
 
-export const deleteActivity = (activityID, data) => {
-  const response = api.delete(`/atividade?id=${activityID}`)
+export const deleteActivity = async (activityID, data) => {
+  const response = await api.delete(`/atividade?id=${activityID}`)
   console.log(response)
 }
