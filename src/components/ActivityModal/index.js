@@ -15,7 +15,7 @@ export const ActivityModal = ({ setIsActive, data }) => {
   const [hours, setHours] = useState(data ? data.horas : '')
   const [credits, setCredits] = useState(data ? data.creditos : '')
   const [title, setTitle] = useState(data ? data.titulo : '')
-  const [uploadedFile, setUploadedFile] = useState(data ? data.certificado : {})
+  const [uploadedFile, setUploadedFile] = useState(data ? data.certificado : null)
   const [category, setCategory] = useState(data ? data.categoria : '')
   const filteredCategories = Object.keys(categories).map((category, index) => {
     return categories[category].text
