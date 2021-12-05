@@ -50,7 +50,7 @@ export const QuestionContent = styled.div`
   align-items: center;
   width: 100%;
   transition: 0.6s ease;
-  gap: 0.8rem;
+  gap: 0.5rem;
   vertical-align: middle;
   align-items: center;
 
@@ -60,7 +60,7 @@ export const QuestionContent = styled.div`
 `
 
 export const QuestionTitle = styled.div`
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 500;
   color: var(--font-grey);
   text-align: left;
@@ -85,10 +85,9 @@ export const ResponseContent = styled.div`
 export const ResponseText = styled.p`
   transition: 0.5s ease;
   color: var(--font-grey);
-  font-size: 1.2rem;
   line-height: 1.75rem;
   width: fit-content;
-  padding: 1.3rem 0.5rem 0;
+  padding: 1rem 0.5rem 0;
 
   ol,
   ul {

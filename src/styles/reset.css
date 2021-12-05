@@ -9,6 +9,7 @@ body,
 }
 
 html {
+  font-size: 14px;
   overflow-y: auto;
   overflow-y: overlay;
 }

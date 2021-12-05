@@ -36,7 +36,6 @@ export const Content = styled.div`
 `
 
 export const Text = styled.p`
-  font-size: 1.2rem;
   margin-bottom: 0.5rem;
   line-height: 1.5rem;
 
@@ -70,7 +69,7 @@ export const Title = styled.h1`
   font-weight: 500;
   letter-spacing: 0.1rem;
 
-  font-size: 2rem;
+  font-size: 1.75rem;
 
   @media screen and (max-width: 1024px) {
     justify-content: center;
@@ -81,7 +80,7 @@ export const Subtitle = styled.h2`
   margin: 1.5rem 0;
   font-weight: 500;
 
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 
   @media screen and (max-width: 1024px) {
     text-align: center;
