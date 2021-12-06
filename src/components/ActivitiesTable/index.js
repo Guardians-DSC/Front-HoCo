@@ -79,15 +79,17 @@ export const ActivitiesTable = ({ data }) => {
         const [modalActive, setModalActive] = useState(false)
 
         return (
-          <Space size="middle">
-            <EditOutlined
-              style={{ fontSize: '18px' }}
-              onClick={() => setModalActive(true)}
-            />
+          <>
+            <Space size="middle">
+              <EditOutlined
+                style={{ fontSize: '18px' }}
+                onClick={() => setModalActive(true)}
+              />
+            </Space>
             {modalActive && (
               <ActivityModal setIsActive={setModalActive} data={record} />
             )}
-          </Space>
+          </>
         )
       },
     },
