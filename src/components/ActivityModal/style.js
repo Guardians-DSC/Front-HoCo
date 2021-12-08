@@ -15,6 +15,7 @@ export const OutWrapper = styled.div`
   z-index: 20;
   width: 100vw;
   background-color: #00000080;
+  overflow-y: scroll;
 `
 
 export const Wrapper = styled.div`
