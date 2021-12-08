@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { Form as FormAntd, Input as InputAntd, Modal as ModalAntd } from 'antd'
 import 'antd/dist/antd.css'
 
@@ -119,20 +119,36 @@ export const Input = styled(InputAntd)`
   }
 `
 
-export const Button = styled.button`
-  padding: 0.6rem 1rem;
+const buttonVariableOne = css`
   background-color: ${({ theme }) => theme['main-green']};
   color: ${({ theme }) => theme['main-white']};
-  width: fit-content;
-  cursor: pointer;
-  border-radius: 2px;
   border: none;
-  transition: 0.5s;
-  font-size: 1rem;
 
   &:hover {
     background-color: ${({ theme }) => theme['second-green']};
   }
+`
+
+const buttonVariableTwo = css`
+  background-color: ${({ theme }) => theme['main-background']};
+  color: ${({ theme }) => theme['second-font']};
+  border: thin solid ${({ theme }) => theme['second-font']};
+
+  &:hover {
+    background-color: ${({ theme }) => theme['second-background']};
+  }
+`
+
+export const Button = styled.button`
+  padding: 0.6rem 1rem;
+  width: fit-content;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: 0.5s;
+  font-size: 1rem;
+
+  ${buttonVariableOne}
+  ${({ variable }) => variable === 'second' && buttonVariableTwo}
 `
 
 export const Form = styled(FormAntd)`

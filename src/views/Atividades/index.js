@@ -5,7 +5,7 @@ import { ActivitiesTable } from '../../components/ActivitiesTable'
 import { ActivityModal } from '../../components/ActivityModal'
 import { getActivities } from '../../services/api'
 import { Button, Text, Title } from '../../styles/base-styles'
-import { TableWrapper, Wrapper } from './styles'
+import { TableWrapper, Wrapper, ButtonsWrapper } from './styles'
 
 export const Atividades = () => {
   const [isActive, setIsActive] = useState(false)
@@ -43,7 +43,12 @@ export const Atividades = () => {
           </Text>
         </div>
         <TableWrapper>
-          <Button onClick={() => setIsActive(true)}>Adicionar</Button>
+          <ButtonsWrapper>
+            <Button onClick={() => setIsActive(true)}>Adicionar</Button>
+            <Button variable="second" onClick={() => console.log('baixando doc...')}>
+              Baixar documentação
+            </Button>
+          </ButtonsWrapper>
           <div>
             <ActivitiesTable setIsActive={setIsActive} data={activities} />
           </div>

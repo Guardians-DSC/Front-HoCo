@@ -13,3 +13,8 @@ export const TableWrapper = styled.div`
     width: 100%;
   }
 `
+
+export const ButtonsWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
