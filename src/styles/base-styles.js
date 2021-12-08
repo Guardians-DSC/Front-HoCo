@@ -135,7 +135,8 @@ const buttonVariableTwo = css`
   border: thin solid ${({ theme }) => theme['second-font']};
 
   &:hover {
-    background-color: ${({ theme }) => theme['second-background']};
+    background-color: ${({ theme }) => theme['main-font']};
+    color: ${({ theme }) => theme['main-background']};
   }
 `
 
