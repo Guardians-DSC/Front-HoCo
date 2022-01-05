@@ -59,16 +59,16 @@ O **passo-a-passo** a seguir, se limita a execução do front-end do projeto, ab
   cd Front-HoCo
 ```
 
-3. Execute o build do projeto com o comando:
+3. Instale as dependências
 
 ```bash
-  docker build . --tag='front-hoco'
+  npm install
 ```
 
-4. Por fim, execute o comando de ativação do container:
+4. Por fim, execute o projeto
 
 ```bash
-  docker run -p 3000:3000 front-hoco
+  npm start
 ```
 
 Pronto! Com esses comandos simples você já conseguirá executar localmente o projeto. No caso de modificação do código-fonte, o projeto irá atualizar automaticamente.
