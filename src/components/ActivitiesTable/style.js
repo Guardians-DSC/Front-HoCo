@@ -83,6 +83,22 @@ export const Table = styled(TableAntd)`
     color: ${({ theme }) => theme['main-font']};
   }
 
+  .ant-btn-primary {
+    background: ${({ theme }) => theme['second-green']} !important;
+  }
+
+  .download-icon,
+  .delete-icon,
+  .edit-icon {
+    transition: 0.2s;
+  }
+
+  .download-icon:hover,
+  .delete-icon:hover,
+  .edit-icon:hover {
+    opacity: 0.4;
+  }
+
   @media screen and (max-width: 600px) {
     tr > th,
     tr > td {

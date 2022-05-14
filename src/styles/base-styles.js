@@ -9,6 +9,10 @@ export const AppWrapper = styled.div`
   box-sizing: border-box;
   transition: width 0.3s;
 
+  .ant-btn-primary {
+    background: ${({ theme }) => theme['second-green']} !important;
+  }
+
   @media screen and (max-width: 1025px) {
     display: block;
   }
@@ -18,7 +22,6 @@ export const Page = styled.div`
   width: 100%;
   padding: 3.5rem 2.5rem;
   background-color: ${({ theme }) => theme['main-background']};
-
   box-sizing: border-box;
   transition: 0.3s;
   color: ${({ theme }) => theme['main-font']};

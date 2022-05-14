@@ -157,3 +157,25 @@ html {
   :not(.ant-input-disabled):not(.ant-input-borderless).ant-input {
   background-color: inherit !important;
 }
+
+
+.ant-table-column-sorter-up.active,
+.ant-table-column-sorter-down.active {
+  color: #539762 !important;
+}
+
+.ant-btn:hover, .ant-btn:focus {
+  color: #539762 !important;
+  border-color: #539762 !important;
+}
+
+.ant-btn-primary {
+  background: #539762 !important;
+  border-color: #539762 !important;
+}
+
+.ant-btn-primary:hover {
+  color: #fff !important;
+  border-color: #53976290 !important;
+  background: #53976290 !important;
+}

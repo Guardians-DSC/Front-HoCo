@@ -65,6 +65,7 @@ export const ActivitiesTable = ({ data }) => {
       render: (record) => (
         <Space size="middle">
           <DownloadOutlined
+            className="download-icon"
             style={{ fontSize: '18px' }}
             onClick={() => handleDownload(record)}
           />
@@ -82,6 +83,7 @@ export const ActivitiesTable = ({ data }) => {
           <>
             <Space size="middle">
               <EditOutlined
+                className="edit-icon"
                 style={{ fontSize: '18px' }}
                 onClick={() => setModalActive(true)}
               />
@@ -107,7 +109,7 @@ export const ActivitiesTable = ({ data }) => {
             title={<p>Tem certeza que você deseja deletar esse registro?</p>}
             onConfirm={() => handleDelete(record)}
           >
-            <DeleteOutlined style={{ fontSize: '18px' }} />
+            <DeleteOutlined className="delete-icon" style={{ fontSize: '18px' }} />
           </Popconfirm>
         </Space>
       ),
