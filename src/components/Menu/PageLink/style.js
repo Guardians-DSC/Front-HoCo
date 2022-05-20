@@ -10,9 +10,14 @@ export const Wrapper = styled.div`
   min-width: ${({ isretracted }) => (isretracted ? 'fit-content' : '15rem')};
   width: ${({ isretracted }) => (isretracted ? 'fit-content' : '100%')};
   font-family: 'sen';
-  border-radius: 2px;
+  border-radius: 8px;
   transition: 0.3s;
   min-height: 3rem;
+
+  &:hover {
+    background-color: ${({ theme, isActive }) =>
+      isActive ? theme['main-white'] : theme['second-green']};
+  }
 `
 
 export const Icon = styled.div`
