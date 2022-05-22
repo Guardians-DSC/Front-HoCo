@@ -15,8 +15,8 @@ export const Wrapper = styled.div`
   min-height: 3rem;
 
   &:hover {
-    background-color: ${({ theme, isActive }) =>
-      isActive ? theme['main-white'] : theme['second-green']};
+    background-color: ${({ theme, isactive }) =>
+      isactive ? theme['main-white'] : theme['second-green']};
   }
 `
 

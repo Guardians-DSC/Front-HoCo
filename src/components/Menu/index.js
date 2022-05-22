@@ -23,6 +23,7 @@ import {
   Header,
   CloseContainer,
   BurguerContainer,
+  HeaderLogoContainer,
 } from './style'
 
 export const Menu = () => {
@@ -101,13 +102,15 @@ export const Menu = () => {
         <BurguerContainer onClick={handleActive}>
           <BurguerMenu color={theme['header-icons']} />
         </BurguerContainer>
-        <Link to="/sobre">
-          <Logo
-            width={100}
-            onClick={() => setisactive(false)}
-            color={theme['header-icons']}
-          />
-        </Link>
+        <HeaderLogoContainer>
+          <Link to="/sobre">
+            <Logo
+              width={100}
+              onClick={() => setisactive(false)}
+              color={theme['header-icons']}
+            />
+          </Link>
+        </HeaderLogoContainer>
       </Header>
     </>
   )

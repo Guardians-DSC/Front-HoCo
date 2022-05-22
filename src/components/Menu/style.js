@@ -70,6 +70,12 @@ export const ArrowContainer = styled.div`
 
 export const CloseContainer = styled.div`
   display: none;
+  transition: 0.3s;
+
+  &:hover {
+    opacity: 0.4;
+    transform: scale(0.9);
+  }
 
   @media screen and (max-width: 1025px) {
     align-self: flex-end;
@@ -81,6 +87,12 @@ export const CloseContainer = styled.div`
 
 export const LinkContainer = styled(Link)`
   display: ${({ isretracted }) => (isretracted ? 'none' : '')};
+  transition: 0.3s;
+
+  &:hover {
+    opacity: 0.7;
+    transform: scale(0.99);
+  }
 `
 
 export const MenuBody = styled.div`
@@ -89,15 +101,6 @@ export const MenuBody = styled.div`
   flex-direction: column;
   gap: 1rem;
   align-items: center;
-`
-
-export const BurguerContainer = styled.div`
-  transition: 0.2s;
-
-  &:hover {
-    opacity: 0.4;
-    transform: scale(0.9);
-  }
 `
 
 export const MenuFooter = styled.div`
@@ -118,5 +121,22 @@ export const Header = styled.header`
     padding: 2rem 1.5rem;
     display: flex;
     justify-content: space-between;
+  }
+`
+export const BurguerContainer = styled.div`
+  transition: 0.3s;
+
+  &:hover {
+    opacity: 0.4;
+    transform: scale(0.9);
+  }
+`
+
+export const HeaderLogoContainer = styled.div`
+  transition: 0.3s;
+
+  &:hover {
+    opacity: 0.6;
+    transform: scale(0.99);
   }
 `
