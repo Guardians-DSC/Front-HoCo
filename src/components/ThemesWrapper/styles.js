@@ -27,6 +27,15 @@ export const ThemesContainer = styled.div`
   }
 `
 
+export const ThemeWrapper = styled.div`
+  transition: 0.3s;
+
+  &:hover {
+    opacity: 0.6;
+    transform: scale(0.99);
+  }
+`
+
 export const FormWrapper = styled.section`
   display: flex;
   align-self: center;

@@ -2,7 +2,7 @@ import React from 'react'
 import { DarkThemeIcon } from '../../assets/icons/DarkThemeIcon'
 import { LightThemeIcon } from '../../assets/icons/LightThemeIcon'
 import usePagesContext from '../../contexts/app.context'
-import { Wrapper, ThemesContainer, Subtitle } from './styles'
+import { Wrapper, ThemesContainer, Subtitle, ThemeWrapper } from './styles'
 
 export const ThemesWrapper = () => {
   const { handleTheme } = usePagesContext()
@@ -11,12 +11,12 @@ export const ThemesWrapper = () => {
     <Wrapper>
       <Subtitle>Temas</Subtitle>
       <ThemesContainer>
-        <div onClick={() => handleTheme('light')}>
+        <ThemeWrapper onClick={() => handleTheme('light')}>
           <LightThemeIcon />
-        </div>
-        <div onClick={() => handleTheme('dark')}>
+        </ThemeWrapper>
+        <ThemeWrapper onClick={() => handleTheme('dark')}>
           <DarkThemeIcon onClick={() => handleTheme('dark')} />
-        </div>
+        </ThemeWrapper>
       </ThemesContainer>
     </Wrapper>
   )
