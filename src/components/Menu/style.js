@@ -57,7 +57,11 @@ export const ArrowContainer = styled.div`
   cursor: pointer;
   align-self: ${({ isretracted }) => (isretracted ? '' : 'flex-end')};
   transform: ${({ isretracted }) => (isretracted ? 'rotate(180deg)' : '')};
-  transition: transform 0.5s ease;
+  transition: 0.5s ease;
+
+  &:hover {
+    opacity: 0.4;
+  }
 
   @media screen and (max-width: 1025px) {
     display: none;
@@ -85,6 +89,15 @@ export const MenuBody = styled.div`
   flex-direction: column;
   gap: 1rem;
   align-items: center;
+`
+
+export const BurguerContainer = styled.div`
+  transition: 0.2s;
+
+  &:hover {
+    opacity: 0.4;
+    transform: scale(0.9);
+  }
 `
 
 export const MenuFooter = styled.div`

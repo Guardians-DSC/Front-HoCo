@@ -2,17 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { Logo } from '../../assets/icons/Logo'
 import { Link } from 'react-router-dom'
 
-import {
-  Wrapper,
-  MenuHeader,
-  MenuBody,
-  MenuFooter,
-  ArrowContainer,
-  OutWrapper,
-  LinkContainer,
-  Header,
-  CloseContainer,
-} from './style'
 import constants from '../../util/constants'
 import { PageLink } from './PageLink'
 import { Profile } from '../Profile'
@@ -23,6 +12,18 @@ import { CloseOutlined } from '@ant-design/icons'
 import { useTheme } from 'styled-components'
 import useUserContext from '../../contexts/user.context'
 import { Login } from '../Login'
+import {
+  Wrapper,
+  MenuHeader,
+  MenuBody,
+  MenuFooter,
+  ArrowContainer,
+  OutWrapper,
+  LinkContainer,
+  Header,
+  CloseContainer,
+  BurguerContainer,
+} from './style'
 
 export const Menu = () => {
   const { userId, name } = useUserContext()
@@ -97,9 +98,9 @@ export const Menu = () => {
         </Wrapper>
       </OutWrapper>
       <Header>
-        <div onClick={handleActive}>
+        <BurguerContainer onClick={handleActive}>
           <BurguerMenu color={theme['header-icons']} />
-        </div>
+        </BurguerContainer>
         <Link to="/sobre">
           <Logo
             width={100}
