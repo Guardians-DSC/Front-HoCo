@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
 export const OutWrapper = styled.div`
-  height: 100vh;
+  height: 100%;
   position: relative;
   margin-right: ${({ isretracted }) => (isretracted ? '5rem' : '18rem')};
   transition: 0.3s;
@@ -97,6 +97,8 @@ export const LinkContainer = styled(Link)`
 
 export const MenuBody = styled.div`
   display: flex;
+  flex-grow: 1;
+  justify-content: center;
   width: 100%;
   flex-direction: column;
   gap: 1rem;
