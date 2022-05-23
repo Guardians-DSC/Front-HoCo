@@ -16,7 +16,6 @@ export const github = {
   },
   async getContributorsFromRepository(repositoryName) {
     const response = await APIGithub.get(`/repos/${repositoryName}/contributors`)
-    console.log(response)
     return response
   },
   async getAllHocoContributors(repositoriesNames) {
