@@ -9,7 +9,7 @@ export const AppWrapper = styled.div`
   box-sizing: border-box;
   transition: width 0.3s;
 
-  @keyFrames littleJump {
+  @keyframes littleJump {
     0% {
       transform: translateY(0);
     }
