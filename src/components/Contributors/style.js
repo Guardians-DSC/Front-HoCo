@@ -12,6 +12,11 @@ export const ContributorsContainer = styled.div`
   & > a > img {
     border-radius: 50%;
     width: 4rem;
+    transition: 0.3s;
+  }
+
+  & > a > img:hover {
+    transform: scale(1.1);
   }
 
   @media screen and (max-width: 1024px) {

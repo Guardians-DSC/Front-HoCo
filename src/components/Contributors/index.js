@@ -1,3 +1,4 @@
+import { Tooltip } from 'antd'
 import React, { useEffect, useState } from 'react'
 
 import { github } from '../../services/github'
@@ -31,14 +32,15 @@ export function Contributors() {
     <ContributorsContainer>
       {Object.values(hocoContributors).map((contributorInfo, index) => {
         return (
-          <a
-            href={contributorInfo.profileUrl}
-            target="_blank"
-            rel="noreferrer"
-            key={index}
-          >
-            <img src={contributorInfo.imageUrl} alt="" />
-          </a>
+          <Tooltip key={index} placement="topLeft" title={contributorInfo.name}>
+            <a
+              href={contributorInfo.profileUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={contributorInfo.imageUrl} alt="" />
+            </a>
+          </Tooltip>
         )
       })}
     </ContributorsContainer>

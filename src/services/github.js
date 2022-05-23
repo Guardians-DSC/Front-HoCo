@@ -16,6 +16,7 @@ export const github = {
   },
   async getContributorsFromRepository(repositoryName) {
     const response = await APIGithub.get(`/repos/${repositoryName}/contributors`)
+    console.log(response)
     return response
   },
   async getAllHocoContributors(repositoriesNames) {
@@ -23,13 +24,13 @@ export const github = {
       repositoriesNames.map((name) => this.getContributorsFromRepository(name))
     ).then((values) => {
       const allUsers = [].concat(...values.map((value) => [...value.data]))
-
       const users = {}
       allUsers.map(
         (user) =>
           (users[user.login] = {
             imageUrl: user.avatar_url,
             profileUrl: user.html_url,
+            name: user.login
           })
       )
 
