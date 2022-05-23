@@ -33,11 +33,7 @@ export function Contributors() {
       {Object.values(hocoContributors).map((contributorInfo, index) => {
         return (
           <Tooltip key={index} placement="topLeft" title={contributorInfo.name}>
-            <a
-              href={contributorInfo.profileUrl}
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href={contributorInfo.profileUrl} target="_blank" rel="noreferrer">
               <img src={contributorInfo.imageUrl} alt="" />
             </a>
           </Tooltip>

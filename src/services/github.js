@@ -29,7 +29,7 @@ export const github = {
           (users[user.login] = {
             imageUrl: user.avatar_url,
             profileUrl: user.html_url,
-            name: user.login
+            name: user.login,
           })
       )
 
