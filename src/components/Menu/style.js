@@ -60,7 +60,7 @@ export const ArrowContainer = styled.div`
   transition: 0.5s ease;
 
   &:hover {
-    opacity: 0.4;
+    opacity: 0.5;
   }
 
   @media screen and (max-width: 1025px) {
@@ -73,8 +73,7 @@ export const CloseContainer = styled.div`
   transition: 0.3s;
 
   &:hover {
-    opacity: 0.4;
-    transform: scale(0.9);
+    opacity: 0.5;
   }
 
   @media screen and (max-width: 1025px) {
@@ -90,8 +89,7 @@ export const LinkContainer = styled(Link)`
   transition: 0.3s;
 
   &:hover {
-    opacity: 0.7;
-    transform: scale(0.99);
+    transform: scale(1.03);
   }
 `
 
@@ -129,8 +127,7 @@ export const BurguerContainer = styled.div`
   transition: 0.3s;
 
   &:hover {
-    opacity: 0.4;
-    transform: scale(0.9);
+    opacity: 0.6;
   }
 `
 
@@ -138,7 +135,6 @@ export const HeaderLogoContainer = styled.div`
   transition: 0.3s;
 
   &:hover {
-    opacity: 0.6;
-    transform: scale(0.99);
+    transform: scale(1.03);
   }
 `

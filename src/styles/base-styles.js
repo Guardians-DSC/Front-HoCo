@@ -9,6 +9,20 @@ export const AppWrapper = styled.div`
   box-sizing: border-box;
   transition: width 0.3s;
 
+  @keyFrames littleJump {
+    0% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-4px);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
+
   .ant-btn-primary {
     background: ${({ theme }) => theme['second-green']} !important;
   }

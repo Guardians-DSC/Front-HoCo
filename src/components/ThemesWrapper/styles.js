@@ -31,8 +31,7 @@ export const ThemeWrapper = styled.div`
   transition: 0.3s;
 
   &:hover {
-    opacity: 0.6;
-    transform: scale(0.99);
+    transform: scale(1.03);
   }
 `
 
