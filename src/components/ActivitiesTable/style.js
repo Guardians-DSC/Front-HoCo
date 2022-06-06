@@ -99,10 +99,13 @@ export const Table = styled(TableAntd)`
     opacity: 0.4;
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 800px) {
     tr > th,
     tr > td {
       width: 9rem;
+    }
+    .title {
+      min-width: 200px;
     }
   }
 `

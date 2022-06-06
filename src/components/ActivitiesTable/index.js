@@ -21,7 +21,7 @@ export const ActivitiesTable = ({ data }) => {
       title: 'Título',
       dataIndex: 'titulo',
       key: 'titulo',
-      width: 'fit-content',
+      className: 'title',
       fixed: 'left',
       render: (text) => text,
     },
@@ -29,7 +29,7 @@ export const ActivitiesTable = ({ data }) => {
       title: 'Horas',
       dataIndex: 'horas',
       key: 'horas',
-      width: 'fit-content',
+      width: '250px',
       align: 'center',
       render: (hora) => (hora > 0 ? hora : '- - -'),
       sorter: (a, b) => a.horas - b.horas,
@@ -38,7 +38,7 @@ export const ActivitiesTable = ({ data }) => {
       title: 'Créditos',
       dataIndex: 'creditos',
       key: 'creditos',
-      width: 'fit-content',
+      width: '250px',
       align: 'center',
       render: (credito) => (credito > 0 ? credito : '- - -'),
       sorter: (a, b) => a.creditos - b.creditos,
@@ -46,6 +46,7 @@ export const ActivitiesTable = ({ data }) => {
     {
       title: 'Categoria',
       align: 'center',
+      width: '300px',
       key: 'categoria',
       dataIndex: 'categoria',
       render: (tag) => {
@@ -61,6 +62,7 @@ export const ActivitiesTable = ({ data }) => {
     {
       title: 'Baixar certificado',
       align: 'center',
+      width: '150px',
       key: 'download',
       render: (record) => (
         <Space size="middle">
@@ -76,6 +78,7 @@ export const ActivitiesTable = ({ data }) => {
       title: 'Editar',
       align: 'center',
       key: 'edit',
+      width: '75px',
       render: (record) => {
         const [modalActive, setModalActive] = useState(false)
 
@@ -98,6 +101,7 @@ export const ActivitiesTable = ({ data }) => {
     {
       title: 'Apagar',
       align: 'center',
+      width: '100px',
       key: 'delete',
       render: (record) => (
         <Space size="middle">
