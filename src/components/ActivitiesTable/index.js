@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { Space, Popconfirm } from 'antd'
-import { EditOutlined, DeleteOutlined, DownloadOutlined } from '@ant-design/icons'
+import { DeleteOutlined, DownloadOutlined } from '@ant-design/icons'
 
 import { Table, Tag } from './style'
 import categories from '../../util/constants/categories'
 import { deleteActivity } from '../../services/api'
-import { ActivityModal } from '../ActivityModal'
+import { EditActivity } from '../EditActivityCell'
 
 export const ActivitiesTable = ({ data }) => {
   const formatFilterCategories = (categoryList) => {
@@ -79,24 +79,7 @@ export const ActivitiesTable = ({ data }) => {
       align: 'center',
       key: 'edit',
       width: '75px',
-      render: (record) => {
-        const [modalActive, setModalActive] = useState(false)
-
-        return (
-          <>
-            <Space size="middle">
-              <EditOutlined
-                className="edit-icon"
-                style={{ fontSize: '18px' }}
-                onClick={() => setModalActive(true)}
-              />
-            </Space>
-            {modalActive && (
-              <ActivityModal setIsActive={setModalActive} data={record} />
-            )}
-          </>
-        )
-      },
+      render: (record) => <EditActivity record={record} />,
     },
     {
       title: 'Apagar',

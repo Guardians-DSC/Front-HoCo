@@ -3,12 +3,13 @@ import React, { useState } from 'react'
 import { useEffect } from 'react'
 import { ActivitiesTable } from '../../components/ActivitiesTable'
 import { ActivityModal } from '../../components/ActivityModal'
+import useActivitiesContext from '../../contexts/activities.context'
 import { getActivities } from '../../services/api'
 import { Button, Text, Title } from '../../styles/base-styles'
 import { TableWrapper, Wrapper, ButtonsWrapper } from './styles'
 
 export const Atividades = () => {
-  const [isActive, setIsActive] = useState(false)
+  const { openActivityModal, isModalActive } = useActivitiesContext()
   const [activities, setActivities] = useState([])
 
   useEffect(() => {
@@ -44,16 +45,16 @@ export const Atividades = () => {
         </div>
         <TableWrapper>
           <ButtonsWrapper>
-            <Button onClick={() => setIsActive(true)}>Adicionar</Button>
+            <Button onClick={openActivityModal}>Adicionar</Button>
             <Button variable="second" onClick={() => console.log('baixando doc...')}>
               Baixar documentação
             </Button>
           </ButtonsWrapper>
           <div>
-            <ActivitiesTable setIsActive={setIsActive} data={activities} />
+            <ActivitiesTable data={activities} />
           </div>
         </TableWrapper>
-        {isActive ? <ActivityModal setIsActive={setIsActive} /> : <></>}
+        {isModalActive ? <ActivityModal /> : <></>}
       </Wrapper>
     )
   )

@@ -10,8 +10,10 @@ import { UploadFile } from '../UploadFile'
 import { OutWrapper, Wrapper, Header, Form } from './style'
 import { editActivity, registerActivity } from '../../services/api'
 import { create_UUID } from '../../util/util'
+import useActivitiesContext from '../../contexts/activities.context'
 
-export const ActivityModal = ({ setIsActive, data }) => {
+export const ActivityModal = ({ data }) => {
+  const { closeActivityModal } = useActivitiesContext()
   const [hours, setHours] = useState(data ? data.horas : '')
   const [credits, setCredits] = useState(data ? data.creditos : '')
   const [title, setTitle] = useState(data ? data.titulo : '')
@@ -34,7 +36,7 @@ export const ActivityModal = ({ setIsActive, data }) => {
   }
 
   const handleSubmit = () => {
-    setIsActive(false)
+    closeActivityModal()
 
     let response
     if (!data) {
@@ -54,16 +56,13 @@ export const ActivityModal = ({ setIsActive, data }) => {
   }
 
   return (
-    <OutWrapper onClick={() => setIsActive(false)}>
+    <OutWrapper onClick={closeActivityModal}>
       <Wrapper onClick={(e) => e.stopPropagation()}>
         <Header>
           <Title>
             <FileTextOutlined /> Cadastrar Atividade
           </Title>
-          <CloseOutlined
-            style={{ fontSize: '28px' }}
-            onClick={() => setIsActive(false)}
-          />
+          <CloseOutlined style={{ fontSize: '28px' }} onClick={closeActivityModal} />
         </Header>
         <Text>
           Olá usuário, caso você queira saber o que cada categoria das atividades
@@ -128,7 +127,6 @@ export const ActivityModal = ({ setIsActive, data }) => {
 }
 
 ActivityModal.propTypes = {
-  setIsActive: PropTypes.func.isRequired,
   data: PropTypes.shape({
     categoria: PropTypes.string,
     creditos: PropTypes.number,
