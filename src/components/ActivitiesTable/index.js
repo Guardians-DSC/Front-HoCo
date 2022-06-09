@@ -79,7 +79,7 @@ export const ActivitiesTable = ({ data }) => {
       align: 'center',
       key: 'edit',
       width: '75px',
-      render: (record) => <EditActivity record={record} />,
+      render: (record) => <EditActivity data={record} />,
     },
     {
       title: 'Apagar',

@@ -5,7 +5,7 @@ import useActivitiesContext from '../../contexts/activities.context'
 import { ActivityModal } from '../ActivityModal'
 import PropTypes from 'prop-types'
 
-export const EditActivity = ({ record }) => {
+export const EditActivity = ({ data }) => {
   const { openActivityModal, isModalActive } = useActivitiesContext()
 
   return (
@@ -17,11 +17,11 @@ export const EditActivity = ({ record }) => {
           onClick={openActivityModal}
         />
       </Space>
-      {isModalActive ? <ActivityModal record={record} /> : <></>}
+      {isModalActive ? <ActivityModal data={data} /> : <></>}
     </>
   )
 }
 
 EditActivity.propTypes = {
-  record: PropTypes.any,
+  data: PropTypes.any,
 }
