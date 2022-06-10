@@ -17,11 +17,21 @@ export const EditActivity = ({ data }) => {
           onClick={openActivityModal}
         />
       </Space>
-      {isModalActive ? <ActivityModal data={data} /> : <></>}
+      {isModalActive && <ActivityModal data={data} />}
     </>
   )
 }
 
 EditActivity.propTypes = {
-  data: PropTypes.any,
+  data: PropTypes.shape({
+    categoria: PropTypes.string,
+    creditos: PropTypes.number,
+    horas: PropTypes.number,
+    id: PropTypes.number,
+    titulo: PropTypes.string,
+    certificado: PropTypes.shape({
+      titulo: PropTypes.string,
+      previewURL: PropTypes.string,
+    }),
+  }),
 }

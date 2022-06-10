@@ -54,7 +54,7 @@ export const Atividades = () => {
             <ActivitiesTable data={activities} />
           </div>
         </TableWrapper>
-        {isModalActive ? <ActivityModal /> : <></>}
+        {isModalActive && <ActivityModal />}
       </Wrapper>
     )
   )
