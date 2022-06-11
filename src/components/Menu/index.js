@@ -50,7 +50,10 @@ export const Menu = () => {
 
   const handleOutClick = (e) => {
     e.stopPropagation()
-    handleActive()
+
+    if (isactive) {
+      setisactive(false)
+    }
   }
 
   return (

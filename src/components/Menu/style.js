@@ -4,17 +4,16 @@ import { Link } from 'react-router-dom'
 
 export const OutWrapper = styled.div`
   height: 100%;
-  width: 100vw;
   position: relative;
   margin-right: ${({ isretracted }) => (isretracted ? '5rem' : '18rem')};
   transition: 0.3s, background ${({ isactive }) => (isactive ? '0.3s' : '0s')};
   z-index: 10;
-  
 
   @media screen and (max-width: 1025px) {
-    transition-delay: 0s, ${({ isactive }) => (isactive ? '0.2s' : '0s')}; 
+    width: 100vw;
+    transition-delay: 0s, ${({ isactive }) => (isactive ? '0.2s' : '0s')};
     background-color: ${({ isactive }) => (isactive ? '#00000070' : 'transparent')};
-    transform: ${({ isactive }) => (!isactive && 'translate(-100vw)')};
+    transform: ${({ isactive }) => !isactive && 'translate(-100vw)'};
     position: absolute;
   }
 `
