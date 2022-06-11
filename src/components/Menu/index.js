@@ -48,9 +48,18 @@ export const Menu = () => {
     setisactive(!isactive)
   }
 
+  const handleOutClick = (e) => {
+    e.stopPropagation()
+    handleActive()
+  }
+
   return (
     <>
-      <OutWrapper isretracted={isretracted ? 1 : 0} isactive={isactive ? 1 : 0}>
+      <OutWrapper
+        onClick={handleOutClick}
+        isretracted={isretracted ? 1 : 0}
+        isactive={isactive ? 1 : 0}
+      >
         <Wrapper isretracted={isretracted ? 1 : 0}>
           <MenuHeader isretracted={isretracted ? 1 : 0}>
             <ArrowContainer
