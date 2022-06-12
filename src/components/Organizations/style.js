@@ -3,9 +3,9 @@ import styled from 'styled-components'
 export const OrganizationsDiv = styled.div`
   width: 100%;
 
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
   gap: 3rem 5rem;
 
   margin: 0 auto;
