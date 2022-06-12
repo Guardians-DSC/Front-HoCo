@@ -81,10 +81,9 @@ Caso esteja interessade(o/a) em contribuir com algum dos projetos do HoCo, verif
 
 ## :pushpin: Mantenedores
 
-- [Franciclaudio Dantas](https://github.com/claudiodantas)
-- [Gustavo Farias](https://github.com/GusttaFS)
 - [Leandra Oliveira](https://github.com/LeandraOS)
 - [Rodrigo Eloy](https://github.com/RodrigoEC)
+- [Ruan Gomes](https://github.com/RuanGOA)
 
 ## :pencil2: Licença e Copyright
 
