@@ -13,6 +13,7 @@ export const Section = styled.div`
 
   img {
     width: fit-content;
+    padding-top: 1rem;
     height: fit-content;
     display: flex;
     flex-direction: column;
@@ -22,8 +23,7 @@ export const Section = styled.div`
 
   blockquote {
     border-left: 4px solid #8b949e;
-    margin: 0 0.75rem;
-    padding-left: 1rem;
+    padding-left: 0.8rem;
     line-height: 1.7rem;
   }
 
@@ -78,6 +78,7 @@ export const QuestionTitle = styled.div`
 
 export const ResponseContent = styled.div`
   @media screen and (max-width: 550px) {
+    padding-left: 1.58rem;
     overflow-x: scroll;
   }
 `
@@ -87,23 +88,22 @@ export const ResponseText = styled.p`
   color: var(--font-grey);
   line-height: 1.75rem;
   width: fit-content;
-  padding: 1rem 0.5rem 0;
+  padding: 1rem 1.58rem 0;
 
-  ol,
-  ul {
-    padding-left: 3rem;
+  ul,
+  ol {
+    padding-left: 1rem;
   }
 
   @media screen and (max-width: 550px) {
     padding-left: 0;
 
     ol {
-      padding-left: 2.25rem;
       line-height: 1.7rem;
     }
 
     ul {
-      padding-left: 2.5rem;
+      padding-left: 1.25rem;
       line-height: 1.7rem;
       font-size: 1.2rem;
       line-height: 1.2rem;
@@ -112,6 +112,7 @@ export const ResponseText = styled.p`
       flex-direction: column;
       width: fit-content;
     }
+
     td,
     th {
       padding: 0.75rem 0.4rem;

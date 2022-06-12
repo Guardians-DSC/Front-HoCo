@@ -34,16 +34,15 @@ O pouco conhecimento sobre como adquirir e gerenciar horas e atividades compleme
 
 ## :gear: Pré-requisitos
 
-Para executar o projeto é necessário ter instalado na sua máquina o [`docker`](https://docs.docker.com/get-docker/), o ambiente de implementação do projeto,  e o [`docker-compose`](https://docs.docker.com/compose/install/), a ferramenta de auxílio no gerenciamento do ambiente de docker. Para auxílio, abaixo estão listados alguns links úteis para a instalação dessas dependências:
+Para executar o projeto é necessário ter instalado na sua máquina o [`docker`](https://docs.docker.com/get-docker/), o ambiente de implementação do projeto, e o [`docker-compose`](https://docs.docker.com/compose/install/), a ferramenta de auxílio no gerenciamento do ambiente de docker. Para auxílio, abaixo estão listados alguns links úteis para a instalação dessas dependências:
 
 - [Tutorial de instalação do docker](https://www.hostinger.com.br/tutoriais/install-docker-ubuntu)
 - [Tutorial de instalação do docker compose](https://docs.docker.com/compose/install/)
 
 ## :running: Como executar o projeto
 
-⚠️ **ATENÇÃO:** É necessário se atentar ao fato que este projeto é o front-end do  [Projeto HoCo](https://github.com/Guardians-DSC/HoCo). Assim, caso você necessite da execução completa, é necessário executar o back-end do projeto.
+⚠️ **ATENÇÃO:** É necessário se atentar ao fato que este projeto é o front-end do [Projeto HoCo](https://github.com/Guardians-DSC/HoCo). Assim, caso você necessite da execução completa, é necessário executar o back-end do projeto.
 O **passo-a-passo** a seguir, se limita a execução do front-end do projeto, abrangendo apenas as funcionalidades implementadas que não possuem a necessidade da execução do back-end.
-
 
 **Siga os seguintes passos para a execução do projeto:**
 
