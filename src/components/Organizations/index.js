@@ -1,11 +1,10 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import { OrganizationCard } from './OrganizationCard'
 import { OrganizationsDiv } from './style.js'
 
-import { orgs } from '../../util/constants/organizations'
-
-export function Organizations() {
+export function Organizations({ orgs }) {
   return (
     <OrganizationsDiv>
       {orgs.map((org, index) => (
@@ -13,4 +12,8 @@ export function Organizations() {
       ))}
     </OrganizationsDiv>
   )
+}
+
+Organizations.propTypes = {
+  orgs: PropTypes.array,
 }

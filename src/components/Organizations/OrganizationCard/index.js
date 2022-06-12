@@ -10,11 +10,11 @@ import {
   OrganizationContainer,
 } from './style.js'
 
-export function OrganizationCard({ image, name, url }) {
+export function OrganizationCard({ image, name, org_url }) {
   return (
     <OrganizationContainer>
       <OrganizationUrl
-        href={url}
+        href={org_url}
         target="_blank"
         rel="noreferrer"
         alt="Imagem da organização"
@@ -29,6 +29,6 @@ export function OrganizationCard({ image, name, url }) {
 
 OrganizationCard.propTypes = {
   name: PropTypes.string,
-  url: PropTypes.string,
+  org_url: PropTypes.string,
   image: PropTypes.string,
 }

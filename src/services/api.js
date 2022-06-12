@@ -194,3 +194,12 @@ export const deleteActivity = async (activityID, data) => {
   const response = await api.delete(`/atividade?id=${activityID}`)
   console.log(response)
 }
+
+export const getOrgs = async () => {
+  try {
+    const response = await api.get('/orgs')
+    return response.data
+  } catch (e) {
+    console.log(e)
+  }
+}
