@@ -17,7 +17,6 @@ export const OrganizationUrl = styled.a`
 
   box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-  
 
   &:hover {
     & > div {
@@ -39,7 +38,6 @@ export const OrganizationImage = styled.img`
 
 export const OrganizationName = styled.p`
   letter-spacing: 5px;
-  
   position: absolute;
   color: white;
   opacity: 0;

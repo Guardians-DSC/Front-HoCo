@@ -21,3 +21,18 @@ export const OrganizationsDiv = styled.div`
     justify-content: center;
   }
 `
+
+export const NoInfoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  height: 15rem;
+  width: 100%;
+`
+
+export const EmptyText = styled.p`
+  color: ${({ theme }) => theme['third-font']};
+`

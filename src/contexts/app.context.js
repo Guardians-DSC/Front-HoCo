@@ -13,6 +13,7 @@ import { useHistory } from 'react-router-dom'
 const PagesContext = createContext()
 
 export function PagesProvider({ children }) {
+  const [loading, setLoading] = useState(true)
   const { themes, pages } = constants
   const history = useHistory()
 
@@ -44,6 +45,8 @@ export function PagesProvider({ children }) {
     pages,
     theme,
     handleTheme,
+    loading,
+    setLoading,
   }
 
   return (
