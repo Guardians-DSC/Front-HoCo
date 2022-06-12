@@ -19,7 +19,7 @@ export const data = [
   {
     question: 'Quais as atividades relacionadas a cada categoria?',
     answer:
-      ' - Lorem Ipsum is simply dummy text of the printing and typesetting industry.![image](https://lh3.googleusercontent.com/proxy/2JtY1o2dF9ZrnuzXfLDkwy9Qqns7o05O0Df8XZliFogn1vGcpJOllxss3CcUH9_VVm-AEtHEik3LjorFiyggCuTv9GnV4khaYx4-5zeND6A5U9f_CBYL0SH6c2WLYSB3REvT6Qg7755m2y-q0Ia8O6o_1Q)',
+      ' - Lorem Ipsum is simply dummy text of the printing and typesetting industry.![image](https://media.sproutsocial.com/uploads/2017/08/Social-Media-Video-Specs-Feature-Image.png)',
   },
 
   {
