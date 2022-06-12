@@ -47,6 +47,7 @@ export const Page = styled.div`
 
 export const Content = styled.div`
   width: auto;
+  height: 100%;
 
   display: flex;
   flex-direction: column;

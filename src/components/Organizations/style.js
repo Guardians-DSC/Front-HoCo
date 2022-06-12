@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const OrganizationsDiv = styled.div`
   width: 100%;
+  flex-grow: 1;
 
   display: flex;
   flex-wrap: wrap;
@@ -23,14 +24,15 @@ export const OrganizationsDiv = styled.div`
 `
 
 export const NoInfoContainer = styled.div`
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   align-items: center;
   text-align: center;
   justify-content: center;
-  height: 15rem;
   width: 100%;
+  max-height: 35rem;
 `
 
 export const EmptyText = styled.p`
