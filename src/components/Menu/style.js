@@ -6,11 +6,14 @@ export const OutWrapper = styled.div`
   height: 100%;
   position: relative;
   margin-right: ${({ isretracted }) => (isretracted ? '5rem' : '18rem')};
-  transition: 0.3s;
+  transition: 0.3s, background ${({ isactive }) => (isactive ? '0.3s' : '0s')};
   z-index: 10;
 
   @media screen and (max-width: 1025px) {
-    transform: ${({ isactive }) => (isactive ? '' : 'translate(-100vw)')};
+    width: 100vw;
+    transition-delay: 0s, ${({ isactive }) => (isactive ? '0.2s' : '0s')};
+    background-color: ${({ isactive }) => (isactive ? '#00000070' : 'transparent')};
+    transform: ${({ isactive }) => !isactive && 'translate(-100vw)'};
     position: absolute;
   }
 `
