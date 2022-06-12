@@ -16,7 +16,7 @@ export const Orgs = () => {
   useEffect(() => {
     const getData = async () => {
       const data = await getOrgs()
-      setOrgs(data)
+      if (data) setOrgs(data)
       setLoading(false)
     }
 
