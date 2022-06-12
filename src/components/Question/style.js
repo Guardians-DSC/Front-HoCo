@@ -90,7 +90,8 @@ export const ResponseText = styled.p`
   width: fit-content;
   padding: 1rem 1.58rem 0;
 
-  ul, ol {
+  ul,
+  ol {
     padding-left: 1rem;
   }
 
@@ -111,6 +112,7 @@ export const ResponseText = styled.p`
       flex-direction: column;
       width: fit-content;
     }
+
     td,
     th {
       padding: 0.75rem 0.4rem;
