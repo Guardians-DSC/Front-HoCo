@@ -102,6 +102,7 @@ export const ResponseText = styled.p`
     }
 
     ul {
+      padding-left: 1.25rem;
       line-height: 1.7rem;
       font-size: 1.2rem;
       line-height: 1.2rem;
