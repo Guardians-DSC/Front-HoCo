@@ -13,6 +13,7 @@ export const Section = styled.div`
 
   img {
     width: fit-content;
+    padding-top: 1rem;
     height: fit-content;
     display: flex;
     flex-direction: column;
@@ -89,21 +90,18 @@ export const ResponseText = styled.p`
   width: fit-content;
   padding: 1rem 1.58rem 0;
 
-  ol,
-  ul {
-    padding-left: 2rem;
+  ul, ol {
+    padding-left: 1rem;
   }
 
   @media screen and (max-width: 550px) {
     padding-left: 0;
 
     ol {
-      padding-left: 2.25rem;
       line-height: 1.7rem;
     }
 
     ul {
-      padding-left: 2.5rem;
       line-height: 1.7rem;
       font-size: 1.2rem;
       line-height: 1.2rem;
