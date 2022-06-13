@@ -13,6 +13,7 @@ export const OrganizationsDiv = styled.div`
   margin-top: 3.5rem;
 
   @media screen and (max-width: 1700px) {
+    justify-content: center;
     grid-template-columns: repeat(2, 1fr);
   }
 
