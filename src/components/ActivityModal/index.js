@@ -8,10 +8,10 @@ import categories from '../../util/constants/categories'
 import { Select } from '../Select'
 import { UploadFile } from '../UploadFile'
 import { OutWrapper, Wrapper, Header, Form } from './style'
-import { editActivity, registerActivity } from '../../services/api'
-import { create_UUID } from '../../util/util'
+import useActivitiesContext from '../../contexts/activities.context'
 
-export const ActivityModal = ({ setIsActive, data }) => {
+export const ActivityModal = ({ data }) => {
+  const { submitActivity, closeActivityModal } = useActivitiesContext()
   const [hours, setHours] = useState(data ? data.horas : '')
   const [credits, setCredits] = useState(data ? data.creditos : '')
   const [title, setTitle] = useState(data ? data.titulo : '')
@@ -34,36 +34,27 @@ export const ActivityModal = ({ setIsActive, data }) => {
   }
 
   const handleSubmit = () => {
-    setIsActive(false)
-
-    let response
-    if (!data) {
-      response = registerActivity({
-        id: create_UUID(),
-        titulo: title,
-        creditos: credits,
-        horas: hours,
-        categoria: category,
-        file: uploadedFile,
-      })
-    } else {
-      response = editActivity(data.id, data)
-    }
-
-    console.log(response)
+    const operation = !data ? 'create' : 'update'
+    submitActivity(
+      data || {
+        hours,
+        credits,
+        title,
+        uploadedFile,
+        category,
+      },
+      operation
+    )
   }
 
   return (
-    <OutWrapper onClick={() => setIsActive(false)}>
+    <OutWrapper onClick={closeActivityModal}>
       <Wrapper onClick={(e) => e.stopPropagation()}>
         <Header>
           <Title>
             <FileTextOutlined /> Cadastrar Atividade
           </Title>
-          <CloseOutlined
-            style={{ fontSize: '28px' }}
-            onClick={() => setIsActive(false)}
-          />
+          <CloseOutlined style={{ fontSize: '28px' }} onClick={closeActivityModal} />
         </Header>
         <Text>
           Olá usuário, caso você queira saber o que cada categoria das atividades
@@ -128,7 +119,6 @@ export const ActivityModal = ({ setIsActive, data }) => {
 }
 
 ActivityModal.propTypes = {
-  setIsActive: PropTypes.func.isRequired,
   data: PropTypes.shape({
     categoria: PropTypes.string,
     creditos: PropTypes.number,
