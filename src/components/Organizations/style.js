@@ -14,13 +14,7 @@ export const OrganizationsDiv = styled.div`
 
   @media screen and (max-width: 1700px) {
     justify-content: center;
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media screen and (max-width: 925px) {
-    grid-template-columns: repeat(1, 1fr);
     align-items: center;
-    justify-content: center;
   }
 `
 
