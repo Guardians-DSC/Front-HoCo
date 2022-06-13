@@ -8,12 +8,10 @@ import categories from '../../util/constants/categories'
 import { Select } from '../Select'
 import { UploadFile } from '../UploadFile'
 import { OutWrapper, Wrapper, Header, Form } from './style'
-import { editActivity, registerActivity } from '../../services/api'
-import { create_UUID } from '../../util/util'
 import useActivitiesContext from '../../contexts/activities.context'
 
 export const ActivityModal = ({ data }) => {
-  const { closeActivityModal } = useActivitiesContext()
+  const { submitActivity, closeActivityModal } = useActivitiesContext()
   const [hours, setHours] = useState(data ? data.horas : '')
   const [credits, setCredits] = useState(data ? data.creditos : '')
   const [title, setTitle] = useState(data ? data.titulo : '')
@@ -36,23 +34,17 @@ export const ActivityModal = ({ data }) => {
   }
 
   const handleSubmit = () => {
-    closeActivityModal()
-
-    let response
-    if (!data) {
-      response = registerActivity({
-        id: create_UUID(),
-        titulo: title,
-        creditos: credits,
-        horas: hours,
-        categoria: category,
-        file: uploadedFile,
-      })
-    } else {
-      response = editActivity(data.id, data)
-    }
-
-    console.log(response)
+    const operation = !data ? 'create' : 'update'
+    submitActivity(
+      data || {
+        hours,
+        credits,
+        title,
+        uploadedFile,
+        category,
+      },
+      operation
+    )
   }
 
   return (
