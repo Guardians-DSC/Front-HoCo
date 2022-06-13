@@ -1,27 +1,26 @@
-import React, { createContext, useContext, useState } from 'react'
+import React, { createContext, useContext } from 'react'
 import PropTypes from 'prop-types'
 import eu from '../assets/images/eu.jpeg'
+import { useForm } from '../hooks/useForm'
 
 const UserContext = createContext()
 
 export function UserProvider({ children }) {
-  const [name, setName] = useState('Rodrigo Eloy')
-  const [email, setEmail] = useState('rodrigo.cavalcanti@ccc.ufcg.edu.br')
-  const [course, setCourse] = useState('Ciência da computação')
-  const [userId, setUserId] = useState('118210111')
-  const [avatar, setAvatar] = useState(eu)
+  const [{ formState }, { handleFormChange }] = useForm({
+    name: 'Rodrigo Eloy',
+    email: 'rodrigo.cavalcanti@ccc.ufcg.edu.br',
+    course: 'Ciência da computação',
+    userId: '118210111',
+    avatar: eu,
+  })
 
   const values = {
-    name,
-    setName,
-    email,
-    setEmail,
-    course,
-    setCourse,
-    userId,
-    setUserId,
-    avatar,
-    setAvatar,
+    ...formState,
+    setName: handleFormChange('name'),
+    setEmail: handleFormChange('email'),
+    setCourse: handleFormChange('course'),
+    setUserId: handleFormChange('userId'),
+    setAvatar: handleFormChange('avatar'),
   }
 
   return <UserContext.Provider value={values}>{children}</UserContext.Provider>

@@ -10,13 +10,17 @@ import { UploadFile } from '../UploadFile'
 import { OutWrapper, Wrapper, Header, Form } from './style'
 import { editActivity, registerActivity } from '../../services/api'
 import { create_UUID } from '../../util/util'
+import { useForm } from '../../hooks/useForm'
 
 export const ActivityModal = ({ setIsActive, data }) => {
-  const [hours, setHours] = useState(data ? data.horas : '')
-  const [credits, setCredits] = useState(data ? data.creditos : '')
-  const [title, setTitle] = useState(data ? data.titulo : '')
-  const [uploadedFile, setUploadedFile] = useState(data ? data.certificado : null)
-  const [category, setCategory] = useState(data ? data.categoria : '')
+  const [{ formState }, { handleFormChange }] = useForm({
+    horas: data?.horas || '',
+    creditos: data?.creditos || '',
+    titulo: data?.titulo || '',
+    file: data?.certificado || '',
+    categoria: data?.categoria || '',
+  })
+
   const filteredCategories = Object.keys(categories).map((category, index) => {
     return categories[category].text
   })
@@ -30,7 +34,7 @@ export const ActivityModal = ({ setIsActive, data }) => {
       previewURL: URL.createObjectURL(file),
     }
 
-    setUploadedFile(fileObject)
+    handleFormChange('uploadedFile')(fileObject)
   }
 
   const handleSubmit = () => {
@@ -40,11 +44,7 @@ export const ActivityModal = ({ setIsActive, data }) => {
     if (!data) {
       response = registerActivity({
         id: create_UUID(),
-        titulo: title,
-        creditos: credits,
-        horas: hours,
-        categoria: category,
-        file: uploadedFile,
+        ...formState,
       })
     } else {
       response = editActivity(data.id, data)
@@ -74,16 +74,16 @@ export const ActivityModal = ({ setIsActive, data }) => {
           <Item>
             <UploadFile
               handleUpload={handleFileUpload}
-              uploadedFile={uploadedFile}
+              uploadedFile={formState.file}
             />
           </Item>
           <Row>
             <Col span={24}>
               <Item label="Título da atividade complementar">
                 <Input
-                  value={title}
+                  value={formState.titulo}
                   placeholder="Ex.: Monitoria em Laboratório de Programação II"
-                  onChange={(e) => setTitle(e.target.value)}
+                  onChange={handleFormChange('titulo')}
                 />
               </Item>
             </Col>
@@ -92,18 +92,18 @@ export const ActivityModal = ({ setIsActive, data }) => {
             <Col span={12}>
               <Item label="Categoria">
                 <Select
-                  defaultOption={category}
+                  defaultOption={formState.categoria}
                   options={filteredCategories}
-                  onChange={setCategory}
+                  onChange={handleFormChange('categoria')}
                 />
               </Item>
             </Col>
             <Col className="gutter-row" span={6}>
               <Item label="Horas">
                 <Input
-                  value={hours}
+                  value={formState.horas}
                   type="number"
-                  onChange={(e) => setHours(e.target.value)}
+                  onChange={handleFormChange('horas')}
                   placeholder="Ex.: 20"
                 />
               </Item>
@@ -111,9 +111,9 @@ export const ActivityModal = ({ setIsActive, data }) => {
             <Col className="gutter-row" span={6}>
               <Item label="Créditos">
                 <Input
-                  value={credits}
+                  value={formState.creditos}
                   type="number"
-                  onChange={(e) => setCredits(e.target.value)}
+                  onChange={handleFormChange('creditos')}
                   placeholder="Ex.: 8"
                 />
               </Item>
