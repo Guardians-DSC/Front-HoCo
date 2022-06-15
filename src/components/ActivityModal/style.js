@@ -14,7 +14,7 @@ export const OutWrapper = styled.div`
   height: 100vh;
   z-index: 20;
   width: 100vw;
-  background-color: #00000080;
+  background-color: rgba(0, 0, 0, 0.15);
   overflow-y: scroll;
 `
 
