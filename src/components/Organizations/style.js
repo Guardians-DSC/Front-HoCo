@@ -2,22 +2,34 @@ import styled from 'styled-components'
 
 export const OrganizationsDiv = styled.div`
   width: 100%;
+  flex-grow: 1;
 
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
   gap: 3rem 5rem;
 
   margin: 0 auto;
   margin-top: 3.5rem;
 
   @media screen and (max-width: 1700px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media screen and (max-width: 925px) {
-    grid-template-columns: repeat(1, 1fr);
-    align-items: center;
     justify-content: center;
+    align-items: center;
   }
+`
+
+export const NoInfoContainer = styled.div`
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  max-height: 35rem;
+`
+
+export const EmptyText = styled.p`
+  color: ${({ theme }) => theme['third-font']};
 `

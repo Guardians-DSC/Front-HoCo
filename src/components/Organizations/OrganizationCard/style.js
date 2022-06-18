@@ -6,9 +6,8 @@ export const OrganizationContainer = styled.div`
 `
 
 export const OrganizationUrl = styled.a`
-  min-width: 25rem;
-  width: inherit;
-  height: 12.5rem;
+  width: 15rem;
+  height: 15rem;
 
   position: relative;
 
@@ -17,6 +16,7 @@ export const OrganizationUrl = styled.a`
   transition: all 0.5s;
 
   box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
 
   &:hover {
     & > div {
@@ -33,12 +33,11 @@ export const OrganizationImage = styled.img`
   object-fit: cover;
   width: 100%;
   height: 100%;
+  border-radius: inherit;
 `
 
 export const OrganizationName = styled.p`
-  font-size: 2rem;
   letter-spacing: 5px;
-
   position: absolute;
   color: white;
   opacity: 0;
@@ -55,6 +54,7 @@ export const OrganizationName = styled.p`
 export const ShadowLayer = styled.div`
   width: 100%;
   height: 100%;
+  border-radius: inherit;
 
   background: black;
   opacity: 0;
