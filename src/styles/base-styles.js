@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 import { Form as FormAntd, Input as InputAntd, Modal as ModalAntd } from 'antd'
-import 'antd/dist/antd.css'
+import 'antd/dist/antd.min.css'
 
 export const AppWrapper = styled.div`
   background-color: ${({ theme }) => theme['main-background']};
@@ -8,6 +8,16 @@ export const AppWrapper = styled.div`
   min-height: 100vh;
   box-sizing: border-box;
   transition: width 0.3s;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    transition: 0.3s;
+    color: ${({ theme }) => theme['main-font']} !important;
+  }
 
   @keyframes littleJump {
     0% {
@@ -35,7 +45,7 @@ export const AppWrapper = styled.div`
 export const Page = styled.div`
   width: 100%;
   padding: 3.5rem 2.5rem;
-  background-color: ${({ theme }) => theme['main-background']};
+  /* background-color: ${({ theme }) => theme['main-background']}; */
   box-sizing: border-box;
   transition: 0.3s;
   color: ${({ theme }) => theme['main-font']};
@@ -86,6 +96,7 @@ export const Title = styled.h1`
   margin-bottom: 2rem;
   font-weight: 500;
   letter-spacing: 0.1rem;
+  transition: 0.3s;
 
   font-size: 1.75rem;
 
@@ -97,7 +108,7 @@ export const Title = styled.h1`
 export const Subtitle = styled.h2`
   margin: 1.5rem 0;
   font-weight: 500;
-
+  transition: 0.3s;
   font-size: 1.25rem;
 
   @media screen and (max-width: 1024px) {

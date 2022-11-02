@@ -1,4 +1,4 @@
-FROM node:lts-alpine as dependency
+FROM node:18.12.0 as dependency
 
 WORKDIR /app
 
