@@ -48,23 +48,27 @@ export const QuestionContent = styled.div`
   cursor: pointer;
   display: flex;
   align-items: center;
-  width: 100%;
   transition: 0.6s ease;
   gap: 0.5rem;
-  vertical-align: middle;
-  align-items: center;
+  height: 4rem;
 
   @media screen and (max-width: 550px) {
     gap: 0.5rem;
+    margin: 1rem 0 1rem;
   }
 `
 
 export const QuestionTitle = styled.div`
   font-size: 1.2rem;
+  display: flex;
   font-weight: 500;
   color: var(--font-grey);
   text-align: left;
-  line-height: 2rem;
+  justify-content: center;
+
+  p {
+    margin: 0;
+  }
 
   a {
     color: var(--font-grey);
@@ -88,7 +92,11 @@ export const ResponseText = styled.p`
   color: var(--font-grey);
   line-height: 1.75rem;
   width: fit-content;
-  padding: 1rem 1.58rem 0;
+  padding-left: 1.58rem;
+  margin: 0;
+  p {
+    margin: 0;
+  }
 
   ul,
   ol {
