@@ -7,7 +7,7 @@ export const LogoutButton = () => {
 
   return (
     <Button onClick={() => logout({ returnTo: window.location.origin })}>
-      Sair
+      Fazer logout
     </Button>
   )
 }
