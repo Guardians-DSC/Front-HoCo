@@ -1,6 +1,8 @@
 import { BookOutlined } from '@ant-design/icons'
+import { useAuth0 } from '@auth0/auth0-react'
 import React, { useState } from 'react'
 import { useEffect } from 'react'
+import { Redirect } from 'react-router-dom/cjs/react-router-dom.min'
 import { ActivitiesTable } from '../../components/ActivitiesTable'
 import { ActivityModal } from '../../components/ActivityModal'
 import useActivitiesContext from '../../contexts/activities.context'
@@ -11,6 +13,7 @@ import { TableWrapper, Wrapper, ButtonsWrapper } from './styles'
 export const Atividades = () => {
   const { openActivityModal, isModalActive } = useActivitiesContext()
   const [activities, setActivities] = useState([])
+  const { isAuthenticated } = useAuth0()
 
   useEffect(() => {
     const getData = async () => {
@@ -21,7 +24,7 @@ export const Atividades = () => {
     getData()
   }, [])
 
-  return (
+  return isAuthenticated ? (
     activities && (
       <Wrapper>
         <Title>
@@ -57,5 +60,7 @@ export const Atividades = () => {
         {isModalActive && <ActivityModal />}
       </Wrapper>
     )
+  ) : (
+    <Redirect to="/sobre" />
   )
 }

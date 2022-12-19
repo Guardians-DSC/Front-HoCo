@@ -1,16 +1,16 @@
 import React from 'react'
 import { Wrapper, Icon, Content, ButtonWrapper } from './styles'
 import { Title } from '../../styles/base-styles'
-import { Button } from '../../styles/base-styles'
 import { UserInfo } from '../../components/UserInfo'
 import { ThemesWrapper } from '../../components/ThemesWrapper'
+import { useAuth0 } from '@auth0/auth0-react'
+import { LogoutButton } from '../../components/LogoutButton'
+import { Redirect } from 'react-router-dom'
 
 export const Perfil = () => {
-  const handleSaveInfo = () => {
-    console.log('Salvando...')
-  }
+  const { isAuthenticated } = useAuth0()
 
-  return (
+  return isAuthenticated ? (
     <Wrapper>
       <Title>
         <Icon />
@@ -20,9 +20,11 @@ export const Perfil = () => {
         <UserInfo />
         <ThemesWrapper />
         <ButtonWrapper>
-          <Button onClick={handleSaveInfo}>Salvar alterações</Button>
+          <LogoutButton />
         </ButtonWrapper>
       </Content>
     </Wrapper>
+  ) : (
+    <Redirect to="/sobre" />
   )
 }

@@ -22,6 +22,7 @@ export default [
     path: '/sobre',
     component: Sobre,
     menu: true,
+    loggedOutRender: true,
   },
   {
     name: 'horas',
@@ -30,6 +31,7 @@ export default [
     path: '/horas',
     component: Horas,
     menu: true,
+    loggedOutRender: false,
   },
   {
     name: 'atividades',
@@ -38,6 +40,7 @@ export default [
     path: '/atividades',
     component: Atividades,
     menu: 'true',
+    loggedOutRender: false,
   },
   {
     name: 'orgs',
@@ -46,6 +49,7 @@ export default [
     path: '/orgs',
     component: Orgs,
     menu: true,
+    loggedOutRender: true,
   },
   {
     name: 'duvidas',
@@ -56,6 +60,7 @@ export default [
     path: '/duvidas',
     component: Duvidas,
     menu: true,
+    loggedOutRender: true,
   },
   {
     name: 'Perfil',
@@ -63,5 +68,6 @@ export default [
     path: '/perfil',
     component: Perfil,
     menu: false,
+    loggedOutRender: false,
   },
 ]

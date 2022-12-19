@@ -1,11 +1,11 @@
 import React from 'react'
-import useUserContext from '../../contexts/user.context'
-import { Wrapper, FormWrapper, SameLineInfoWrapper, Subtitle } from './styles'
+import { Wrapper, FormWrapper, Subtitle } from './styles'
 import { Item, Input, Form } from '../../styles/base-styles'
 import { Profile } from '../Profile'
+import { useAuth0 } from '@auth0/auth0-react'
 
 export const UserInfo = () => {
-  const { name, email, userId, course } = useUserContext()
+  const { user } = useAuth0()
 
   return (
     <Wrapper>
@@ -13,19 +13,11 @@ export const UserInfo = () => {
       <FormWrapper>
         <Form>
           <Item label="Nome">
-            <Input defaultValue={name} />
+            <Input defaultValue={user.name} disabled />
           </Item>
           <Item label="E-mail">
-            <Input defaultValue={email} />
+            <Input defaultValue={user.email} disabled />
           </Item>
-          <SameLineInfoWrapper>
-            <Item label="Matrícula">
-              <Input defaultValue={userId} disabled />
-            </Item>
-            <Item label="Curso">
-              <Input defaultValue={course} />
-            </Item>
-          </SameLineInfoWrapper>
         </Form>
         <Profile width={320} displayName={false} />
       </FormWrapper>

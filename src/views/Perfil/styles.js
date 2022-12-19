@@ -21,7 +21,9 @@ export const Icon = styled(UserOutlined)`
 `
 
 export const ButtonWrapper = styled.div`
+  width: fit-content;
   align-self: flex-end;
+  gap: 1rem;
 
   @media screen and (max-width: 1025px) {
     margin-top: 3.5rem;

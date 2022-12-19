@@ -1,5 +1,7 @@
 import { ClockCircleOutlined } from '@ant-design/icons'
+import { useAuth0 } from '@auth0/auth0-react'
 import React from 'react'
+import { Redirect } from 'react-router-dom/cjs/react-router-dom.min'
 import { useTheme } from 'styled-components'
 import { ActivitiesBarChart } from '../../components/ActivitiesBarChart'
 import { CreditsPieChart } from '../../components/CreditsPieChart'
@@ -9,8 +11,9 @@ import { ProgressbarContainer, ChartsContainer, Charts } from './styles'
 
 export const Horas = () => {
   const theme = useTheme()
+  const { isAuthenticated } = useAuth0()
 
-  return (
+  return isAuthenticated ? (
     <>
       <Title>
         <ClockCircleOutlined
@@ -48,5 +51,7 @@ export const Horas = () => {
         </Charts>
       </ChartsContainer>
     </>
+  ) : (
+    <Redirect to="/sobre" />
   )
 }

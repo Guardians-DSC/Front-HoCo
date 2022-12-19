@@ -185,6 +185,7 @@ export const Form = styled(FormAntd)`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  width: 100%;
 
   .ant-form-item-label label {
     color: ${({ theme }) => theme['main-font']};
