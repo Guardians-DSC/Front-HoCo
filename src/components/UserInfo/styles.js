@@ -8,7 +8,7 @@ export const FormWrapper = styled.section`
   display: flex;
   align-self: center;
   align-items: center;
-  gap: 8rem;
+  gap: 4rem;
   width: 100%;
 
   @media screen and (max-width: 800px) {
