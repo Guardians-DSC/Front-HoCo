@@ -1,10 +1,18 @@
 import styled from 'styled-components'
 
+export const OutWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+`
+
 export const Wrapper = styled.div`
   display: flex;
   gap: 1rem;
   align-items: center;
   font-weight: 600;
+  width: 100%;
 
   @media screen and (max-width: 600px) {
     flex-direction: column;
@@ -27,4 +35,8 @@ export const Progress = styled.div`
   transition-delay: 0.2s;
   width: ${({ width }) => `${width}%`};
   transition: width 1s ease-in-out 0s;
+`
+
+export const LimitExceded = styled.span`
+  font-weight: bold;
 `

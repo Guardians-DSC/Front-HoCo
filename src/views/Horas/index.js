@@ -48,7 +48,7 @@ export const Horas = () => {
         </Text>
 
         <ProgressbarContainer>
-          <ProgressBar />
+          <ProgressBar credits={userData.amount} limit={userData.max} />
         </ProgressbarContainer>
 
         <Text>
