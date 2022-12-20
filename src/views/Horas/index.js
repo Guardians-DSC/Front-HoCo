@@ -65,7 +65,7 @@ export const Horas = () => {
 
           <Charts>
             <CreditsPieChart data={userData} />
-            <ActivitiesBarChart />
+            <ActivitiesBarChart data={userData} />
           </Charts>
         </ChartsContainer>
       </>

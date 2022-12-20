@@ -19,9 +19,9 @@ import { useTheme } from 'styled-components'
 export const ActivitiesBarChart = ({ data }) => {
   const theme = useTheme()
 
-  const updatedData = data.map((objectData) => {
+  const updatedData = data.categories.map((objectData) => {
     return {
-      'creditos disponiveis': objectData.maximo - objectData.acumulado,
+      'creditos disponiveis': objectData.max - objectData.amount,
       ...objectData,
       top: 20,
     }
@@ -42,7 +42,7 @@ export const ActivitiesBarChart = ({ data }) => {
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="categoria" />
+          <XAxis dataKey="category" />
           <YAxis dataKey="top" width={30} />
           <Tooltip
             cursor={{ fill: theme['third-background'] }}
@@ -50,7 +50,7 @@ export const ActivitiesBarChart = ({ data }) => {
           />
           <Bar
             legendType="rect"
-            dataKey="acumulado"
+            dataKey="amount"
             stackId="a"
             maxBarSize={25}
             fill={theme['main-bar']}
@@ -92,54 +92,4 @@ ActivitiesBarChart.propTypes = {
       top: PropTypes.number,
     })
   ),
-}
-
-ActivitiesBarChart.defaultProps = {
-  data: [
-    {
-      categoria: 'Projeto',
-      acumulado: 12,
-      maximo: 18,
-    },
-    {
-      categoria: 'Monitoria',
-      acumulado: 8,
-      maximo: 16,
-    },
-    {
-      categoria: 'Evento',
-      acumulado: 2,
-      maximo: 18,
-    },
-    {
-      categoria: 'init. científica',
-      acumulado: 8,
-      maximo: 16,
-    },
-    {
-      categoria: 'Estágio',
-      acumulado: 15,
-      maximo: 16,
-    },
-    {
-      categoria: 'Caesi',
-      acumulado: 9,
-      maximo: 16,
-    },
-    {
-      categoria: 'Atv. extensão',
-      acumulado: 1,
-      maximo: 14,
-    },
-    {
-      categoria: 'Atv. profissionais',
-      acumulado: 1,
-      maximo: 16,
-    },
-    {
-      categoria: 'outros',
-      acumulado: 2,
-      maximo: 16,
-    },
-  ],
 }
