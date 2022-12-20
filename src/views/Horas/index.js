@@ -2,19 +2,19 @@ import { ClockCircleOutlined } from '@ant-design/icons'
 import { useAuth0 } from '@auth0/auth0-react'
 import React, { useEffect, useState } from 'react'
 import { useTheme } from 'styled-components'
+import { useHistory } from 'react-router-dom'
 import { ActivitiesBarChart } from '../../components/ActivitiesBarChart'
 import { CreditsPieChart } from '../../components/CreditsPieChart'
 import { ProgressBar } from '../../components/ProgressBar'
 import { getUserData } from '../../services/api'
 import { Text, Title } from '../../styles/base-styles'
 import { ProgressbarContainer, ChartsContainer, Charts } from './styles'
-import { useNavigate } from 'react-router-dom'
 
 export const Horas = () => {
   const theme = useTheme()
   const { user, isAuthenticated } = useAuth0()
   const [userData, setUserData] = useState({ categories: [] })
-  const navigate = useNavigate()
+  const navigate = useHistory()
 
   useEffect(() => {
     const getData = async () => {
@@ -23,7 +23,7 @@ export const Horas = () => {
     }
 
     if (!isAuthenticated) {
-      navigate('/sobre')
+      navigate.push('/sobre')
     }
     getData()
   }, [])

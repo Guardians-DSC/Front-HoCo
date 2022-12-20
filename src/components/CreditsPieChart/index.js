@@ -42,15 +42,20 @@ const customizedLabel = ({
 
 export const CreditsPieChart = ({ data }) => {
   const sortedData = data.categories.sort(compare)
-  console.log(sortedData)
 
-  let finalData = sortedData.map((cell) => {
+  let filteredData = sortedData.filter((cell) => {
+    return cell.category_piece !== 0
+  })
+
+  let finalData = filteredData.map((cell) => {
     return {
       ...cell,
       name: cell.category,
       value: Number(cell.category_piece),
     }
   })
+
+  console.log(sortedData)
 
   return (
     <Wrapper>
