@@ -5,7 +5,7 @@ import { DeleteOutlined, DownloadOutlined } from '@ant-design/icons'
 
 import { Table, Tag } from './style'
 import categories from '../../util/constants/categories'
-import { deleteActivity } from '../../services/api'
+import { deleteActivity, downloadCertificate } from '../../services/api'
 import { EditActivity } from '../EditActivityCell'
 
 export const ActivitiesTable = ({ data }) => {
@@ -19,36 +19,36 @@ export const ActivitiesTable = ({ data }) => {
   const columns = [
     {
       title: 'Título',
-      dataIndex: 'titulo',
-      key: 'titulo',
+      dataIndex: 'title',
+      key: 'title',
       className: 'title',
       fixed: 'left',
       render: (text) => text,
     },
     {
       title: 'Horas',
-      dataIndex: 'horas',
-      key: 'horas',
+      dataIndex: 'time',
+      key: 'time',
       width: '250px',
       align: 'center',
       render: (hora) => (hora > 0 ? hora : '- - -'),
-      sorter: (a, b) => a.horas - b.horas,
+      sorter: (a, b) => a.time - b.time,
     },
     {
       title: 'Créditos',
-      dataIndex: 'creditos',
-      key: 'creditos',
+      dataIndex: 'credits',
+      key: 'credits',
       width: '250px',
       align: 'center',
       render: (credito) => (credito > 0 ? credito : '- - -'),
-      sorter: (a, b) => a.creditos - b.creditos,
+      sorter: (a, b) => a.credits - b.credits,
     },
     {
       title: 'Categoria',
       align: 'center',
       width: '300px',
-      key: 'categoria',
-      dataIndex: 'categoria',
+      key: 'category',
+      dataIndex: 'category',
       render: (tag) => {
         return (
           <Tag color="green" key={tag}>
@@ -57,7 +57,7 @@ export const ActivitiesTable = ({ data }) => {
         )
       },
       filters: formatFilterCategories(Object.values(categories)),
-      onFilter: (value, record) => record.categoria.indexOf(value) === 0,
+      onFilter: (value, record) => record.credits.indexOf(value) === 0,
     },
     {
       title: 'Baixar certificado',
@@ -103,7 +103,8 @@ export const ActivitiesTable = ({ data }) => {
     },
   ]
 
-  const handleDownload = (record) => {
+  const handleDownload = async (record) => {
+    await downloadCertificate(record._id)
     console.log('baixando...', record)
   }
 
@@ -117,9 +118,13 @@ export const ActivitiesTable = ({ data }) => {
       columns={columns}
       pagination={{ pageSize: 7 }}
       scroll={{ x: 600 }}
-      dataSource={data.map((cell) => ({ ...cell, key: cell.id }))}
+      dataSource={data.map((cell) => ({ ...cell, key: cell._id }))}
     />
   )
+}
+
+ActivitiesTable.defaultProps = {
+  data: [],
 }
 
 ActivitiesTable.propTypes = {

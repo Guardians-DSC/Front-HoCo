@@ -15,6 +15,11 @@ export const getCredits = async () => {
   // return response.data
 }
 
+export const downloadCertificate = async (activityId) => {
+  const response = await api.get(`/activity/download/${activityId}`)
+  return response
+}
+
 export const getUserData = async (email) => {
   const response = await api.get(`/user_data?email=${email}`)
   console.log(response)
@@ -52,89 +57,9 @@ export const registerActivity = async (activityData) => {
   return response.data
 }
 
-export const getActivities = async () => {
-  // const response = await api.get('/atividades')
-  return [
-    {
-      id: 129087124908,
-      titulo: 'Projeto ePol',
-      horas: 0,
-      creditos: 12,
-      categoria: 'projeto',
-      certificado: {
-        titulo: 'meu_certificado.jpeg',
-        previewURL: 'https://giphy.com/embed/6ZorD2fyy1nj8GqunP',
-      },
-    },
-    {
-      id: 129087124901,
-      titulo: 'CodeSQ',
-      horas: 0,
-      creditos: 12,
-      categoria: 'projeto',
-      certificado: {
-        titulo: 'meu_certificado.jpeg',
-        previewURL: 'https://giphy.com/embed/6ZorD2fyy1nj8GqunP',
-      },
-    },
-    {
-      id: 13231321312312,
-      titulo: 'Andromedevi',
-      horas: 135,
-      creditos: 1,
-      categoria: 'evento',
-      certificado: {
-        titulo: 'meu_certificado.jpeg',
-        previewURL: 'https://giphy.com/embed/6ZorD2fyy1nj8GqunP',
-      },
-    },
-    {
-      id: 132313123312,
-      titulo: 'Hacktoberfest',
-      horas: 20,
-      creditos: 0,
-      categoria: 'evento',
-      certificado: {
-        titulo: 'meu_certificado.jpeg',
-        previewURL: 'https://giphy.com/embed/6ZorD2fyy1nj8GqunP',
-      },
-    },
-    {
-      id: 13231321312318,
-      titulo: 'Projeto ePoli',
-      horas: 0,
-      creditos: 12,
-      categoria: 'caesi',
-      certificado: {
-        titulo: 'meu_certificado.jpeg',
-        previewURL: 'https://giphy.com/embed/6ZorD2fyy1nj8GqunP',
-      },
-    },
-    {
-      id: 13231321312310,
-      titulo: 'Andromedev',
-      horas: 135,
-      creditos: 0,
-      categoria: 'inic. cientifica',
-      certificado: {
-        titulo: 'meu_certificado.jpeg',
-        previewURL: 'https://giphy.com/embed/6ZorD2fyy1nj8GqunP',
-      },
-    },
-    {
-      id: 23231321312312,
-      titulo: 'semana acadêmica',
-      horas: 10,
-      creditos: 0,
-      categoria: 'evento',
-      certificado: {
-        titulo: 'meu_certificado.jpeg',
-        previewURL: 'https://giphy.com/embed/6ZorD2fyy1nj8GqunP',
-      },
-    },
-  ]
-
-  // return response.data
+export const getActivities = async (email) => {
+  const response = await api.get(`/activities?e-mail=${email}`)
+  return response.data
 }
 
 export const editActivity = async (activityID, data) => {

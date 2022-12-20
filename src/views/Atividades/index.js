@@ -13,12 +13,12 @@ import { TableWrapper, Wrapper, ButtonsWrapper } from './styles'
 export const Atividades = () => {
   const { openActivityModal, isModalActive } = useActivitiesContext()
   const [activities, setActivities] = useState([])
-  const { isAuthenticated } = useAuth0()
+  const { user, isAuthenticated } = useAuth0()
 
   useEffect(() => {
     const getData = async () => {
-      const data = await getActivities()
-      setActivities(data)
+      const data = await getActivities(user.email)
+      setActivities(data.activities)
     }
 
     getData()
