@@ -15,7 +15,7 @@ export const getCredits = async () => {
   // return response.data
 }
 
-export const getCreditsPerCategory = async (email) => {
+export const getUserData = async (email) => {
   const response = await api.get(`/user_data?email=${email}`)
   console.log(response)
 

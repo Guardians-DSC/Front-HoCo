@@ -1,57 +1,74 @@
 import { ClockCircleOutlined } from '@ant-design/icons'
 import { useAuth0 } from '@auth0/auth0-react'
-import React from 'react'
-import { Redirect } from 'react-router-dom/cjs/react-router-dom.min'
+import React, { useEffect, useState } from 'react'
 import { useTheme } from 'styled-components'
 import { ActivitiesBarChart } from '../../components/ActivitiesBarChart'
 import { CreditsPieChart } from '../../components/CreditsPieChart'
 import { ProgressBar } from '../../components/ProgressBar'
+import { getUserData } from '../../services/api'
 import { Text, Title } from '../../styles/base-styles'
 import { ProgressbarContainer, ChartsContainer, Charts } from './styles'
+import { useNavigate } from 'react-router-dom'
 
 export const Horas = () => {
   const theme = useTheme()
-  const { isAuthenticated } = useAuth0()
+  const { user, isAuthenticated } = useAuth0()
+  const [userData, setUserData] = useState({ categories: [] })
+  const navigate = useNavigate()
 
-  return isAuthenticated ? (
-    <>
-      <Title>
-        <ClockCircleOutlined
-          style={{ fontSize: '2rem', color: [theme['main-font']] }}
-        />
-        Minhas Horas
-      </Title>
-      <Text>
-        Bom, essa página existe para que você possa entender como está sua situação
-        atual em relação as suas horas complementares através de algumas
-        visualizações com gráficos e textos.
-      </Text>
-      <Text>
-        Esse é sua progressão de horas complementares atualmente, lembre-se você
-        precisa de 22 créditos de atividades complementares para se formar.
-      </Text>
+  useEffect(() => {
+    const getData = async () => {
+      const response = await getUserData(user.email)
+      setUserData(response)
+    }
 
-      <ProgressbarContainer>
-        <ProgressBar />
-      </ProgressbarContainer>
+    if (!isAuthenticated) {
+      navigate('/sobre')
+    }
+    getData()
+  }, [])
 
-      <Text>
-        Para aumentar o seu número de horas complementares você pode cadastrar
-        atividades das seguintes categorias: <span>Projeto</span>,{' '}
-        <span>Eventos</span>, <span>Monitoria</span>, <span>Caesi</span> ou{' '}
-        <span>Pet</span>.
-      </Text>
+  return (
+    isAuthenticated && (
+      <>
+        <Title>
+          <ClockCircleOutlined
+            style={{ fontSize: '2rem', color: [theme['main-font']] }}
+          />
+          Minhas Horas
+        </Title>
+        <Text>
+          Bom, essa página existe para que você possa entender como está sua situação
+          atual em relação as suas horas complementares através de algumas
+          visualizações com gráficos e textos.
+        </Text>
+        <Text>
+          Esse é sua progressão de horas complementares atualmente, lembre-se você
+          precisa de 22 créditos de atividades complementares para se formar.
+        </Text>
 
-      <ChartsContainer>
-        <Text>Aqui estão algumas visualizações das suas horas complementares:</Text>
+        <ProgressbarContainer>
+          <ProgressBar />
+        </ProgressbarContainer>
 
-        <Charts>
-          <CreditsPieChart />
-          <ActivitiesBarChart />
-        </Charts>
-      </ChartsContainer>
-    </>
-  ) : (
-    <Redirect to="/sobre" />
+        <Text>
+          Para aumentar o seu número de horas complementares você pode cadastrar
+          atividades das seguintes categorias: <span>Projeto</span>,{' '}
+          <span>Eventos</span>, <span>Monitoria</span>, <span>Caesi</span> ou{' '}
+          <span>Pet</span>.
+        </Text>
+
+        <ChartsContainer>
+          <Text>
+            Aqui estão algumas visualizações das suas horas complementares:
+          </Text>
+
+          <Charts>
+            <CreditsPieChart data={userData} />
+            <ActivitiesBarChart />
+          </Charts>
+        </ChartsContainer>
+      </>
+    )
   )
 }

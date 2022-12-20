@@ -1,5 +1,5 @@
 export function compare(a, b) {
-  return b.value - a.value
+  return Number(b.category_piece) - Number(a.category_piece)
 }
 
 export const filterRepositoriesNames = (repositories) => {

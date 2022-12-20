@@ -41,29 +41,16 @@ const customizedLabel = ({
 }
 
 export const CreditsPieChart = ({ data }) => {
-  const sortedData = data.sort(compare)
-
-  function sumValues(objects) {
-    const reducer = (previousValue, currentValue) =>
-      previousValue + currentValue.porcentagem
-    return objects.reduce(reducer, 0)
-  }
+  const sortedData = data.categories.sort(compare)
+  console.log(sortedData)
 
   let finalData = sortedData.map((cell) => {
     return {
       ...cell,
-      name: cell.categoria,
+      name: cell.category,
+      value: Number(cell.category_piece),
     }
   })
-
-  finalData = [
-    ...finalData,
-    {
-      name: 'outros',
-      // sum the values from the max_categories until the end of the array
-      porcentagem: 1 - sumValues(sortedData.slice(0, MAX_NUM_CATEGORIES)),
-    },
-  ]
 
   return (
     <Wrapper>
@@ -77,9 +64,9 @@ export const CreditsPieChart = ({ data }) => {
             labelLine={false}
             label={customizedLabel}
             outerRadius="90%"
-            dataKey="porcentagem"
+            dataKey="value"
           >
-            {data.map((entry, index) => (
+            {data.categories.map((entry, index) => (
               <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
             ))}
           </Pie>
@@ -88,37 +75,16 @@ export const CreditsPieChart = ({ data }) => {
       </ResponsiveContainer>
       <Text>
         Você tem 11 créditos aprovados atualmente e as suas principais fontes de
-        atividades <br /> complementares são <span>{sortedData[0].categoria}</span>,
-        <span>{sortedData[1].categoria}</span> e{' '}
-        <span>{sortedData[2].categoria}</span>.
+        atividades <br /> complementares são <span>{sortedData[0]?.category}</span>,
+        <span>{sortedData[1]?.category}</span> e{' '}
+        <span>{sortedData[2]?.category}</span>.
       </Text>
     </Wrapper>
   )
 }
 
-CreditsPieChart.defaultProps = {
-  data: [
-    {
-      categoria: 'Projeto',
-      porcentagem: 0.45,
-    },
-    {
-      categoria: 'Evento',
-      porcentagem: 0.2,
-    },
-    {
-      categoria: 'Monitoria',
-      porcentagem: 0.1,
-    },
-    {
-      categoria: 'Caesi',
-      porcentagem: 0.2,
-    },
-  ],
-}
-
 CreditsPieChart.propTypes = {
   data: PropTypes.arrayOf(
-    PropTypes.shape({ name: PropTypes.string, value: PropTypes.number })
+    PropTypes.shape({ category: PropTypes.string, category_piece: PropTypes.number })
   ),
 }
