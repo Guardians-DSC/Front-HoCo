@@ -15,59 +15,11 @@ export const getCredits = async () => {
   // return response.data
 }
 
-export const getCreditsPerCategory = async () => {
-  // const response = await api.get('/categorias/creditos')
-  // console.log(response)
+export const getCreditsPerCategory = async (email) => {
+  const response = await api.get(`/user_data?email=${email}`)
+  console.log(response)
 
-  return [
-    {
-      categoria: 'Projeto',
-      acumulado: 12,
-      maximo: 18,
-    },
-    {
-      categoria: 'Monitoria',
-      acumulado: 8,
-      maximo: 16,
-    },
-    {
-      categoria: 'Evento',
-      acumulado: 2,
-      maximo: 18,
-    },
-    {
-      categoria: 'init. científica',
-      acumulado: 8,
-      maximo: 16,
-    },
-    {
-      categoria: 'Estágio',
-      acumulado: 15,
-      maximo: 16,
-    },
-    {
-      categoria: 'Caesi',
-      acumulado: 9,
-      maximo: 16,
-    },
-    {
-      categoria: 'Atv. extensão',
-      acumulado: 1,
-      maximo: 14,
-    },
-    {
-      categoria: 'Atv. profissionais',
-      acumulado: 1,
-      maximo: 16,
-    },
-    {
-      categoria: 'outros',
-      acumulado: 2,
-      maximo: 16,
-    },
-  ]
-
-  // return response.data
+  return response.data
 }
 
 export const getRankCategories = async () => {

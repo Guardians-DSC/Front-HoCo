@@ -1,4 +1,4 @@
-FROM node:18.12.0 as dependency
+FROM node:16 as dependency
 
 WORKDIR /app
 
@@ -6,7 +6,7 @@ COPY package.json .
 
 RUN npm install
 
-FROM node:lts-alpine
+FROM node:16-alpine
 
 ARG user=node
 
