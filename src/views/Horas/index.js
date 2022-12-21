@@ -18,7 +18,7 @@ export const Horas = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const response = await getUserData(user.email)
+      const response = await getUserData(user?.email)
       setUserData(response)
     }
 

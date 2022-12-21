@@ -13,10 +13,10 @@ export const ProgressBar = ({ credits, limit }) => {
 
   return (
     <OutWrapper>
-      {credits > limit && <LimitExceded>Limite excedido</LimitExceded>}
+      {credits > limit && <LimitExceded>Limite excedido, parabéns!</LimitExceded>}
       <Wrapper>
         <ProgressContainer>
-          <Progress width={porcentage} />
+          <Progress width={porcentage || 0} />
         </ProgressContainer>
         <span>
           {credits}/{limit}

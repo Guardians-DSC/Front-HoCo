@@ -11,7 +11,7 @@ import {
   PURPLE,
   LIGHT_PURPLE,
 } from '../../util/constants/colors'
-import { RADIAN, MAX_NUM_CATEGORIES } from '../../util/constants/numbers'
+import { RADIAN } from '../../util/constants/numbers'
 
 const COLORS = [SALMON, DARK_SALMON, BURGUNDY, PURPLE, LIGHT_PURPLE]
 
