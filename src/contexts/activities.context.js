@@ -7,6 +7,7 @@ const ActivitiesContext = createContext()
 export function ActivitiesProvider({ children }) {
   const [isModalActive, setModalVisibility] = useState(false)
   const [userActivities, setUserActivities] = useState([])
+  const [currentActivityData, setCurrentActivityData] = useState(null)
 
   const openActivityModal = () => {
     setModalVisibility(true)
@@ -14,6 +15,7 @@ export function ActivitiesProvider({ children }) {
 
   const closeActivityModal = () => {
     setModalVisibility(false)
+    setCurrentActivityData(null)
   }
 
   const submitActivity = (data, operation) => {
@@ -35,6 +37,8 @@ export function ActivitiesProvider({ children }) {
         isModalActive,
         setUserActivities,
         userActivities,
+        setCurrentActivityData,
+        currentActivityData,
       }}
     >
       {children}

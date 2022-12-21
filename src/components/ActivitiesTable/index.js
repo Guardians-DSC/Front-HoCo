@@ -1,16 +1,16 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { EditOutlined } from '@ant-design/icons'
 import { Space, Popconfirm } from 'antd'
 import { DeleteOutlined, DownloadOutlined } from '@ant-design/icons'
 
 import { Table, Tag } from './style'
 import categories from '../../util/constants/categories'
 import { deleteActivity, downloadCertificate } from '../../services/api'
-import { EditActivity } from '../EditActivityCell'
 import useActivitiesContext from '../../contexts/activities.context'
 
 export const ActivitiesTable = () => {
-  const { userActivities } = useActivitiesContext()
+  const { setCurrentActivityData, openActivityModal, userActivities } =
+    useActivitiesContext()
   const formatFilterCategories = (categoryList) => {
     return categoryList.map((category) => ({
       text: category.text,
@@ -68,11 +68,16 @@ export const ActivitiesTable = () => {
       key: 'download',
       render: (record) => (
         <Space size="middle">
-          <DownloadOutlined
-            className="download-icon"
-            style={{ fontSize: '18px' }}
-            onClick={() => handleDownload(record)}
-          />
+          <a
+            href={`${process.env.REACT_APP_BASE_URL}/activity/download/${record._id}`}
+            download
+          >
+            <DownloadOutlined
+              className="download-icon"
+              style={{ fontSize: '18px' }}
+              onClick={() => handleDownload(record)}
+            />
+          </a>
         </Space>
       ),
     },
@@ -81,7 +86,18 @@ export const ActivitiesTable = () => {
       align: 'center',
       key: 'edit',
       width: '75px',
-      render: (record) => <EditActivity data={record} />,
+      render: (record) => (
+        <Space size="middle">
+          <EditOutlined
+            className="edit-icon"
+            style={{ fontSize: '18px' }}
+            onClick={() => {
+              openActivityModal()
+              setCurrentActivityData(record)
+            }}
+          />
+        </Space>
+      ),
     },
     {
       title: 'Apagar',
@@ -107,12 +123,10 @@ export const ActivitiesTable = () => {
 
   const handleDownload = async (record) => {
     await downloadCertificate(record._id)
-    console.log('baixando...', record)
   }
 
   const handleDelete = (record) => {
     deleteActivity(record.id)
-    console.log('deletando...', record)
   }
 
   return (

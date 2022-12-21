@@ -9,6 +9,10 @@ export const AppWrapper = styled.div`
   box-sizing: border-box;
   transition: width 0.3s;
 
+  a {
+    color: ${({ theme }) => theme['main-font']} !important;
+  }
+
   h1,
   h2,
   h3,

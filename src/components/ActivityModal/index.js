@@ -11,19 +11,24 @@ import { OutWrapper, Wrapper, Header, Form } from './style'
 import useActivitiesContext from '../../contexts/activities.context'
 import { useAuth0 } from '@auth0/auth0-react'
 
-export const ActivityModal = ({ data }) => {
-  const { setUserActivities, submitActivity, closeActivityModal } = useActivitiesContext()
-  const [title, setTitle] = useState(data ? data.title : '')
-  const [hours, setHours] = useState(data ? data.time : '')
-  const [credits, setCredits] = useState(data ? data.credits : '')
+export const ActivityModal = () => {
+  const {
+    currentActivityData,
+    setCurrentActivityData,
+    setUserActivities,
+    submitActivity,
+    closeActivityModal,
+  } = useActivitiesContext()
+  const [title, setTitle] = useState('')
+  const [hours, setHours] = useState('')
+  const [credits, setCredits] = useState('')
   const [certificate, setcertificate] = useState(null)
-  const [category, setCategory] = useState(data ? data.category : '')
+  const [category, setCategory] = useState('')
   const filteredCategories = Object.keys(categories).map((category, _) => {
     return categories[category].value
   })
   const [disabled, setDisabled] = useState(true)
   const { user } = useAuth0()
-
   const handleFileUpload = (files) => {
     const file = files[0]
 
@@ -37,29 +42,52 @@ export const ActivityModal = ({ data }) => {
   }
 
   const handleSubmit = async () => {
-    const operation = !data ? 'create' : 'update'
-    const finalData = {
-      title,
-      file: certificate.file,
-      category,
-      'e-mail': user.email,
+    const operation = !currentActivityData ? 'create' : 'update'
+    let finalData = {}
+    if (operation === 'create') {
+      finalData = {
+        title,
+        file: certificate.file,
+        category,
+        'e-mail': user.email,
+      }
+    } else {
+      finalData = {
+        _id: currentActivityData._id,
+        title: title,
+        category: category,
+        'e-mail': user.email,
+      }
+      if (certificate !== null) {
+        finalData.certificate = certificate
+      }
     }
+
     if (credits !== '') finalData.credits = credits
     else finalData.time = hours
 
-    const newData = await submitActivity(data || finalData, operation)
-    console.log(newData)
-    setUserActivities(newData)
+    const newData = await submitActivity(finalData, operation)
+    await setUserActivities(newData)
+    await setCurrentActivityData(null)
   }
 
   useEffect(() => {
     setDisabled(
       title === '' ||
-        certificate === null ||
+        (certificate && certificate === null) ||
         category === '' ||
         (hours === '' && credits === '')
     )
-  }, [title, credits, certificate, category, hours, credits])
+  }, [title, credits, certificate, category, hours])
+
+  useEffect(() => {
+    if (currentActivityData && Object.keys(currentActivityData).length > 0) {
+      setTitle(currentActivityData.title)
+      setCredits(currentActivityData.credits)
+      setHours(currentActivityData.time)
+      setCategory(currentActivityData.category)
+    }
+  }, [currentActivityData])
 
   return (
     <OutWrapper onClick={closeActivityModal}>
@@ -104,7 +132,7 @@ export const ActivityModal = ({ data }) => {
               <Item label="Horas">
                 <Input
                   value={hours}
-                  disabled={credits !== ''}
+                  disabled={credits !== null && credits !== ''}
                   type="number"
                   onChange={(e) => setHours(e.target.value)}
                   placeholder="Ex.: 20"
@@ -116,7 +144,7 @@ export const ActivityModal = ({ data }) => {
                 <Input
                   value={credits}
                   type="number"
-                  disabled={hours !== ''}
+                  disabled={hours !== null && hours !== ''}
                   onChange={(e) => setCredits(e.target.value)}
                   placeholder="Ex.: 8"
                 />

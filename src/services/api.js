@@ -12,8 +12,6 @@ export const downloadCertificate = async (activityId) => {
 
 export const getUserData = async (email) => {
   const response = await api.get(`/user_data?email=${email}`)
-  console.log(response)
-
   return response.data
 }
 
@@ -22,7 +20,6 @@ export const registerActivity = async (activityData) => {
   Object.keys(activityData).forEach((activity) => {
     form.append(activity, activityData[activity])
   })
-  console.log(form.keys())
   const response = await api.post('/activity', form, {
     headers: {
       'Content-Type': 'multipart/form-data',
@@ -32,8 +29,17 @@ export const registerActivity = async (activityData) => {
 }
 
 export const editActivity = async (data) => {
-  const response = await api.patch(`/activity`, data)
-  console.log(response)
+  const form = new FormData()
+  Object.keys(data).forEach((activity) => {
+    form.append(activity, data[activity])
+  })
+  const response = await api.patch(`/activity`, form, {
+    headers: {
+      'Content-Type': 'multipart/form-data',
+    },
+  })
+
+  return response.data
 }
 
 export const getActivities = async (email) => {

@@ -50,9 +50,9 @@ export const Atividades = () => {
         <TableWrapper>
           <ButtonsWrapper>
             <Button onClick={openActivityModal}>Adicionar</Button>
-            <Button variable="second" onClick={() => console.log('baixando doc...')}>
+            {/* <Button variable="second" onClick={() => console.log('baixando doc...')}>
               Baixar documentação
-            </Button>
+            </Button> */}
           </ButtonsWrapper>
           <div>
             <ActivitiesTable />
