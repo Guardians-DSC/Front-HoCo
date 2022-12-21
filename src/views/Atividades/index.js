@@ -11,7 +11,7 @@ import { Button, Text, Title } from '../../styles/base-styles'
 import { TableWrapper, Wrapper, ButtonsWrapper } from './styles'
 
 export const Atividades = () => {
-  const { openActivityModal, isModalActive } = useActivitiesContext()
+  const { setUserActivities, openActivityModal, isModalActive } = useActivitiesContext()
   const [activities, setActivities] = useState([])
   const { user, isAuthenticated } = useAuth0()
 
@@ -19,6 +19,7 @@ export const Atividades = () => {
     const getData = async () => {
       const data = await getActivities(user.email)
       setActivities(data.activities)
+      setUserActivities(data.activities)
     }
 
     getData()
@@ -54,7 +55,7 @@ export const Atividades = () => {
             </Button>
           </ButtonsWrapper>
           <div>
-            <ActivitiesTable data={activities} />
+            <ActivitiesTable />
           </div>
         </TableWrapper>
         {isModalActive && <ActivityModal />}

@@ -119,9 +119,23 @@ export const Subtitle = styled.h2`
 export const Item = styled(FormAntd.Item)`
   display: block;
   margin: 0;
+  width: 100%;
+
+  & .ant-row {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .ant-form-horizontal,
+  .ant-form-item-control {
+    width: 100%;
+  }
 
   input,
   select {
+    width: 100%;
     margin-top: 0;
   }
 `
@@ -153,7 +167,7 @@ const buttonVariableOne = css`
   color: ${({ theme }) => theme['main-white']};
   border: none;
 
-  &:hover {
+  &:hover{
     background-color: ${({ theme }) => theme['second-green']};
   }
 `
@@ -177,6 +191,10 @@ export const Button = styled.button`
   transition: 0.5s;
   font-size: 1rem;
 
+  &[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
   ${buttonVariableOne}
   ${({ variable }) => variable === 'second' && buttonVariableTwo}
 `

@@ -5,16 +5,6 @@ const api = axios.create({
   baseURL: process.env.REACT_APP_BASE_URL,
 })
 
-export const getCredits = async () => {
-  // const response = await api.get('/creditos')
-  // console.log(response)
-  return {
-    creditos: 11,
-    maximo: 22,
-  }
-  // return response.data
-}
-
 export const downloadCertificate = async (activityId) => {
   const response = await api.get(`/activity/download/${activityId}`)
   return response
@@ -27,44 +17,28 @@ export const getUserData = async (email) => {
   return response.data
 }
 
-export const getRankCategories = async () => {
-  // const response = await api.get('/categorias/top')
-  return [
-    {
-      categoria: 'Projeto',
-      porcentagem: 0.45,
+export const registerActivity = async (activityData) => {
+  const form = new FormData()
+  Object.keys(activityData).forEach((activity) => {
+    form.append(activity, activityData[activity])
+  })
+  console.log(form.keys())
+  const response = await api.post('/activity', form, {
+    headers: {
+      'Content-Type': 'multipart/form-data',
     },
-    {
-      categoria: 'Evento',
-      porcentagem: 0.2,
-    },
-    {
-      categoria: 'Monitoria',
-      porcentagem: 0.1,
-    },
-    {
-      categoria: 'Caesi',
-      porcentagem: 0.2,
-    },
-  ]
-
-  // return response.data
+  })
+  return response.data
 }
 
-export const registerActivity = async (activityData) => {
-  const response = await api.post('/atividade', { activityData })
-  console.log('Dados enviados:', activityData)
-  return response.data
+export const editActivity = async (data) => {
+  const response = await api.patch(`/activity`, data)
+  console.log(response)
 }
 
 export const getActivities = async (email) => {
   const response = await api.get(`/activities?e-mail=${email}`)
   return response.data
-}
-
-export const editActivity = async (activityID, data) => {
-  const response = await api.patch(`/atividade?id=${activityID}`, data)
-  console.log(response)
 }
 
 export const deleteActivity = async (activityID, data) => {

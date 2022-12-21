@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import { CloseOutlined, FileTextOutlined } from '@ant-design/icons'
 import { Col, Row } from 'antd'
@@ -9,17 +9,20 @@ import { Select } from '../Select'
 import { UploadFile } from '../UploadFile'
 import { OutWrapper, Wrapper, Header, Form } from './style'
 import useActivitiesContext from '../../contexts/activities.context'
+import { useAuth0 } from '@auth0/auth0-react'
 
 export const ActivityModal = ({ data }) => {
-  const { submitActivity, closeActivityModal } = useActivitiesContext()
-  const [hours, setHours] = useState(data ? data.horas : '')
-  const [credits, setCredits] = useState(data ? data.creditos : '')
-  const [title, setTitle] = useState(data ? data.titulo : '')
-  const [uploadedFile, setUploadedFile] = useState(data ? data.certificado : null)
-  const [category, setCategory] = useState(data ? data.categoria : '')
-  const filteredCategories = Object.keys(categories).map((category, index) => {
-    return categories[category].text
+  const { setUserActivities, submitActivity, closeActivityModal } = useActivitiesContext()
+  const [title, setTitle] = useState(data ? data.title : '')
+  const [hours, setHours] = useState(data ? data.time : '')
+  const [credits, setCredits] = useState(data ? data.credits : '')
+  const [certificate, setcertificate] = useState(null)
+  const [category, setCategory] = useState(data ? data.category : '')
+  const filteredCategories = Object.keys(categories).map((category, _) => {
+    return categories[category].value
   })
+  const [disabled, setDisabled] = useState(true)
+  const { user } = useAuth0()
 
   const handleFileUpload = (files) => {
     const file = files[0]
@@ -30,22 +33,33 @@ export const ActivityModal = ({ data }) => {
       previewURL: URL.createObjectURL(file),
     }
 
-    setUploadedFile(fileObject)
+    setcertificate(fileObject)
   }
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     const operation = !data ? 'create' : 'update'
-    submitActivity(
-      data || {
-        hours,
-        credits,
-        title,
-        uploadedFile,
-        category,
-      },
-      operation
-    )
+    const finalData = {
+      title,
+      file: certificate.file,
+      category,
+      'e-mail': user.email,
+    }
+    if (credits !== '') finalData.credits = credits
+    else finalData.time = hours
+
+    const newData = await submitActivity(data || finalData, operation)
+    console.log(newData)
+    setUserActivities(newData)
   }
+
+  useEffect(() => {
+    setDisabled(
+      title === '' ||
+        certificate === null ||
+        category === '' ||
+        (hours === '' && credits === '')
+    )
+  }, [title, credits, certificate, category, hours, credits])
 
   return (
     <OutWrapper onClick={closeActivityModal}>
@@ -63,10 +77,7 @@ export const ActivityModal = ({ data }) => {
 
         <Form>
           <Item>
-            <UploadFile
-              handleUpload={handleFileUpload}
-              uploadedFile={uploadedFile}
-            />
+            <UploadFile handleUpload={handleFileUpload} uploadedFile={certificate} />
           </Item>
           <Row>
             <Col span={24}>
@@ -93,6 +104,7 @@ export const ActivityModal = ({ data }) => {
               <Item label="Horas">
                 <Input
                   value={hours}
+                  disabled={credits !== ''}
                   type="number"
                   onChange={(e) => setHours(e.target.value)}
                   placeholder="Ex.: 20"
@@ -104,6 +116,7 @@ export const ActivityModal = ({ data }) => {
                 <Input
                   value={credits}
                   type="number"
+                  disabled={hours !== ''}
                   onChange={(e) => setCredits(e.target.value)}
                   placeholder="Ex.: 8"
                 />
@@ -111,7 +124,9 @@ export const ActivityModal = ({ data }) => {
             </Col>
           </Row>
 
-          <Button onClick={handleSubmit}>Finalizar cadastro</Button>
+          <Button disabled={disabled} onClick={handleSubmit}>
+            Finalizar cadastro
+          </Button>
         </Form>
       </Wrapper>
     </OutWrapper>
@@ -120,15 +135,11 @@ export const ActivityModal = ({ data }) => {
 
 ActivityModal.propTypes = {
   data: PropTypes.shape({
-    categoria: PropTypes.string,
-    creditos: PropTypes.number,
-    horas: PropTypes.number,
-    id: PropTypes.number,
-    titulo: PropTypes.string,
+    category: PropTypes.string,
+    credits: PropTypes.string,
+    time: PropTypes.string,
+    _id: PropTypes.string,
+    title: PropTypes.string,
     imageURL: PropTypes.string,
-    certificado: PropTypes.shape({
-      titulo: PropTypes.string,
-      previewURL: PropTypes.string,
-    }),
   }),
 }

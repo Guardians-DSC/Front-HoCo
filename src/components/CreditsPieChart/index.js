@@ -55,8 +55,6 @@ export const CreditsPieChart = ({ data }) => {
     }
   })
 
-  console.log(sortedData)
-
   return (
     <Wrapper>
       <GraphTitle>Proporção de créditos de horas complementares</GraphTitle>

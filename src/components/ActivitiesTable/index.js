@@ -7,8 +7,10 @@ import { Table, Tag } from './style'
 import categories from '../../util/constants/categories'
 import { deleteActivity, downloadCertificate } from '../../services/api'
 import { EditActivity } from '../EditActivityCell'
+import useActivitiesContext from '../../contexts/activities.context'
 
-export const ActivitiesTable = ({ data }) => {
+export const ActivitiesTable = () => {
+  const { userActivities } = useActivitiesContext()
   const formatFilterCategories = (categoryList) => {
     return categoryList.map((category) => ({
       text: category.text,
@@ -118,27 +120,7 @@ export const ActivitiesTable = ({ data }) => {
       columns={columns}
       pagination={{ pageSize: 7 }}
       scroll={{ x: 600 }}
-      dataSource={data.map((cell) => ({ ...cell, key: cell._id }))}
+      dataSource={userActivities.map((cell) => ({ ...cell, key: cell._id }))}
     />
   )
-}
-
-ActivitiesTable.defaultProps = {
-  data: [],
-}
-
-ActivitiesTable.propTypes = {
-  data: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number,
-      titulo: PropTypes.string,
-      creditos: PropTypes.number,
-      horas: PropTypes.number,
-      categoria: PropTypes.string,
-      certificado: PropTypes.shape({
-        titulo: PropTypes.string,
-        previewURL: PropTypes.string,
-      }),
-    })
-  ).isRequired,
 }

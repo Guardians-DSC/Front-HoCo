@@ -6,11 +6,10 @@ import { DownOutlined } from '@ant-design/icons'
 
 export const Select = ({ options, onChange, defaultOption }) => {
   const theme = useTheme()
-
   return (
     <Wrapper>
       <SelectDefault
-        defaultValue={defaultOption.length > 0 ? defaultOption : 'default'}
+        defaultValue={defaultOption?.length > 0 ? defaultOption : 'default'}
         onChange={(e) => onChange(e.target.value)}
       >
         <Option value="default" disabled>
