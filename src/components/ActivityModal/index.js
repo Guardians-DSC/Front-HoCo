@@ -58,13 +58,14 @@ export const ActivityModal = () => {
         category: category,
         'e-mail': user.email,
       }
+
       if (certificate !== null) {
-        finalData.certificate = certificate
+        finalData.certificate = certificate.file
       }
     }
 
-    if (credits !== '') finalData.credits = credits
-    else finalData.time = hours
+    if (credits !== '' && credits !== null) finalData.credits = credits
+    if (hours !== '' && hours !== null) finalData.time = hours
 
     const newData = await submitActivity(finalData, operation)
     await setUserActivities(newData)
