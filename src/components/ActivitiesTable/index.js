@@ -7,10 +7,16 @@ import { Table, Tag } from './style'
 import categories from '../../util/constants/categories'
 import { deleteActivity, downloadCertificate } from '../../services/api'
 import useActivitiesContext from '../../contexts/activities.context'
+import { useAuth0 } from '@auth0/auth0-react'
 
 export const ActivitiesTable = () => {
-  const { setCurrentActivityData, openActivityModal, userActivities } =
-    useActivitiesContext()
+  const {
+    setCurrentActivityData,
+    openActivityModal,
+    userActivities,
+    setUserActivities,
+  } = useActivitiesContext()
+  const { user } = useAuth0()
   const formatFilterCategories = (categoryList) => {
     return categoryList.map((category) => ({
       text: category.text,
@@ -125,8 +131,9 @@ export const ActivitiesTable = () => {
     await downloadCertificate(record._id)
   }
 
-  const handleDelete = (record) => {
-    deleteActivity(record.id)
+  const handleDelete = async (record) => {
+    const response = await deleteActivity(record._id, user.email)
+    setUserActivities(response.activities)
   }
 
   return (
