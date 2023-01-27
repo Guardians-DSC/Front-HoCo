@@ -2,15 +2,14 @@ export const data = [
   {
     question:
       ' Quais as atividades [*extra-curriculares*](https://www.dicio.com.br/extracurricular/) são consideradas atividades complementares?',
-    answer:
-    `
+    answer: `
   - Participação em projetos de Pesquisa, Desenvolvimento e Inovação (PDI);
   - Participação em projetos de extensão como PIBIC e PIVIC;
   - Monitoria;
   - Participar como ouvinte ou ministrante de palestras, minicursos e/ou workshops;
   - Participar de olimpíadas de programação;
   - Organizar eventos;
-    `
+    `,
   },
   {
     question:
@@ -39,12 +38,12 @@ export const data = [
 
   {
     question: 'Organizar **evento** é uma atividade complementar?',
-    answer:
-      ' > Sim, mas o evento precisa ser na área de Ciência da Computação.',
+    answer: ' > Sim, mas o evento precisa ser na área de Ciência da Computação.',
   },
 
   {
-    question: 'Em relação a alguns certificados de eventos em EAD, como será a validação destes certificados? Terão o mesmo peso?',
+    question:
+      'Em relação a alguns certificados de eventos em EAD, como será a validação destes certificados? Terão o mesmo peso?',
     answer:
       ' - [x] Todos eventos realizados durante o EAD e organizados pelas comunidades do curso e reconhecidads pela coordenação terão o mesmo peso \n - [ ] Participação em eventos de fora da graduação e que não sejam validadas pelo colegiado não poderão ser contabilizadas.',
   },
