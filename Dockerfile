@@ -10,6 +10,11 @@ FROM node:16-alpine
 
 ARG user=node
 
+ENV REACT_APP_BASE_URL=http://54.164.133.210:8000/ 
+ENV REACT_APP_DOMAIN=dev-qcrl1v18netyvzxw.us.auth0.com 
+ENV REACT_APP_CLIENTID=2jpy5fQAxKQjfwrcXHsA1GCMdEu9bU8v 
+ENV REACT_APP_URI=http://localhost:3000/sobre
+
 WORKDIR /app
 
 COPY . .
