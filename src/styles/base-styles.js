@@ -171,7 +171,7 @@ const buttonVariableOne = css`
   color: ${({ theme }) => theme['main-white']};
   border: none;
 
-  &:hover{
+  &:hover {
     background-color: ${({ theme }) => theme['second-green']};
   }
 `

@@ -6,8 +6,6 @@ import { data } from './Data'
 import { Section } from './styles'
 
 export const Duvidas = () => {
-  
-
   return (
     <Content>
       <Title>

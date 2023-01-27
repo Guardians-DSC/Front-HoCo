@@ -11,7 +11,8 @@ import { Button, Text, Title } from '../../styles/base-styles'
 import { TableWrapper, Wrapper, ButtonsWrapper } from './styles'
 
 export const Atividades = () => {
-  const { setUserActivities, openActivityModal, isModalActive } = useActivitiesContext()
+  const { setUserActivities, openActivityModal, isModalActive } =
+    useActivitiesContext()
   const [activities, setActivities] = useState([])
   const { user, isAuthenticated } = useAuth0()
 
