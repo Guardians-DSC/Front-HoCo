@@ -60,7 +60,7 @@ export const ActivitiesTable = () => {
       render: (tag) => {
         return (
           <Tag color="green" key={tag}>
-            {tag.toUpperCase()}
+            {tag}
           </Tag>
         )
       },
@@ -133,15 +133,14 @@ export const ActivitiesTable = () => {
 
   const handleDelete = async (record) => {
     const response = await deleteActivity(record._id, user.email)
-    setUserActivities(response.activities)
+    setUserActivities(response)
   }
 
   return (
     <Table
       columns={columns}
       pagination={{ pageSize: 7 }}
-      scroll={{ x: 600 }}
-      dataSource={userActivities.map((cell) => ({ ...cell, key: cell._id }))}
+      dataSource={userActivities?.map((cell) => ({ ...cell, key: cell._id }))}
     />
   )
 }

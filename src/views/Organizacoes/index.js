@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 
 import { Organizations } from '../../components/Organizations'
 import { OrganizationsIcon } from '../../assets/icons/OrganizationIcon'
@@ -13,7 +13,7 @@ export const Orgs = () => {
 
   const theme = useTheme()
 
-  useMemo(() => {
+  useEffect(() => {
     const getData = async () => {
       setLoading(true)
       const data = await getOrgs()

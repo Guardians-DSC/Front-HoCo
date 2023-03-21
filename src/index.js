@@ -12,8 +12,8 @@ const uri = process.env.REACT_APP_URI
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <PagesProvider>
         <ActivitiesProvider>
+      <PagesProvider>
           <UserProvider>
             <Auth0Provider
               domain={process.env.REACT_APP_DOMAIN}
@@ -23,8 +23,8 @@ ReactDOM.render(
               <App />
             </Auth0Provider>
           </UserProvider>
-        </ActivitiesProvider>
       </PagesProvider>
+        </ActivitiesProvider>
     </Router>
   </React.StrictMode>,
   document.getElementById('root')

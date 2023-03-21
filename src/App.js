@@ -11,6 +11,14 @@ import usePagesContext from './contexts/app.context'
 function App() {
   const { theme } = usePagesContext()
 
+  window.addEventListener('error', function (e) {
+    console.error(e.message);
+    // prevent React's listener from firing
+    e.stopImmediatePropagation();
+    // prevent the browser's console error message
+    e.preventDefault();
+  });
+
   return (
     <ThemeProvider theme={theme}>
       <AppWrapper>
