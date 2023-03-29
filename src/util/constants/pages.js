@@ -10,7 +10,6 @@ import { Horas } from '../../views/Horas'
 import { Atividades } from '../../views/Atividades'
 import { Orgs } from '../../views/Organizacoes'
 import { Duvidas } from '../../views/Duvidas'
-import { Perfil } from '../../views/Perfil'
 import { Sobre } from '../../views/Sobre'
 import { ShortLogo } from '../../assets/icons/ShortLogo'
 

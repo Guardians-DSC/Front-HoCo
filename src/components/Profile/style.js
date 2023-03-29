@@ -31,6 +31,7 @@ export const AvatarContainer = styled(Avatar)`
 export const UserContentWrapper = styled.div`
   display: flex;
   flex-flow: column;
+  gap: 0.5rem;
 `
 
 export const Name = styled.span`
