@@ -30,7 +30,6 @@ export const Orgs = () => {
       <Title>
         <OrganizationsIcon width={32} color={theme['main-font']} />
         {`Organizações`}
-        <Switch />
       </Title>
       <Text>
         {`Olá, querido usuário! Para que você saiba como ganhar algumas horinhas

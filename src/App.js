@@ -1,6 +1,6 @@
 import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
-
+import { Switch as SwitchTheme } from './components/Switch'
 import './styles/reset.css'
 import { Menu } from './components/Menu'
 import { ThemeProvider } from 'styled-components'
@@ -14,6 +14,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <AppWrapper>
+        <SwitchTheme />
         <Menu />
         <Page>
           <Switch>

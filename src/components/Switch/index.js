@@ -1,13 +1,14 @@
 import React from 'react'
 import usePagesContext from "../../contexts/app.context";
-import { InnerBall, Wrapper } from "./style";
+import themes from '../../util/constants/themes';
+import { InnerBall, Wrapper, ThemeName } from "./style";
 
 export const Switch = () => {
-  const { handleTheme } = usePagesContext();
-
+  const { handleTheme, theme } = usePagesContext();
+    console.log(theme)
   return (
     <Wrapper onClick={handleTheme}>
-      <InnerBall />
+      <ThemeName>{theme === themes['light'] ? 'light': 'dark'}</ThemeName>
     </Wrapper>
   );
 };

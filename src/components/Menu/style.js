@@ -112,6 +112,7 @@ export const MenuFooter = styled.div`
 `
 
 export const Header = styled.header`
+  display: none;
   padding: 2rem 3rem;
   background-color: transparent;
 
@@ -134,7 +135,9 @@ export const BurguerContainer = styled.div`
   }
 
   @media screen and (max-width: 1025px) {
+    padding: 2rem 1.5rem;
     display: flex;
+    justify-content: space-between;
   }
 `
 

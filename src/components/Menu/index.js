@@ -105,11 +105,6 @@ export const Menu = () => {
         <BurguerContainer onClick={handleActive}>
           <BurguerMenu color={theme['header-icons']} />
         </BurguerContainer>
-        <HeaderLogoContainer>
-          <Link to="/sobre">
-            <Switch />
-          </Link>
-        </HeaderLogoContainer>
       </Header>
     </>
   )
