@@ -1,11 +1,12 @@
 import React from 'react'
-import { Wrapper, Image, AvatarContainer } from './style'
 import PropTypes from 'prop-types'
 import { UserOutlined } from '@ant-design/icons'
 import eu from '../../assets/images/eu.jpeg'
 import useUserContext from '../../contexts/user.context'
 import { useAuth0 } from '@auth0/auth0-react'
 import { LoginButton } from '../LoginButton'
+import { LogoutButton } from '../LogoutButton'
+import { UserContentWrapper, Name, Wrapper, Image, AvatarContainer } from './style'
 
 export const Profile = ({ isretracted, width, displayName }) => {
   const { avatar } = useUserContext()
@@ -21,11 +22,15 @@ export const Profile = ({ isretracted, width, displayName }) => {
           icon={<UserOutlined style={{ color: '#000', width: width }} />}
         />
       )}
-
-      {displayName ? <span>{user.name}</span> : null}
+      <UserContentWrapper>
+        <Name>
+          {displayName ? <span>{user.name}</span> : null}
+        </Name>
+        <LogoutButton />
+      </UserContentWrapper>
     </Wrapper>
   ) : (
-    <LoginButton></LoginButton>
+    <LoginButton />
   )
 }
 

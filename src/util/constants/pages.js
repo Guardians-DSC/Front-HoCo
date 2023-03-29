@@ -62,12 +62,4 @@ export default [
     menu: true,
     loggedOutRender: true,
   },
-  {
-    name: 'Perfil',
-    text: 'Meu Perfil',
-    path: '/perfil',
-    component: Perfil,
-    menu: false,
-    loggedOutRender: false,
-  },
 ]

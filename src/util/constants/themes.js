@@ -40,6 +40,7 @@ const themeDark = {
   'second-bar': '#f5f5f590',
   'bright-red': '#D12828',
   'bright-green': '#6CBD7E',
+
 }
 
 export default { light: themeLight, dark: themeDark }

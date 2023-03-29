@@ -24,9 +24,14 @@ export function PagesProvider({ children }) {
   const currentTheme = getTheme()
   const [theme, setTheme] = useState(currentTheme ? currentTheme : themes['light'])
 
-  const handleTheme = (themeName) => {
+  const handleTheme = () => {
+    let themeName = 'light'
+    if (theme === themes['light']) {
+      themeName = 'dark'
+    }
+
     localStorage.setItem('@hoco/theme', JSON.stringify(themes[themeName]))
-    setTheme(getTheme())
+    setTheme(themes[themeName])
   }
 
   const [currentPathname, setCurrentPathname] = useState(

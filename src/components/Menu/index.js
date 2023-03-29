@@ -25,6 +25,7 @@ import {
   BurguerContainer,
   HeaderLogoContainer,
 } from './style'
+import { Switch } from '../Switch'
 
 export const Menu = () => {
   const { userId, name } = useUserContext()
@@ -97,17 +98,7 @@ export const Menu = () => {
               }
             })}
           </MenuBody>
-          <MenuFooter>
-            {userId ? (
-              <Link to="/perfil" onClick={() => setisactive(false)}>
-                <Profile isretracted={isretracted} name={name} />
-              </Link>
-            ) : (
-              <>
-                <Login /> | Cadastrar-se
-              </>
-            )}
-          </MenuFooter>
+            <Profile isretracted={isretracted} name={name} />
         </Wrapper>
       </OutWrapper>
       <Header>
@@ -116,11 +107,7 @@ export const Menu = () => {
         </BurguerContainer>
         <HeaderLogoContainer>
           <Link to="/sobre">
-            <Logo
-              width={100}
-              onClick={() => setisactive(false)}
-              color={theme['header-icons']}
-            />
+            <Switch />
           </Link>
         </HeaderLogoContainer>
       </Header>

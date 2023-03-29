@@ -2,7 +2,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL: process.env.REACT_APP_BASE_URL,
+  baseURL: 'http://172.18.0.3:8081',
 })
 
 export const downloadCertificate = async (activityId) => {
@@ -12,6 +12,7 @@ export const downloadCertificate = async (activityId) => {
 
 export const getUserData = async (email) => {
   const response = await api.get(`/user_data?email=${email}`)
+  console.log(response)
   return response.data
 }
 
@@ -44,11 +45,13 @@ export const editActivity = async (data) => {
 
 export const getActivities = async (email) => {
   const response = await api.get(`/activities?e-mail=${email}`)
+  console.log(response)
   return response.data
 }
 
 export const deleteActivity = async (activityID, email) => {
   const response = await api.delete(`/activity/${activityID}?e-mail=${email}`)
+  console.log('removed', response)
   return response.data
 }
 

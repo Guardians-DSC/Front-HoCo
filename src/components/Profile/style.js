@@ -13,8 +13,11 @@ export const Wrapper = styled.div`
 `
 
 export const Image = styled.img`
-  width: ${({ width }) => `${width}px`};
+  /* width: ${({ width }) => `${width}px`}; */
+  min-width: 60px;
+  min-height: 60px;
   border-radius: 100%;
+  background-color: black;
   box-shadow: 1px 1px 1px grey;
 `
 
@@ -23,4 +26,13 @@ export const AvatarContainer = styled(Avatar)`
   padding: 1rem;
   box-shadow: 1px 1px 1px grey;
   border-radius: 100%;
+`
+
+export const UserContentWrapper = styled.div`
+  display: flex;
+  flex-flow: column;
+`
+
+export const Name = styled.span`
+  font-weight: bold;
 `

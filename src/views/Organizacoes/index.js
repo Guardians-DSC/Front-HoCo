@@ -6,6 +6,7 @@ import { useTheme } from 'styled-components'
 import { Content, Title, Text } from '../../styles/base-styles.js'
 import { getOrgs } from '../../services/api'
 import usePagesContext from '../../contexts/app.context'
+import { Switch } from '../../components/Switch'
 
 export const Orgs = () => {
   const [orgs, setOrgs] = useState([])
@@ -29,6 +30,7 @@ export const Orgs = () => {
       <Title>
         <OrganizationsIcon width={32} color={theme['main-font']} />
         {`Organizações`}
+        <Switch />
       </Title>
       <Text>
         {`Olá, querido usuário! Para que você saiba como ganhar algumas horinhas
