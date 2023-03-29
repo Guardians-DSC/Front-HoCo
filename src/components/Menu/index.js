@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { Logo } from '../../assets/icons/Logo'
-import { Link } from 'react-router-dom'
 
 import constants from '../../util/constants'
 import { PageLink } from './PageLink'
@@ -11,24 +10,20 @@ import { BurguerMenu } from '../../assets/icons/BurguerMenu'
 import { CloseOutlined } from '@ant-design/icons'
 import { useTheme } from 'styled-components'
 import useUserContext from '../../contexts/user.context'
-import { Login } from '../Login'
 import {
   Wrapper,
   MenuHeader,
   MenuBody,
-  MenuFooter,
   ArrowContainer,
   OutWrapper,
   LinkContainer,
   Header,
   CloseContainer,
   BurguerContainer,
-  HeaderLogoContainer,
 } from './style'
-import { Switch } from '../Switch'
 
 export const Menu = () => {
-  const { userId, name } = useUserContext()
+  const { name } = useUserContext()
   const [isretracted, setisretracted] = useState(
     localStorage.getItem('@hoco/retracted') === 'true'
   )
@@ -98,7 +93,7 @@ export const Menu = () => {
               }
             })}
           </MenuBody>
-            <Profile isretracted={isretracted} name={name} />
+          <Profile isretracted={isretracted} name={name} />
         </Wrapper>
       </OutWrapper>
       <Header>

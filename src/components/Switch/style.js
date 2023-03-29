@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Wrapper = styled.div`
   background-color: ${({ theme }) => theme['main-green']};
@@ -21,7 +21,7 @@ export const Wrapper = styled.div`
     width: 3rem;
     height: 1.5rem;
   }
-`;
+`
 
 export const ThemeName = styled.span`
   color: white;
@@ -37,11 +37,9 @@ export const InnerBall = styled.div`
   border-radius: 100%;
   transition: 0.3s ease;
   transition-property: transform background-color;
-  
-  ${({ theme }) =>
-    theme === "dark" ? `transform: translate(125%)` : ""};
+  ${({ theme }) => (theme === 'dark' ? `transform: translate(125%)` : '')};
   @media screen and (max-width: 600px) {
     width: 1rem;
     height: 1rem;
   }
-`;
+`

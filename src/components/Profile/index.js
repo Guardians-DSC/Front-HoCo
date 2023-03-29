@@ -23,9 +23,7 @@ export const Profile = ({ isretracted, width, displayName }) => {
         />
       )}
       <UserContentWrapper>
-        <Name>
-          {displayName ? <span>{user.name}</span> : null}
-        </Name>
+        <Name>{displayName ? <span>{user.name}</span> : null}</Name>
         <LogoutButton />
       </UserContentWrapper>
     </Wrapper>
