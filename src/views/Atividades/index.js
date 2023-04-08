@@ -21,7 +21,6 @@ export const Atividades = () => {
       const data = await getActivities(user.email)
       setActivities(data.activities)
       setUserActivities(data.activities)
-
     }
 
     getData()

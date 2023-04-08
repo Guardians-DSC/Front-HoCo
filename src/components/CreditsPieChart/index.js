@@ -77,8 +77,9 @@ export const CreditsPieChart = ({ data }) => {
         </PieChart>
       </ResponsiveContainer>
       <Text>
-        Você tem 11 créditos aprovados atualmente e as suas principais fontes de
-        atividades <br /> complementares são <span>{sortedData[0]?.category}</span>,
+        Você tem {data.amount} créditos aprovados atualmente e as suas principais
+        fontes de atividades <br /> complementares são
+        <span>{sortedData[0]?.category}</span>,{' '}
         <span>{sortedData[1]?.category}</span> e{' '}
         <span>{sortedData[2]?.category}</span>.
       </Text>
