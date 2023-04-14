@@ -2,7 +2,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL: 'http://172.18.0.3:8081',
+  baseURL: process.env.REACT_APP_BASE_URL,
 })
 
 export const downloadCertificate = async (activityId) => {
